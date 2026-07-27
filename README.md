@@ -17,6 +17,18 @@ It supports two core flows:
 - License on portal: 이용허락범위 제한 없음
 - Rows imported: 12
 
+## Official Data Registry
+
+The project also tracks additional official datasets in:
+
+- `backend/app/data/official/official_dataset_registry.json`
+
+Dataset statuses:
+
+- `imported`: available locally and used by the app
+- `planned`: permission/metadata reviewed, ready for future ingestion
+- `reference_only`: official page used as procedural reference, not automatically collected yet
+
 ## Project Structure
 
 ```text

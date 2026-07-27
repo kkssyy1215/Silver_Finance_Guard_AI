@@ -285,13 +285,49 @@ def render_complaint_draft() -> None:
             st.caption(result["disclaimer"])
 
 
+def render_official_data() -> None:
+    st.header("공식 데이터")
+    st.write("프로젝트에 실제로 연결했거나, 다음 수집 후보로 관리 중인 공식 데이터 목록입니다.")
+
+    col1, col2 = st.columns(2)
+    with col1:
+        status = st.selectbox("상태", ["전체", "imported", "planned", "reference_only"])
+    with col2:
+        query = st.text_input("검색어", placeholder="예: 착오송금, 보이스피싱, 고령층")
+
+    params = {}
+    if status != "전체":
+        params["status"] = status
+    if query:
+        params["query"] = query
+
+    try:
+        response = requests.get(f"{API_BASE_URL}/api/v1/official-data/datasets", params=params, timeout=20)
+        response.raise_for_status()
+        datasets = response.json()["datasets"]
+    except requests.RequestException as exc:
+        st.error(f"공식 데이터 목록을 불러오지 못했습니다. ({exc})")
+        return
+
+    st.caption(f"총 {len(datasets)}개 데이터")
+    for dataset in datasets:
+        with st.container(border=True):
+            st.markdown(f"**{dataset['title']}**")
+            st.caption(f"{dataset['publisher']} · {dataset['portal']} · {dataset['status']}")
+            st.write(dataset["summary"])
+            st.write(f"형식: {dataset['format']} / 행 수: {dataset['row_count'] or '확인 필요'}")
+            st.write(f"이용조건: {dataset['license']} / 비용: {dataset['fee']}")
+            st.write("태그: " + ", ".join(dataset["tags"]))
+            st.link_button("출처 보기", dataset["url"])
+
+
 st.title("실버 금융가드 AI")
 st.markdown(
     '<div class="notice">고령층 사용자가 이해하기 어려운 금융 약관의 위험 요소를 사전에 탐지하고, 금융사고 발생 시 골든타임 내 필요한 조치와 서류 작성을 지원합니다.</div>',
     unsafe_allow_html=True,
 )
 
-tab_contract, tab_incident, tab_complaint = st.tabs(["가입 전 점검", "사고 대응", "민원 초안"])
+tab_contract, tab_incident, tab_complaint, tab_data = st.tabs(["가입 전 점검", "사고 대응", "민원 초안", "공식 데이터"])
 
 with tab_contract:
     render_contract_check()
@@ -301,3 +337,6 @@ with tab_incident:
 
 with tab_complaint:
     render_complaint_draft()
+
+with tab_data:
+    render_official_data()

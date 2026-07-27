@@ -1,0 +1,54 @@
+from pydantic import BaseModel, Field
+
+from app.schemas.common import Confidence, EasyExplanation, RiskLevel
+
+
+class TextAnalysisRequest(BaseModel):
+    content: str = Field(min_length=1)
+    content_type: str = "text"
+    user_age_group: str = "senior"
+    product_type: str = "unknown"
+
+
+class ExtractedDocumentText(BaseModel):
+    source_type: str
+    text: str
+    quality_message: str
+
+
+class RiskItem(BaseModel):
+    label: str
+    severity: RiskLevel
+    confidence: Confidence
+    original_text: str
+    simplified_text: str
+    why_it_matters: str
+    must_ask_question: str
+
+
+class ContractRiskResponse(BaseModel):
+    overall_risk: RiskLevel
+    document_summary: EasyExplanation
+    risk_items: list[RiskItem]
+    must_ask_questions: list[str]
+    disclaimer: str
+
+
+class SuspiciousPoint(BaseModel):
+    label: str
+    severity: RiskLevel
+    detected_text: str
+    reason: str
+    easy_explanation: str
+    must_ask_question: str
+
+
+class ExplanationRiskResponse(BaseModel):
+    risk_level: RiskLevel
+    confidence: Confidence
+    summary: EasyExplanation
+    suspicious_points: list[SuspiciousPoint]
+    missing_explanations: list[str]
+    must_ask_questions: list[str]
+    recommended_next_step: str
+    disclaimer: str

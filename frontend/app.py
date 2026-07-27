@@ -79,7 +79,7 @@ st.markdown(
       gap: 0.8rem;
       margin: 1rem 0;
     }}
-    .guide-card, .big-card, .emergency-card, .magnifier-card, .question-card, .guardian-card {{
+    .guide-card, .big-card, .emergency-card, .magnifier-card, .question-card, .guardian-card, .start-card, .three-line-card {{
       border: 2px solid {border_color};
       border-radius: 18px;
       padding: 1rem 1.1rem;
@@ -166,9 +166,9 @@ st.markdown(
     }}
     .question-card {{
       margin-bottom: 0.7rem;
-      border-left: 10px solid {accent_color};
       font-size: {font_tokens["large"]};
       line-height: 1.6;
+      box-shadow: none;
     }}
     .guardian-card {{
       background: #f8fafc;
@@ -180,8 +180,42 @@ st.markdown(
       font-size: {font_tokens["large"]};
       margin-bottom: 0.35rem;
     }}
+    .start-grid {{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin: 0.8rem 0 1rem;
+    }}
+    .start-card {{
+      min-height: 8rem;
+      box-shadow: none;
+    }}
+    .start-card strong {{
+      display: block;
+      font-size: {font_tokens["large"]};
+      margin-bottom: 0.35rem;
+    }}
+    .start-card span {{
+      line-height: 1.55;
+    }}
+    .three-line-card {{
+      background: #ffffff;
+      margin: 1rem 0;
+      box-shadow: none;
+    }}
+    .three-line-card strong {{
+      display: block;
+      font-size: {font_tokens["xlarge"]};
+      margin-bottom: 0.4rem;
+    }}
+    .three-line-card ol {{
+      margin: 0;
+      padding-left: 1.4rem;
+      font-size: {font_tokens["large"]};
+      line-height: 1.8;
+    }}
     @media (max-width: 760px) {{
-      .senior-guide, .emergency-grid {{ grid-template-columns: 1fr; }}
+      .senior-guide, .emergency-grid, .start-grid {{ grid-template-columns: 1fr; }}
     }}
     </style>
     """,
@@ -285,6 +319,49 @@ def render_magnifier(title: str, text: str) -> None:
         <div class="magnifier-card">
           <strong>{escape(title)}</strong><br>
           {cleaned}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_start_helper() -> None:
+    st.subheader("무슨 일이 있으세요?")
+    st.markdown(
+        """
+        <div class="start-grid">
+          <div class="start-card"><strong>가입하려고 해요</strong><span>약관, 문자, 상담 내용을 넣고 가입 전에 위험한 조건을 확인합니다.</span></div>
+          <div class="start-card"><strong>어려운 단어가 있어요</strong><span>예금자보호, 지급정지 같은 금융용어를 쉬운 말로 풀이합니다.</span></div>
+          <div class="start-card"><strong>돈을 잘못 보냈어요</strong><span>착오송금이나 보이스피싱 의심 상황에서 지금 할 일을 순서대로 봅니다.</span></div>
+          <div class="start-card"><strong>민원을 넣고 싶어요</strong><span>장황한 이야기를 접수용 문장과 준비자료로 정리합니다.</span></div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    selected = st.radio(
+        "가장 가까운 상황을 고르세요.",
+        ["가입하려고 해요", "어려운 단어가 있어요", "돈을 잘못 보냈어요", "민원을 넣고 싶어요"],
+        horizontal=True,
+    )
+    guide = {
+        "가입하려고 해요": "`가입 전 안심점검` 탭에서 문자, 약관, 상담 내용을 넣고 `약관 위험 점검` 또는 `설명의무 위험 점검`을 누르세요.",
+        "어려운 단어가 있어요": "`금융용어검색` 탭에서 단어 하나만 입력하세요. 예: 예금자보호, 지급정지, 청약철회",
+        "돈을 잘못 보냈어요": "`사고 대응` 탭에서 상황을 한 문장으로 적고 `사고 대응 시작`을 누르세요. 급하면 먼저 은행에 전화하세요.",
+        "민원을 넣고 싶어요": "`민원 초안` 탭에서 있었던 일을 편하게 적으면 접수용 문장으로 정리합니다.",
+    }
+    st.info(guide[selected])
+
+
+def render_three_line_result(lines: list[str], title: str = "먼저 볼 3줄 결론") -> None:
+    cleaned = [line for line in lines if line][:3]
+    if not cleaned:
+        return
+    items = "".join(f"<li>{escape(line)}</li>" for line in cleaned)
+    st.markdown(
+        f"""
+        <div class="three-line-card">
+          <strong>{escape(title)}</strong>
+          <ol>{items}</ol>
         </div>
         """,
         unsafe_allow_html=True,
@@ -536,7 +613,7 @@ def render_contract_check() -> None:
     st.write("어르신이 금융상품에 가입하기 전, 상담 내용과 약관을 넣으면 설명 누락·불리한 조건·지금 물어봐야 할 질문을 한 번에 정리합니다.")
     st.info("핵심 흐름: 가입 전에는 막고, 상담 중에는 물어보게 하고, 문제가 생기면 대응 자료까지 정리합니다.")
 
-    input_mode = st.radio("입력 방식", ["텍스트 입력", "PDF/텍스트 파일 업로드"], horizontal=True)
+    input_mode = st.radio("입력 방식", ["직접 적기", "파일 올리기"], horizontal=True)
     sample = (
         "별도 해지 신청이 없는 경우 계약은 자동 연장됩니다. "
         "마케팅 목적의 개인정보 제3자 제공에 동의합니다. "
@@ -545,12 +622,12 @@ def render_contract_check() -> None:
     content = ""
     uploaded_file = None
 
-    if input_mode == "텍스트 입력":
-        content = st.text_area("확인할 내용을 입력하세요.", value=sample, height=180)
+    if input_mode == "직접 적기":
+        content = st.text_area("문자나 상담 내용을 그대로 적어주세요.", value=sample, height=180)
         render_magnifier("돋보기: 내가 입력한 내용", content)
     else:
         uploaded_file = st.file_uploader("PDF 또는 텍스트 파일을 올려주세요.", type=["pdf", "txt", "md", "json"])
-        st.caption("사진 OCR은 다음 단계에서 연결할 예정입니다. 현재는 PDF와 텍스트 파일을 먼저 지원합니다.")
+        st.caption("파일 찾기가 어려우면 `직접 적기`를 눌러 중요한 문장만 적어도 됩니다. 사진 OCR은 다음 단계에서 연결할 예정입니다.")
 
     col1, col2 = st.columns(2)
     with col1:
@@ -559,7 +636,7 @@ def render_contract_check() -> None:
         analyze_explanation = st.button("설명의무 위험 점검", use_container_width=True)
 
     if analyze_contract:
-        if input_mode == "PDF/텍스트 파일 업로드":
+        if input_mode == "파일 올리기":
             if uploaded_file is None:
                 st.warning("분석할 파일을 먼저 올려주세요.")
                 return
@@ -567,6 +644,13 @@ def render_contract_check() -> None:
         else:
             result = post_json("/api/v1/analyze/document", {"content": content})
         if result:
+            render_three_line_result(
+                [
+                    result["document_summary"]["one_line"],
+                    f"위험 후보가 {len(result.get('risk_items', []))}개 보입니다.",
+                    "아래 질문 카드를 직원에게 보여주고 답을 들은 뒤 가입하세요.",
+                ]
+            )
             render_easy_summary(result["document_summary"])
             render_safety_score(result["overall_risk"], len(result.get("risk_items", [])))
             guardian_points = [
@@ -606,7 +690,7 @@ def render_contract_check() -> None:
             st.caption(result["disclaimer"])
 
     if analyze_explanation:
-        if input_mode != "텍스트 입력":
+        if input_mode != "직접 적기":
             st.warning("설명의무 위험 점검은 상담 내용이나 문자 텍스트를 입력해서 사용해주세요.")
             return
         result = post_json(
@@ -614,6 +698,13 @@ def render_contract_check() -> None:
             {"content": content, "content_type": "consultation_note", "user_age_group": "senior"},
         )
         if result:
+            render_three_line_result(
+                [
+                    result["summary"]["one_line"],
+                    f"설명 부족 또는 오해 가능성이 있는 표현이 {len(result.get('suspicious_points', []))}개 보입니다.",
+                    "오늘 바로 결정하지 말고 아래 질문에 대한 답을 먼저 확인하세요.",
+                ]
+            )
             render_easy_summary(result["summary"])
             render_safety_score(result["risk_level"], len(result.get("suspicious_points", [])))
             guardian_points = [
@@ -656,9 +747,13 @@ def render_incident_response() -> None:
         if not classified:
             return
 
-        st.metric("상황 판단", incident_label(classified["incident_type"]))
-        st.metric("긴급도", risk_label(classified["urgency_level"]))
-        st.info(classified["first_action_summary"])
+        render_three_line_result(
+            [
+                f"상황 판단: {incident_label(classified['incident_type'])}",
+                f"긴급도: {risk_label(classified['urgency_level'])}",
+                classified["first_action_summary"],
+            ]
+        )
 
         plan = post_json(
             "/api/v1/incidents/action-plan",
@@ -725,6 +820,13 @@ def render_complaint_draft() -> None:
             {"user_statement": statement, "incident_type": incident_type},
         )
         if result:
+            render_three_line_result(
+                [
+                    result["summary"],
+                    "아래 초안을 그대로 제출하지 말고 날짜, 금액, 금융회사명을 한 번 더 확인하세요.",
+                    "문자, 녹취, 약관, 이체내역 같은 증빙자료를 함께 준비하세요.",
+                ]
+            )
             st.subheader(result["title"])
             st.write(result["summary"])
             draft_body = st.text_area("초안", value=result["draft_body"], height=260)
@@ -881,6 +983,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 render_senior_guide()
+render_start_helper()
 
 tab_contract, tab_terms, tab_incident, tab_complaint, tab_data = st.tabs(["가입 전 안심점검", "금융용어검색", "사고 대응", "민원 초안", "공식 데이터"])
 

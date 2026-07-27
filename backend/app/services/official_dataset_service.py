@@ -264,14 +264,43 @@ def search_official_records(query: str, dataset_id: Optional[str] = None, limit:
 
 
 def search_financial_terms(query: str, limit: int = 8) -> list[FinancialTermExplanation]:
-    records = search_official_records(query=query, limit=limit * 2)
+    normalized_query = query.strip().lower()
+    compact_query = normalized_query.replace(" ", "")
+    if not normalized_query:
+        return []
+
+    easy_results = _easy_dictionary_results(query)
     term_records = [
         record
-        for record in records
+        for record in load_official_records()
         if record.dataset_id in {"FSC_FINANCIAL_TERMS_20260630", "KDIC_DEPOSIT_INSURANCE_TERMS_20220825"}
     ]
-    explanations = [_to_financial_term_explanation(record) for record in term_records[:limit]]
-    explanations.extend(_easy_dictionary_results(query))
+    scored_records: list[tuple[int, OfficialRecord]] = []
+    for record in term_records:
+        title = record.title.lower()
+        compact_title = title.replace(" ", "")
+        body = record.body.lower()
+        compact_body = body.replace(" ", "")
+        if compact_query == compact_title:
+            score = 100
+        elif compact_query in compact_title or compact_title in compact_query:
+            score = 80
+        elif normalized_query in body or compact_query in compact_body:
+            score = 10
+        else:
+            continue
+        scored_records.append((score, record))
+
+    scored_records.sort(key=lambda item: item[0], reverse=True)
+    exact_or_title_matches = [record for score, record in scored_records if score >= 80]
+    body_matches = [record for score, record in scored_records if score < 80]
+
+    if easy_results or exact_or_title_matches:
+        selected_records = exact_or_title_matches
+    else:
+        selected_records = body_matches
+
+    explanations = easy_results + [_to_financial_term_explanation(record) for record in selected_records[:limit]]
     deduped: list[FinancialTermExplanation] = []
     seen: set[str] = set()
     for item in explanations:

@@ -123,6 +123,12 @@ def test_financial_term_search_returns_easy_explanation() -> None:
     assert results[0].action_tip
 
 
+def test_financial_term_search_prioritizes_exact_term_over_body_matches() -> None:
+    results = search_financial_terms("예금자보호", limit=5)
+
+    assert [result.term for result in results] == ["예금자보호"]
+
+
 def test_official_record_search_uses_new_complaint_and_phishing_data() -> None:
     complaint_results = search_official_records("보험금", dataset_id="FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227", limit=3)
     phishing_results = search_official_records("기관사칭", dataset_id="POLICE_VOICE_PHISHING_STATS_20251231", limit=3)

@@ -4,7 +4,9 @@ from pathlib import Path
 from typing import Any, Optional
 
 from app.schemas.official_data import OfficialDataset
+from app.schemas.official_data import FinancialTermExplanation
 from app.schemas.official_data import OfficialRecord
+from app.services.rule_loader import load_rule_file
 
 OFFICIAL_DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "official"
 
@@ -257,3 +259,64 @@ def search_official_records(query: str, dataset_id: Optional[str] = None, limit:
 
     results.sort(key=lambda item: item[0], reverse=True)
     return [record for _, record in results[:limit]]
+
+
+def search_financial_terms(query: str, limit: int = 8) -> list[FinancialTermExplanation]:
+    records = search_official_records(query=query, limit=limit * 2)
+    term_records = [
+        record
+        for record in records
+        if record.dataset_id in {"FSC_FINANCIAL_TERMS_20260630", "KDIC_DEPOSIT_INSURANCE_TERMS_20220825"}
+    ]
+    return [_to_financial_term_explanation(record) for record in term_records[:limit]]
+
+
+def _to_financial_term_explanation(record: OfficialRecord) -> FinancialTermExplanation:
+    easy_match = _easy_dictionary_match(record.title)
+    official_definition = record.body.strip()
+    if easy_match:
+        easy_explanation = easy_match["easy"]
+        action_tip = easy_match["action"]
+    else:
+        easy_explanation = _simplify_definition(official_definition)
+        action_tip = _action_tip_for_term(record.title, official_definition)
+
+    return FinancialTermExplanation(
+        term=record.title,
+        official_definition=official_definition,
+        easy_explanation=easy_explanation,
+        action_tip=action_tip,
+        source_title=record.source_title,
+        source_url=record.source_url,
+    )
+
+
+def _easy_dictionary_match(term: str) -> Optional[dict[str, str]]:
+    normalized_term = term.replace(" ", "").lower()
+    for item in load_rule_file("easy_language_dictionary.json"):
+        dictionary_term = item["term"].replace(" ", "").lower()
+        if dictionary_term in normalized_term or normalized_term in dictionary_term:
+            return item
+    return None
+
+
+def _simplify_definition(definition: str) -> str:
+    if not definition:
+        return "공식 설명을 찾았지만 쉬운 설명을 만들기 위한 내용이 부족합니다."
+    first_sentence = definition.replace("ㆍ", ", ").split(".")[0].strip()
+    if len(first_sentence) > 140:
+        first_sentence = first_sentence[:140].rstrip() + "..."
+    return f"쉽게 말하면, {first_sentence}"
+
+
+def _action_tip_for_term(term: str, definition: str) -> str:
+    text = f"{term} {definition}"
+    if any(keyword in text for keyword in ["예금", "보호", "보험"]):
+        return "내 돈이 보호 대상인지, 한도와 조건을 꼭 확인하세요."
+    if any(keyword in text for keyword in ["대출", "이자", "상환", "채무"]):
+        return "이자, 갚는 날짜, 중도상환 비용을 숫자로 확인하세요."
+    if any(keyword in text for keyword in ["투자", "펀드", "증권", "파생", "손실"]):
+        return "원금 손실 가능성과 수수료를 먼저 물어보세요."
+    if any(keyword in text for keyword in ["개인정보", "동의", "제공"]):
+        return "거절해도 가입할 수 있는 선택 동의인지 확인하세요."
+    return "상담사에게 이 용어를 쉬운 말로 다시 설명해 달라고 요청하세요."

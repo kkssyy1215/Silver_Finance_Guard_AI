@@ -6,7 +6,7 @@ from app.services.document_exporter import export_document
 from app.services.complaint_service import draft_complaint
 from app.schemas.analysis import TextAnalysisRequest
 from app.services.official_faq_service import search_kdic_mistaken_transfer_faq
-from app.services.official_dataset_service import find_official_datasets, search_official_records
+from app.services.official_dataset_service import find_official_datasets, search_financial_terms, search_official_records
 
 
 def test_contract_risk_detects_auto_renewal() -> None:
@@ -113,6 +113,14 @@ def test_official_record_search_uses_imported_financial_terms() -> None:
 
     assert results
     assert any("예금" in result.title or "예금" in result.body for result in results)
+
+
+def test_financial_term_search_returns_easy_explanation() -> None:
+    results = search_financial_terms("지급정지", limit=3)
+
+    assert results
+    assert results[0].easy_explanation
+    assert results[0].action_tip
 
 
 def test_official_record_search_uses_new_complaint_and_phishing_data() -> None:

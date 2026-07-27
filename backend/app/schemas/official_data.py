@@ -38,3 +38,18 @@ class OfficialRecordSearchResponse(BaseModel):
     query: str
     total_matches: int
     records: list[OfficialRecord]
+
+
+class FinancialTermExplanation(BaseModel):
+    term: str
+    official_definition: str
+    easy_explanation: str
+    action_tip: str
+    source_title: str
+    source_url: Optional[str] = None
+
+
+class FinancialTermSearchResponse(BaseModel):
+    query: str
+    total_matches: int
+    terms: list[FinancialTermExplanation]

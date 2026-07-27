@@ -613,6 +613,46 @@ def render_complaint_draft() -> None:
             st.caption(result["disclaimer"])
 
 
+def render_term_dictionary() -> None:
+    st.header("쉬운 금융용어")
+    st.write("어려운 금융 단어를 검색하면 공식 설명과 쉬운 말 설명을 함께 보여드립니다.")
+
+    examples = ["예금자보호", "지급정지", "청약철회", "위약금", "불완전판매", "제3자 제공"]
+    st.caption("추천 검색어: " + ", ".join(examples))
+    query = st.text_input("궁금한 금융 단어를 입력하세요.", value="예금자보호", placeholder="예: 예금자보호, 지급정지, 청약철회")
+    render_magnifier("돋보기: 검색할 단어", query)
+
+    if st.button("쉬운 말로 검색", use_container_width=True):
+        try:
+            response = requests.get(
+                f"{API_BASE_URL}/api/v1/official-data/terms/search",
+                params={"query": query, "limit": 8},
+                timeout=20,
+            )
+            response.raise_for_status()
+            terms = response.json()["terms"]
+        except requests.RequestException as exc:
+            st.error(f"금융용어 검색에 실패했습니다. ({exc})")
+            return
+
+        if not terms:
+            st.warning("검색 결과가 없습니다. 다른 단어로 다시 검색해보세요.")
+            return
+
+        st.caption(f"검색 결과 {len(terms)}건")
+        for term in terms:
+            with st.container(border=True):
+                st.subheader(term["term"])
+                st.info(term["easy_explanation"])
+                render_magnifier("돋보기: 쉬운 설명", term["easy_explanation"])
+                st.write("공식 설명")
+                st.write(term["official_definition"][:700] + ("..." if len(term["official_definition"]) > 700 else ""))
+                st.warning("확인할 일: " + term["action_tip"])
+                st.caption(term["source_title"])
+                if term.get("source_url"):
+                    st.link_button("공식 출처 보기", term["source_url"])
+
+
 def render_official_data() -> None:
     st.header("공식 데이터")
     st.write("프로젝트에 실제로 연결했거나, 다음 수집 후보로 관리 중인 공식 데이터 목록입니다.")
@@ -683,10 +723,13 @@ st.markdown(
 )
 render_senior_guide()
 
-tab_contract, tab_incident, tab_complaint, tab_data = st.tabs(["가입 전 점검", "사고 대응", "민원 초안", "공식 데이터"])
+tab_contract, tab_terms, tab_incident, tab_complaint, tab_data = st.tabs(["가입 전 점검", "쉬운 금융용어", "사고 대응", "민원 초안", "공식 데이터"])
 
 with tab_contract:
     render_contract_check()
+
+with tab_terms:
+    render_term_dictionary()
 
 with tab_incident:
     render_incident_response()

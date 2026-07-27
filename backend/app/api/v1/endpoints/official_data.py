@@ -2,8 +2,8 @@ from typing import Optional
 
 from fastapi import APIRouter
 
-from app.schemas.official_data import OfficialDatasetListResponse, OfficialRecordSearchResponse
-from app.services.official_dataset_service import find_official_datasets, search_official_records
+from app.schemas.official_data import FinancialTermSearchResponse, OfficialDatasetListResponse, OfficialRecordSearchResponse
+from app.services.official_dataset_service import find_official_datasets, search_financial_terms, search_official_records
 
 router = APIRouter()
 
@@ -20,3 +20,10 @@ def search_records(query: str, dataset_id: Optional[str] = None, limit: int = 10
     safe_limit = min(max(limit, 1), 30)
     records = search_official_records(query=query, dataset_id=dataset_id, limit=safe_limit)
     return OfficialRecordSearchResponse(query=query, total_matches=len(records), records=records)
+
+
+@router.get("/terms/search", response_model=FinancialTermSearchResponse)
+def search_terms(query: str, limit: int = 8) -> FinancialTermSearchResponse:
+    safe_limit = min(max(limit, 1), 20)
+    terms = search_financial_terms(query=query, limit=safe_limit)
+    return FinancialTermSearchResponse(query=query, total_matches=len(terms), terms=terms)

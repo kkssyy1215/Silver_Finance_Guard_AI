@@ -12,8 +12,18 @@
     "modified_at": "2025-09-03",
     "status": "imported",
     "local_path": "backend/app/data/official/kdic_mistaken_transfer_faq.json",
-    "tags": ["착오송금", "반환지원", "FAQ", "신청절차", "서류"],
-    "use_cases": ["mistaken_transfer", "action_plan", "faq_grounding"],
+    "tags": [
+      "착오송금",
+      "반환지원",
+      "FAQ",
+      "신청절차",
+      "서류"
+    ],
+    "use_cases": [
+      "mistaken_transfer",
+      "action_plan",
+      "faq_grounding"
+    ],
     "summary": "잘못 보낸 돈 되찾기 서비스를 이용하는 신청자들이 자주 묻는 질문과 답변으로 구성된 공식 FAQ 데이터입니다."
   },
   {
@@ -27,10 +37,21 @@
     "license": "공공데이터포털 파일데이터",
     "fee": "무료",
     "modified_at": "2025-11-11",
-    "status": "planned",
-    "local_path": null,
-    "tags": ["서민금융", "FAQ", "햇살론", "미소금융", "청년도약계좌", "정책서민금융"],
-    "use_cases": ["financial_support", "easy_explanation", "faq_grounding"],
+    "status": "imported",
+    "local_path": "backend/app/data/official/kinfa_main_faq.json",
+    "tags": [
+      "서민금융",
+      "FAQ",
+      "햇살론",
+      "미소금융",
+      "청년도약계좌",
+      "정책서민금융"
+    ],
+    "use_cases": [
+      "financial_support",
+      "easy_explanation",
+      "faq_grounding"
+    ],
     "summary": "서민금융 상품 및 서비스 관련 질문과 답변 데이터로, 정책서민금융 안내와 쉬운 설명 기능 확장에 적합합니다."
   },
   {
@@ -44,10 +65,22 @@
     "license": "공공데이터포털 파일데이터",
     "fee": "무료",
     "modified_at": "2026-07-14",
-    "status": "planned",
-    "local_path": null,
-    "tags": ["금융용어", "용어사전", "투자", "대출", "예금", "보험", "쉬운말"],
-    "use_cases": ["easy_explanation", "term_dictionary", "faq_grounding"],
+    "status": "imported",
+    "local_path": "backend/app/data/official/fsc_financial_terms.json",
+    "tags": [
+      "금융용어",
+      "용어사전",
+      "투자",
+      "대출",
+      "예금",
+      "보험",
+      "쉬운말"
+    ],
+    "use_cases": [
+      "easy_explanation",
+      "term_dictionary",
+      "faq_grounding"
+    ],
     "summary": "투자, 대출, 예금, 보험, 증권, 금융정책 및 금융제도 등 주요 금융 전문용어를 설명하는 금융위원회 공식 용어사전입니다."
   },
   {
@@ -61,28 +94,21 @@
     "license": "이용허락범위 제한 없음",
     "fee": "무료",
     "modified_at": "2022-09-05",
-    "status": "planned",
-    "local_path": null,
-    "tags": ["예금보험", "예금자보호", "금융용어", "보호예금", "부보금융회사"],
-    "use_cases": ["easy_explanation", "term_dictionary", "deposit_protection"],
+    "status": "imported",
+    "local_path": "backend/app/data/official/kdic_deposit_insurance_terms.json",
+    "tags": [
+      "예금보험",
+      "예금자보호",
+      "금융용어",
+      "보호예금",
+      "부보금융회사"
+    ],
+    "use_cases": [
+      "easy_explanation",
+      "term_dictionary",
+      "deposit_protection"
+    ],
     "summary": "예금자보호제도 및 예금보험공사 업무에서 사용하는 공식 용어와 설명 데이터입니다."
-  },
-  {
-    "dataset_id": "FSC_DEPOSIT_INSURANCE_COMPANY_PRODUCT_API",
-    "title": "금융위원회_금융회사부보정보",
-    "publisher": "금융위원회",
-    "portal": "공공데이터포털",
-    "url": "https://www.data.go.kr/data/15059606/openapi.do",
-    "format": "OpenAPI JSON/XML",
-    "row_count": null,
-    "license": "이용허락범위 제한 없음",
-    "fee": "무료",
-    "modified_at": "2026-01-02",
-    "status": "planned",
-    "local_path": null,
-    "tags": ["예금자보호", "부보대상", "금융회사", "금융상품", "예금보험"],
-    "use_cases": ["deposit_protection", "product_precheck", "institution_lookup"],
-    "summary": "부보대상 금융회사와 예금자보호 적용 금융상품 정보를 조회할 수 있는 공식 OpenAPI입니다."
   },
   {
     "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
@@ -95,10 +121,19 @@
     "license": "이용허락범위 제한 없음",
     "fee": "무료",
     "modified_at": "2026-03-18",
-    "status": "planned",
-    "local_path": null,
-    "tags": ["미소금융", "지점", "상담", "정책서민금융", "금융접근성"],
-    "use_cases": ["support_center_lookup", "financial_support"],
+    "status": "imported",
+    "local_path": "backend/app/data/official/kinfa_microfinance_branches.json",
+    "tags": [
+      "미소금융",
+      "지점",
+      "상담",
+      "정책서민금융",
+      "금융접근성"
+    ],
+    "use_cases": [
+      "support_center_lookup",
+      "financial_support"
+    ],
     "summary": "미소금융을 취급하는 전국 법인 및 지점의 지역, 지점명, 주소, 전화번호 정보를 담은 공식 데이터입니다."
   },
   {
@@ -112,10 +147,19 @@
     "license": "이용허락범위 제한 없음",
     "fee": "무료",
     "modified_at": "2025-08-06",
-    "status": "planned",
-    "local_path": null,
-    "tags": ["미소금융", "연령대", "대출실적", "고령층", "서민금융"],
-    "use_cases": ["problem_definition", "senior_finance_analysis"],
+    "status": "imported",
+    "local_path": "backend/app/data/official/kinfa_microfinance_age_loan_stats.json",
+    "tags": [
+      "미소금융",
+      "연령대",
+      "대출실적",
+      "고령층",
+      "서민금융"
+    ],
+    "use_cases": [
+      "problem_definition",
+      "senior_finance_analysis"
+    ],
     "summary": "연도별·연령대별 미소금융 대출 금액과 건수를 제공해 고령층 및 연령대별 금융 접근성 분석에 활용할 수 있습니다."
   },
   {
@@ -125,14 +169,23 @@
     "portal": "공공데이터포털",
     "url": "https://www.data.go.kr/data/15083260/fileData.do",
     "format": "CSV",
-    "row_count": 12000,
+    "row_count": 12898,
     "license": "이용허락범위 제한 없음",
     "fee": "무료",
     "modified_at": "2025-12-11",
-    "status": "planned",
-    "local_path": null,
-    "tags": ["전화권유", "사업자정보", "방문판매", "고령층", "사전경고"],
-    "use_cases": ["sales_call_precheck", "dark_pattern_detection"],
+    "status": "imported",
+    "local_path": "backend/app/data/official/ftc_telemarketing_sellers_seoul_gyeonggi.json",
+    "tags": [
+      "전화권유",
+      "사업자정보",
+      "방문판매",
+      "고령층",
+      "사전경고"
+    ],
+    "use_cases": [
+      "sales_call_precheck",
+      "dark_pattern_detection"
+    ],
     "summary": "전화권유판매업자의 신고 정보를 제공하는 공식 데이터로, 상담·권유 문구 분석 시 사업자 확인 기능으로 확장할 수 있습니다."
   },
   {
@@ -146,10 +199,19 @@
     "license": "공공데이터포털 파일데이터",
     "fee": "무료",
     "modified_at": "2025-12-17",
-    "status": "planned",
-    "local_path": null,
-    "tags": ["보이스피싱", "뉴스메타데이터", "사기", "피해예방", "동향"],
-    "use_cases": ["voice_phishing_trend", "demo_statistics"],
+    "status": "imported",
+    "local_path": "backend/app/data/official/kpf_voice_phishing_news_metadata.json",
+    "tags": [
+      "보이스피싱",
+      "뉴스메타데이터",
+      "사기",
+      "피해예방",
+      "동향"
+    ],
+    "use_cases": [
+      "voice_phishing_trend",
+      "demo_statistics"
+    ],
     "summary": "보이스피싱 관련 뉴스 메타정보 데이터로, 피해 유형 트렌드 분석과 발표용 문제정의 근거로 활용할 수 있습니다."
   },
   {
@@ -165,8 +227,16 @@
     "modified_at": null,
     "status": "reference_only",
     "local_path": null,
-    "tags": ["상담사례", "피해구제", "소비자분쟁", "사례"],
-    "use_cases": ["complaint_draft", "case_reference"],
+    "tags": [
+      "상담사례",
+      "피해구제",
+      "소비자분쟁",
+      "사례"
+    ],
+    "use_cases": [
+      "complaint_draft",
+      "case_reference"
+    ],
     "summary": "소비자24 상담사례 목록으로, 민원 초안 작성 시 유사 사례 참조 후보로 활용할 수 있습니다. 자동 수집 전 이용조건 확인이 필요합니다."
   },
   {
@@ -182,8 +252,43 @@
     "modified_at": null,
     "status": "reference_only",
     "local_path": null,
-    "tags": ["신고안내", "소비자24", "1372", "분쟁조정", "약관"],
-    "use_cases": ["procedure_guidance", "complaint_draft"],
+    "tags": [
+      "신고안내",
+      "소비자24",
+      "1372",
+      "분쟁조정",
+      "약관"
+    ],
+    "use_cases": [
+      "procedure_guidance",
+      "complaint_draft"
+    ],
     "summary": "한국소비자원, 소비자24, 한국공정거래조정원 등 분쟁·피해구제 관련 기관 연락처와 역할을 제공하는 공식 안내입니다."
+  },
+  {
+    "dataset_id": "FINANCIAL_CONSUMER_PROTECTION_PDF",
+    "title": "금융소비자 보호.pdf",
+    "publisher": "공식 자료",
+    "portal": "사용자 제공 공식 PDF",
+    "url": "",
+    "format": "PDF",
+    "row_count": 37,
+    "license": "사용자 제공 공식 자료",
+    "fee": "무료",
+    "modified_at": null,
+    "status": "imported",
+    "local_path": "backend/app/data/official/financial_consumer_protection_pdf_pages.json",
+    "tags": [
+      "금융소비자보호",
+      "설명의무",
+      "민원",
+      "피해예방"
+    ],
+    "use_cases": [
+      "procedure_guidance",
+      "complaint_draft",
+      "explanation_duty"
+    ],
+    "summary": "금융소비자 보호 관련 PDF를 페이지 단위 텍스트로 추출해 설명의무, 민원 초안, 절차 안내의 근거 자료로 활용합니다."
   }
 ]

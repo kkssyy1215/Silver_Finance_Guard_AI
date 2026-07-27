@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-27",
+  "source_folder": "/Users/kkssyy/Projects/Silver_Finance_Guard_AI/data_inbox",
+  "row_counts": {
+    "KINFA_MAIN_FAQ_20251031": 467,
+    "KDIC_DEPOSIT_INSURANCE_TERMS_20220825": 70,
+    "KINFA_MICROFINANCE_BRANCHES_20251231": 163,
+    "KINFA_MICROFINANCE_AGE_LOAN_20241231": 90,
+    "FTC_TELEMARKETING_SELLERS": 12898,
+    "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": 11968,
+    "FINANCIAL_CONSUMER_PROTECTION_PDF": 37,
+    "FSC_FINANCIAL_TERMS_20260630": 229
+  },
+  "excluded": [
+    {
+      "dataset_id": "FSC_DEPOSIT_INSURANCE_COMPANY_PRODUCT_API",
+      "reason": "사용자 요청에 따라 API만 제공하는 데이터는 제외했습니다."
+    }
+  ]
+}

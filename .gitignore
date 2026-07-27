@@ -1,21 +1,8 @@
-.DS_Store
-__pycache__/
-*.py[cod]
-.pytest_cache/
-
-# Virtual environments
+data_inbox/*
+!data_inbox/.gitkeep
 .venv/
 backend/.venv/
 frontend/.venv/
-
-# Local environment
-.env
-.env.*
-
-# Generated files
-*.pdf
-*.log
-tmp/
-dist/
-build/
-
+*.pyc
+__pycache__/
+.DS_Store

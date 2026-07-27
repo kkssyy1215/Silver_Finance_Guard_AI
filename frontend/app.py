@@ -318,7 +318,34 @@ def render_official_data() -> None:
             st.write(f"형식: {dataset['format']} / 행 수: {dataset['row_count'] or '확인 필요'}")
             st.write(f"이용조건: {dataset['license']} / 비용: {dataset['fee']}")
             st.write("태그: " + ", ".join(dataset["tags"]))
-            st.link_button("출처 보기", dataset["url"])
+            if dataset["url"]:
+                st.link_button("출처 보기", dataset["url"])
+
+    st.divider()
+    st.subheader("정제 데이터 검색")
+    st.write("금융용어, 서민금융 FAQ, 예금보험 용어, 전화권유판매 사업자, 보이스피싱 뉴스 메타데이터를 한 번에 검색합니다.")
+    record_query = st.text_input("데이터 검색어", value="예금자보호", placeholder="예: 예금자보호, 미소금융, 보이스피싱, 자동연장")
+    if st.button("공식 데이터에서 검색", use_container_width=True):
+        try:
+            response = requests.get(
+                f"{API_BASE_URL}/api/v1/official-data/records/search",
+                params={"query": record_query, "limit": 10},
+                timeout=20,
+            )
+            response.raise_for_status()
+            records = response.json()["records"]
+        except requests.RequestException as exc:
+            st.error(f"정제 데이터 검색에 실패했습니다. ({exc})")
+            return
+
+        st.caption(f"검색 결과 {len(records)}건")
+        for record in records:
+            with st.container(border=True):
+                st.markdown(f"**{record['title']}**")
+                st.caption(f"{record['source_title']} · {record['dataset_id']}")
+                st.write(record["body"][:600] + ("..." if len(record["body"]) > 600 else ""))
+                if record.get("source_url"):
+                    st.link_button("원문 보기", record["source_url"])
 
 
 st.title("실버 금융가드 AI")

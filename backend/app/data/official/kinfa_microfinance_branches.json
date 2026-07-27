@@ -1,0 +1,1632 @@
+[
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "강원",
+    "name": "IBK미소금융재단",
+    "address": "강원 강릉시 경강로 2087 기업은행 강릉지점 2층",
+    "phone": "033-822-4200",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "IBK미소금융재단",
+    "address": "경기도 고양시 일산동구 중앙로1187  흥국생명빌딩6층 (통합거점센터)",
+    "phone": "031-365-5200",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "IBK미소금융재단",
+    "address": "서울 강서구 양천로 57길 10-10 (강서고용복지플러스센타 3층)",
+    "phone": "02-2038-3432",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "IBK미소금융재단",
+    "address": "서울 관악구 남부순환로 1794 IBK기업은행 서울대역지점 2층",
+    "phone": "02-6925-6940",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "IBK미소금융재단",
+    "address": "서울 광진구 광나루로56길85,5층(구의동.테크노마트) 광진서민금융통합지원센터",
+    "phone": "02-6925-3700",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "IBK미소금융재단",
+    "address": "서울 구로구 개봉로 60 IBK기업은행 개봉동지점 3층",
+    "phone": "02-6925-3710",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대구",
+    "name": "IBK미소금융재단",
+    "address": "대구 달서구 달구벌대로 1780(두류동) 삼희빌딩 8층",
+    "phone": "053-721-7100",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대전",
+    "name": "IBK미소금융재단",
+    "address": "대전 동구 중교로 125 (구)IBK기업은행 1층",
+    "phone": "042-716-4200",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "IBK미소금융재단",
+    "address": "서울 동대문구 천호대로 233 IBK기업은행 답십리지점 3층",
+    "phone": "02-6925-7307",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "IBK미소금융재단",
+    "address": "부산 중구 흑교로 5 기업은행 부평동지점 3층",
+    "phone": "051-714-4200",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "IBK미소금융재단",
+    "address": "부산시 수영구 수영로 690-5, 메디세움 13층 (수영서민금융통합지원센터 내)",
+    "phone": "051-761-5455",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "IBK미소금융재단",
+    "address": "부천시 원미구 송내대로66 용운빌딩8층 (경인지역서민금융통합거점센터내)",
+    "phone": "032-668-5200",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "IBK미소금융재단",
+    "address": "경기도 시흥시 새재로32 시흥시종합일자리센터 1층",
+    "phone": "031-365-4200",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "IBK미소금융재단",
+    "address": "경기도 안산시 단원구 적금로 126 (고잔동) IBK기업은행 안산중앙지점 3층",
+    "phone": "031-485-4690",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경남",
+    "name": "IBK미소금융재단",
+    "address": "경상남도 양산시 중앙로 216, IBK기업은행 양산지점 2층",
+    "phone": "055-781-2300",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "IBK미소금융재단",
+    "address": "서울 양천구 목동로177, 정동프라자7층(서민금융통합지원센터)",
+    "phone": "02-6925-6869",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "전남",
+    "name": "IBK미소금융재단",
+    "address": "여수시 통제영 5길6 IBK기업은행 여수지점 2층",
+    "phone": "061-807-2900",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "IBK미소금융재단",
+    "address": "서울시 은평구 통일로 725 IBK기업은행 불광역지점 2층",
+    "phone": "02-6925-5100",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "전북",
+    "name": "IBK미소금융재단",
+    "address": "전북 익산시 익산대로16길23 (구)IBK기업은행 2층",
+    "phone": "063-723-3900",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "IBK미소금융재단",
+    "address": "경기도 의정부시 평화로 325, 5층(경기도 서민금융복지지원센터 내)",
+    "phone": "031-876-8780",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "IBK미소금융재단",
+    "address": "경기도 수원시 팔달구 매산로 20번길 23, 4층(경기도 서민금융복지지원센터 내)",
+    "phone": "031-241-2030",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "KB미소금융재단",
+    "address": "경기도 안양시 만안구 안양로 329(안양동) 국민은행 안양동지점 1층",
+    "phone": "031-442-8990",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대구",
+    "name": "KB미소금융재단",
+    "address": "대구광역시 중구 명륜로 69(남산동) KB국민은행 남산동지점 3층",
+    "phone": "053-314-5031",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대전",
+    "name": "KB미소금융재단",
+    "address": "대전광역시 중구 대종로 478(은행동) 국민은행 대전은행동지점 4층",
+    "phone": "042-254-1025",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "KB미소금융재단",
+    "address": "부산광역시 부산진구 복지로 2(개금동) 국민은행 개금동지점 2층",
+    "phone": "051-894-6990",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "KB미소금융재단",
+    "address": "서울특별시 도봉구 노해로 383(창동) 국민은행 창동지점 4층",
+    "phone": "02-3297-3745",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "KB미소금융재단",
+    "address": "서울 은평구 수색로 246 (수색동) 국민은행 수색지점 3층",
+    "phone": "02-375-9330",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "인천",
+    "name": "KB미소금융재단",
+    "address": "인천광역시 미추홀구 토금중로1(용현동) 용현남종합금융센터 3층",
+    "phone": "032-765-6831",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "광주",
+    "name": "KB미소금융재단",
+    "address": "광주 동구 금남로 204 (금남로4가) 국민은행 광주종합금융센터 4층",
+    "phone": "062-225-3361",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "광주",
+    "name": "LG미소금융재단",
+    "address": "광주광역시 북구 북문대로 117, 로데오빌딩 405호",
+    "phone": "062-716-1020",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경북",
+    "name": "LG미소금융재단",
+    "address": "경북 구미시 백산로 118 구미고용센터 3층",
+    "phone": "054-715-6001",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대구",
+    "name": "LG미소금융재단",
+    "address": "대구시 수성구 동대구로 392 대구고용복지+센터 1층 (범어동)",
+    "phone": "053-710-1020",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대전",
+    "name": "LG미소금융재단",
+    "address": "대전시 서구 월평서로 11 신신빌딩 4층 401호",
+    "phone": "042-721-2143",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "LG미소금융재단",
+    "address": "부산시 중구 대청로 80 백성사오피스텔 904호 (대청동3가)",
+    "phone": "051-243-4806",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "LG미소금융재단",
+    "address": "부산시 연제구 중앙대로 1000 국민연금빌딩 16층 (연산동)",
+    "phone": "051-710-2261",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "LG미소금융재단",
+    "address": "서울시 서초구 동작대로 186 신흥빌딩 5층",
+    "phone": "02-6929-0534",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "LG미소금융재단",
+    "address": "경기도 안산시 단원구 중앙대로 927 남양빌딩 6층",
+    "phone": "031-8042-3472, 3476",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "인천",
+    "name": "LG미소금융재단",
+    "address": "인천 계양구 장제로 867 지상 2층",
+    "phone": "032-715-8020",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "LG미소금융재단",
+    "address": "경기도 고양시 덕양구 은빛로 45 206-2호 화정꽃무리조합프라자 (화정동)",
+    "phone": "031-8074-9120",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "전북",
+    "name": "LG미소금융재단",
+    "address": "전주시 덕진구 기린대로 396 세광타워 3층 전주 서민금융통합지원센터",
+    "phone": "063-717-1904",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경남",
+    "name": "LG미소금융재단",
+    "address": "경남 창원시 성산구 중앙대로 82 삼성생명빌딩 3층",
+    "phone": "055-713-5591",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "LG미소금융재단",
+    "address": "경기도 성남시 분당구 황새울로 258번길 31 예미지 빌딩 2층 성남서민금융통합지원센터",
+    "phone": "031-697-8136, 8146",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "LG미소금융재단",
+    "address": "경기 안양시 만안구 안양로 270 남서울빌딩 7층",
+    "phone": "031-360-0142",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "충북",
+    "name": "LG미소금융재단",
+    "address": "충북 청주시 서원구 1순환로 642(사창동) 청주고용복지센터2층",
+    "phone": "043-230-7079",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "강원",
+    "name": "SK미소금융재단",
+    "address": "강원도 강릉시 경강로 2110, 5층 서민금융통합지원센터 (임당동)",
+    "phone": "033-921-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "SK미소금융재단",
+    "address": "서울 강북구 도봉로 136 풍양빌딩 3층 강북·성북고용복지플러스센터 內",
+    "phone": "02-6224-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "SK미소금융재단",
+    "address": "서울 관악구 남부순환로 1836 호산빌딩 9층 서민금융통합지원센터",
+    "phone": "02-6332-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "전북",
+    "name": "SK미소금융재단",
+    "address": "전라북도 군산시 조촌로 62 (조촌동 752-4) 군산고용복지+센터 3층 군산서민금융통합지원센터",
+    "phone": "063-901-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "SK미소금융재단",
+    "address": "경기도 남양주시 별내3로 64-21 별내행정복지센터 1층",
+    "phone": "031-515-5510",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대전",
+    "name": "SK미소금융재단",
+    "address": "대전 서구 문정로 41 SK텔레콤 둔산사옥 지하 1층",
+    "phone": "042-348-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "강원",
+    "name": "SK미소금융재단",
+    "address": "강원 동해시 중앙시장길 12 뉴월드상가 B동 2층",
+    "phone": "033-930-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "SK미소금융재단",
+    "address": "부산시 부산진구 중앙대로 993, 부산고용복지플러스센터 2층 (양정동, 롯데골드로즈)",
+    "phone": "051-923-5505",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "SK미소금융재단",
+    "address": "부산 사하구 낙동남로 1400 (하단동) 8층 부산사하고용복지+센터",
+    "phone": "051-915-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "SK미소금융재단",
+    "address": "부산시 금정구 부곡로1 (부곡동, 기업은행 동래지점) 2층",
+    "phone": "051-918-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "충남",
+    "name": "SK미소금융재단",
+    "address": "충청남도 서산시 고운로 177(동문동, 서산시2청사) 1동 4층",
+    "phone": "041-920-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "SK미소금융재단",
+    "address": "서울특별시 송파구 올림픽로 319(신천동) 교통회관 10층",
+    "phone": "02-6285-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "SK미소금융재단",
+    "address": "경기도 수원시 팔달구 매산로 37 KT&G 코스모수원빌딩 8층 수원서민금융통합지원센터",
+    "phone": "031-891-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "SK미소금융재단",
+    "address": "경기 광명시 시청로 15, 고용복지+센터 2층 내",
+    "phone": "031-342-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "SK미소금융재단",
+    "address": "서울특별시 영등포구 선유로 120 1층 서울남부고용복지+센터",
+    "phone": "02-6205-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "울산",
+    "name": "SK미소금융재단",
+    "address": "울산 남구 화합로 138, 옥산빌딩 2층 울산서민금융통합지원센터 內",
+    "phone": "052-933-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경북",
+    "name": "SK미소금융재단",
+    "address": "경북 울진군 울진읍 읍내1길 18 울진바지게시장 2층",
+    "phone": "054-610-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "인천",
+    "name": "SK미소금융재단",
+    "address": "인천광역시 남동구 인주대로 611 삼성생명 구월동빌딩 15층 인천서민금융통합지원센터內",
+    "phone": "032-214-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "제주",
+    "name": "SK미소금융재단",
+    "address": "제주도 제주시 중앙로 165 제주고용복지+센터 3층 제주서민금융통합지원센터",
+    "phone": "064-901-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경남",
+    "name": "SK미소금융재단",
+    "address": "경남 진주시 진양호로 563 (주)안성빌딩 진주고용복지+센터 7층 진주서민금융통합지원센터",
+    "phone": "055-920-5500",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "롯데미소금융재단",
+    "address": "서울특별시 중구 퇴계로 36 8층",
+    "phone": "02-757-3645",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "롯데미소금융재단",
+    "address": "부산시 사상구 광장로 76 송원센터빌딩 10층 (괘법동)",
+    "phone": "051-315-8972",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "강원",
+    "name": "미소금융 강원춘천법인",
+    "address": "강원 춘천시 금강로 45 기업은행 춘천지점 2층",
+    "phone": "033-255-0063",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "강원",
+    "name": "미소금융 강원태백법인",
+    "address": "강원도 태백시 태백로 976-1, 2층",
+    "phone": "033-553-3744",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "미소금융 경기구리법인",
+    "address": "경기도 구리시 건원대로 44, 태영빌딩 2층",
+    "phone": "031-552-2155",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "미소금융 경기동두천법인",
+    "address": "경기도 동두천시 어수로 102번길 3, 청백빌딩 3층",
+    "phone": "031-858-2066",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "미소금융 경기성남법인",
+    "address": "성남시 분당구 성남대로 912, 503호(야탑동,분당BYC빌딩)",
+    "phone": "031-721-2103",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "미소금융 경기의정부법인",
+    "address": "경기도 의정부시 평화로 516, 한화생명 4층",
+    "phone": "031-837-2194",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "미소금융 경기하남법인",
+    "address": "하남시 대청로 10 하남시청본관지하1층 소상공인종합상황실내",
+    "phone": "031-794-2091",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "미소금융 경기하남법인",
+    "address": "경기도 하남시 미사강변대로 52, 미사강변블루빌딩 3층",
+    "phone": "031-730-7081~2",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "미소금융 경기화성법인",
+    "address": "경기도 화성시 경기대로 1038, A동 2층 203호(진안동, YJ금성빌딩)",
+    "phone": "031-267-0584",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경남",
+    "name": "미소금융 경남거제법인",
+    "address": "경상남도 거제시 계룡로 2길 69-1, 1층",
+    "phone": "055-632-6164",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경남",
+    "name": "미소금융 경남거제법인",
+    "address": "경상남도 통영시 광도면 죽림1로 69 통영고용복지+센터 2층",
+    "phone": "055-650-1958",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경북",
+    "name": "미소금융 경북경주법인",
+    "address": "경북 경주시 원화로 396 (동천동) 경주고용복지+센터 3층",
+    "phone": "054-778-2571",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경북",
+    "name": "미소금융 경북안동법인",
+    "address": "안동시 경동로 400, 고용노동부 안동지청 2층",
+    "phone": "054-851-8082",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경북",
+    "name": "미소금융 경북안동법인",
+    "address": "경상북도 문경시 매봉1길 67번지, 문경시산림조합 4층",
+    "phone": "054-559-8256",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경북",
+    "name": "미소금융 경북안동법인",
+    "address": "경상북도 영주시 번영로 88 (영주고용복지+센터2층)",
+    "phone": "054-639-1195",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "광주",
+    "name": "미소금융 광주북구법인",
+    "address": "광주광역시 북구 북문대로 117, 로데오빌딩 405호",
+    "phone": "062-352-1661",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대구",
+    "name": "미소금융 대구서구법인",
+    "address": "대구광역시 서구 달서로 1 (내당동) 대구은행 내당동지점 2층",
+    "phone": "053-522-0072",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대구",
+    "name": "미소금융 대구중구법인",
+    "address": "대구광역시 남구 중앙대로 146, 4층(하나은행 봉덕지점)",
+    "phone": "053-252-6479",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대구",
+    "name": "미소금융 대구중구법인",
+    "address": "대구광역시 동구 아양로 207 대구동구청 1층 종합민원봉사실 내",
+    "phone": "053-662-2668",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대전",
+    "name": "미소금융 대전유성구법인",
+    "address": "대전광역시 유성구 가정북로 96, 대전일자리경제진흥원 103호",
+    "phone": "042-242-0380",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "미소금융 부산수영구법인",
+    "address": "부산시 연제구 중앙대로 1073, 부산은행 연산동금융센터 4층 401호",
+    "phone": "051-852-3446",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "미소금융 부산중구법인",
+    "address": "부산시 중구 대청로56, 4층 (부평동2가)",
+    "phone": "051-255-0005",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "미소금융 서울관악구법인",
+    "address": "서울 관악구 봉천로 401 (봉천동, 대성빌딩 3층)",
+    "phone": "02-884-1040",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "미소금융 서울노원구법인",
+    "address": "서울특별시 노원구 노해로 460, 3층(현대증권빌딩)",
+    "phone": "02-936-1008",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "미소금융 동작법인",
+    "address": "서울시 동작구 동작대로5길 9 초당빌딩 7층",
+    "phone": "02-592-1672",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "미소금융 서울성북구법인",
+    "address": "서울시 성북구 동소문로58, 경일빌딩4층",
+    "phone": "02-924-1425",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "미소금융 서울은평구법인",
+    "address": "서울특별시 은평구 통일로 80길 1-1, 제202호",
+    "phone": "02-352-0459",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "인천",
+    "name": "미소금융 인천서구법인",
+    "address": "인천 서구 가정로 388 (가정동) 4층",
+    "phone": "032-573-5017",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "전북",
+    "name": "미소금융 전북익산법인",
+    "address": "익산시 익산대로 16길 39(SK빌딩) 11층",
+    "phone": "063-852-4047",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "전북",
+    "name": "미소금융 전북전주법인",
+    "address": "전라북도 전주시 완산구 홍산로 276 (전주상공회의소 4층)",
+    "phone": "063-285-4031",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "충남",
+    "name": "미소금융 충남천안법인",
+    "address": "충남 천안시 서북구 월봉로38, 3층(쌍용동,수암빌딩)",
+    "phone": "041-571-2714",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "충북",
+    "name": "미소금융 충북청주법인",
+    "address": "충북 청주시 상당구 상당로81번길 4 (북문로1가, 대우증권) 미래에셋빌딩 4층 청주서민금융통합지원센터",
+    "phone": "043-225-0029",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경북",
+    "name": "삼성미소금융재단",
+    "address": "경상북도 경산시 경안로 223 경산상공회의소 2층",
+    "phone": "053-801-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "인천",
+    "name": "삼성미소금융재단",
+    "address": "인천 계양구 계산새로 71 하이베라스 C동 503호",
+    "phone": "032-551-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "광주",
+    "name": "삼성미소금융재단",
+    "address": "광주광역시 광산구 하남대로 154, 광산고용복지플러스센터 2층",
+    "phone": "062-960-3242",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "광주",
+    "name": "삼성미소금융재단",
+    "address": "광주광역시 남구 봉선로 1 (주월동) 남구청 별관 2층 종합민원실",
+    "phone": "062-675-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "삼성미소금융재단",
+    "address": "경기도 용인시 기흥구 관곡로 95 기흥구청 1층 종합민원실",
+    "phone": "031-693-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "삼성미소금융재단",
+    "address": "경기도 김포시 사우중로 49, BYC B/D 6층 서민금융통합지원센터 내",
+    "phone": "031-986-8768",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경남",
+    "name": "삼성미소금융재단",
+    "address": "경상남도 김해시 인제로11번길 51 활천동주민센터 4층",
+    "phone": "055-339-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "삼성미소금융재단",
+    "address": "경기도 남양주시 다산순환로 166 신화타워 7층 704호",
+    "phone": "031-574-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대구",
+    "name": "삼성미소금융재단",
+    "address": "대구 동구 안심로 405 (신서동) 신용보증재단 내",
+    "phone": "053-743-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대전",
+    "name": "삼성미소금융재단",
+    "address": "대전 서구 관저중로 82 관저2동 주민센터",
+    "phone": "042-541-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "삼성미소금융재단",
+    "address": "서울시 마포구 마포대로 63-8 삼창프라자 4층 고용복지플러스센터",
+    "phone": "02-2077-3456",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "전남",
+    "name": "삼성미소금융재단",
+    "address": "전라남도 무안군 삼향읍 오룡3길 2 전남 중소기업종합지원센터 5층",
+    "phone": "061-285-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "강원",
+    "name": "삼성미소금융재단",
+    "address": "강원도 원주시 시청로 36 시티타워 2층",
+    "phone": "033-735-8763",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "삼성미소금융재단",
+    "address": "부산광역시 북구 화명대로9 부산북부 고용복지센터 1층 민원실 내",
+    "phone": "051-524-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "삼성미소금융재단",
+    "address": "서울특별시 서대문구 연희로 248 (연희동, 서대문구청) 1층 통합민원실 內",
+    "phone": "02-6952-8722",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "삼성미소금융재단",
+    "address": "서울특별시 성동구 고산자로 270 성동구청 1층 1번 창구 옆",
+    "phone": "02-2294-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "삼성미소금융재단",
+    "address": "경기도 수원시 팔달구 경수대로 420 (인계동) 마라톤빌딩 1210호,1211호",
+    "phone": "031-247-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "삼성미소금융재단",
+    "address": "경기도 시흥시 마유로 418번길 18 정왕프라자 2층 고용복지플러스센터",
+    "phone": "031-496-1989",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "충남",
+    "name": "삼성미소금융재단",
+    "address": "충청남도 아산시 염치읍 은행나무길 223 (재)충청남도일자리경제진흥원 303호",
+    "phone": "041-541-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "강원",
+    "name": "삼성미소금융재단",
+    "address": "강원도 원주시 호저로47 강원도산업경제진흥원 內 202호(우산동)",
+    "phone": "033-735-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "삼성미소금융재단",
+    "address": "경기도 의왕시 안양판교로 89 의왕고용복지플러스센터 2층",
+    "phone": "031-463-7499",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "삼성미소금융재단",
+    "address": "경기도 이천시 부악로 40 이천시청 1층 민원실 내 9번 옆 창구",
+    "phone": "031-631-8752",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "전북",
+    "name": "삼성미소금융재단",
+    "address": "전라북도 전주시 덕진구 팔과정로 164, 전라북도 경제통상진흥원 본관 5층",
+    "phone": "063-276-8762",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "광주",
+    "name": "신한미소금융재단",
+    "address": "광주광역시 광산구 무진대로 245 신한은행 광산금융센터 2층",
+    "phone": "062-710-8110",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "신한미소금융재단",
+    "address": "서울시 금천구 시흥대로 446 2층 (독산동)",
+    "phone": "02-2061-0507",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대구",
+    "name": "신한미소금융재단",
+    "address": "대구시 중구 달구벌대로 2125 6층 (봉산동)",
+    "phone": "053-721-6245",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "신한미소금융재단",
+    "address": "서울시 중랑구 면목로 460 3층 (망우동)",
+    "phone": "02-6954-3697",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "신한미소금융재단",
+    "address": "부산광역시 중구 해관로 7 신한은행 부산금융센터 5층",
+    "phone": "051-791-2130",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "신한미소금융재단",
+    "address": "서울시 영등포구 영중로 27 5층 (영등포동)",
+    "phone": "02-6925-4562, 4563",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "신한미소금융재단",
+    "address": "경기도 수원시 팔달구 중부대로2, 2층(중동)",
+    "phone": "031-546-3909",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "신한미소금융재단",
+    "address": "경기도 안양시 만안구 안양로 290 3층 (안양동)",
+    "phone": "031-687-5663",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "인천",
+    "name": "신한미소금융재단",
+    "address": "인천광역시 부평구 부흥로 337  4층 (부평동)",
+    "phone": "032-721-3943",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "충북",
+    "name": "신한미소금융재단",
+    "address": "충북 청주시 상당구 무심동로336번길106  3층",
+    "phone": "043-903-7555",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경남",
+    "name": "우리미소금융재단",
+    "address": "경상남도 창원시 마산합포구 불종거리로 30 (오동동) 경남은행 오동동지점 2층",
+    "phone": "055-248-1051",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "광주",
+    "name": "우리미소금융재단",
+    "address": "광주광역시 동구 양림로 117 (학동) 완이수산 3층(남광주시장내)",
+    "phone": "062-225-6336",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대구",
+    "name": "우리미소금융재단",
+    "address": "대구광역시 중구 중앙대로 418 (남일동) 우리은행 대구지점 5층",
+    "phone": "053-629-6593",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "우리미소금융재단",
+    "address": "부산광역시 동구 중앙대로 287 (초량동) 우리은행 초량지점4층",
+    "phone": "051-466-7117",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "우리미소금융재단",
+    "address": "서울특별시 중구 충무로 61 (을지로3가) 우리은행 을지로지점 2층",
+    "phone": "02-2275-2570",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "우리미소금융재단",
+    "address": "경기도 성남시 수정구 산성대로 321 (신흥동) 우리은행 성남지점 3층",
+    "phone": "031-733-0486",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "우리미소금융재단",
+    "address": "경기도 용인시 처인구 금령로 89 (김량장동) 우리은행 용인지점 3층",
+    "phone": "031-322-1263",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "우리미소금융재단",
+    "address": "서울특별시 중랑구 면목로 242 (면목동) 중랑자동차등록 · 나눔센터 2층",
+    "phone": "02-3421-4963",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "전남",
+    "name": "포스코미소금융재단",
+    "address": "전라남도 광양시 광양읍 백운로 3(광양5일시장 內)",
+    "phone": "061-761-8522",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "포스코미소금융재단",
+    "address": "서울시 강서구 강서로 12길 15, 3층(화곡동, 양지빌딩)",
+    "phone": "02-2065-2391",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "인천",
+    "name": "포스코미소금융재단",
+    "address": "인천시 미추홀구 석바위로 56, 203호(주안동, 주안빌딩)",
+    "phone": "032-761-9755",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경북",
+    "name": "포스코미소금융재단",
+    "address": "경상북포 포항시 북구 칠성천길 116, 2층(죽도동)",
+    "phone": "054-231-7815",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대전",
+    "name": "하나미소금융재단",
+    "address": "대전광역시 중구 중앙로116 대전신용보증재단 3층 대전서민금융통합지원센터 내",
+    "phone": "042-719-8310",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "하나미소금융재단",
+    "address": "서울특별시 중구 을지로66 지하1층",
+    "phone": "02-2275-0248",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "하나미소금융재단",
+    "address": "서울특별시 강남구 봉은사로 325 3층(논현동, 라임타워)",
+    "phone": "02-3448-5345",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "충남",
+    "name": "하나미소금융재단",
+    "address": "충청남도 천안시 동남구 충절로 17 삼성생명빌딩 9층 천안서민금융통합지원센터 내",
+    "phone": "041-621-6883",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "하나미소금융재단",
+    "address": "경기도 평택시 평택로 32번길 28, 3층",
+    "phone": "031-657-7123",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "세종",
+    "name": "하나미소금융재단",
+    "address": "세종특별자치시 조치원읍 터미널안길60 세종고용복지플러스센터 8층",
+    "phone": "044-865-3503",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "현대차미소금융재단",
+    "address": "서울시 구로구 디지털로34길 27(구로동 182-4) 대륭포스트타워 3차 3층 서울관악고용복지센터 내",
+    "phone": "02-3282-9359",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "광주",
+    "name": "현대차미소금융재단",
+    "address": "광주광역시 북구 금남로 80, 송강빌딩 7층",
+    "phone": "062-369-7400",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "현대차미소금융재단",
+    "address": "서울특별시 서대문구 통일로 135, 충정빌딩 11층",
+    "phone": "02-3789-5006",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대구",
+    "name": "현대차미소금융재단",
+    "address": "대구시 달서구 와룡로 226 (송죽빌딩, 2층 201호)",
+    "phone": "053-557-8917",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "대전",
+    "name": "현대차미소금융재단",
+    "address": "대전광역시 대덕구 한밭대로 1027 우성빌딩 5층",
+    "phone": "042-639-2199",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "부산",
+    "name": "현대차미소금융재단",
+    "address": "부산시 북구 백양대로 1204 동강빌딩 4층 (부산은행 구포지점 건물 4층)",
+    "phone": "051-305-8730",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "현대차미소금융재단",
+    "address": "서울특별시 서초구 반포대로43 서초고용센터 2층",
+    "phone": "02-453-6730",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "현대차미소금융재단",
+    "address": "서울시 중구 삼일대로 363 장교빌딩 2층 (서울고용노동청 고용복지플러스센터 내)",
+    "phone": "02-964-7900",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "현대차미소금융재단",
+    "address": "경기도 안양시 만안구 안양로 303, 안양메쎄타워 3층 (안양고용복지플러스센터 내)",
+    "phone": "031-426-6380",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "인천",
+    "name": "현대차미소금융재단",
+    "address": "인천 미추홀구 석정로 229 제물포스마트타운 2층 205호",
+    "phone": "032-715-6078",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "강원",
+    "name": "현대차미소금융재단",
+    "address": "강원도 춘천시 퇴계농공로 9, 넥서스 프라자 2층 (춘천고용복지플러스 센터 내)",
+    "phone": "033-262-5042",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "경기",
+    "name": "하나미소금융재단",
+    "address": "경기 부천시 원미구 길주로 351, 부천고용복지플러스센터 4층",
+    "phone": "032-310-8897",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "삼성미소금융재단",
+    "address": "서울시 강남구 테헤란로 410, 서울강남고용복지플러스센터 9층",
+    "phone": "02-3468-4782",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "KINFA_MICROFINANCE_BRANCHES_20251231",
+    "branch_type": "미소지점",
+    "region": "서울",
+    "name": "하나미소금융재단",
+    "address": "서울 동작구 여의대방로54길 18, 서울여성플라자 3층",
+    "phone": "02-811-5113",
+    "source_title": "서민금융진흥원 미소금융지점 현황_20251231",
+    "source_file": "서민금융진흥원 미소금융지점 현황_20251231.csv"
+  }
+]

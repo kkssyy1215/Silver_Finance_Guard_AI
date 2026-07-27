@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class OfficialDataset(BaseModel):
@@ -23,3 +23,18 @@ class OfficialDataset(BaseModel):
 
 class OfficialDatasetListResponse(BaseModel):
     datasets: list[OfficialDataset]
+
+
+class OfficialRecord(BaseModel):
+    dataset_id: str
+    title: str
+    body: str
+    source_title: str
+    source_url: Optional[str] = None
+    metadata: dict[str, str] = Field(default_factory=dict)
+
+
+class OfficialRecordSearchResponse(BaseModel):
+    query: str
+    total_matches: int
+    records: list[OfficialRecord]

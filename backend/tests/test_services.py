@@ -4,7 +4,7 @@ from app.services.risk_detector import analyze_contract_risk
 from app.services.document_exporter import export_document
 from app.schemas.analysis import TextAnalysisRequest
 from app.services.official_faq_service import search_kdic_mistaken_transfer_faq
-from app.services.official_dataset_service import find_official_datasets
+from app.services.official_dataset_service import find_official_datasets, search_official_records
 
 
 def test_contract_risk_detects_auto_renewal() -> None:
@@ -63,7 +63,14 @@ def test_official_kdic_faq_search_uses_imported_csv_data() -> None:
 
 def test_official_dataset_registry_tracks_imported_and_planned_data() -> None:
     imported = find_official_datasets(status="imported")
-    planned = find_official_datasets(status="planned")
 
     assert any(dataset.dataset_id == "KDIC_MISTAKEN_TRANSFER_FAQ_20240729" for dataset in imported)
-    assert any("보이스피싱" in dataset.title for dataset in planned)
+    assert any(dataset.dataset_id == "FSC_FINANCIAL_TERMS_20260630" and dataset.row_count == 229 for dataset in imported)
+    assert not any(dataset.format.startswith("OpenAPI") for dataset in find_official_datasets())
+
+
+def test_official_record_search_uses_imported_financial_terms() -> None:
+    results = search_official_records("예금자보호", limit=5)
+
+    assert results
+    assert any("예금" in result.title or "예금" in result.body for result in results)

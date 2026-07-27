@@ -48,11 +48,18 @@ def find_official_datasets(query: str = "", status: Optional[str] = None, use_ca
 SEARCHABLE_DATA_FILES = {
     "FSC_FINANCIAL_TERMS_20260630": "fsc_financial_terms.json",
     "KDIC_DEPOSIT_INSURANCE_TERMS_20220825": "kdic_deposit_insurance_terms.json",
+    "KDIC_INSURED_FINANCIAL_COMPANIES_20250930": "kdic_insured_financial_companies.json",
     "KINFA_MAIN_FAQ_20251031": "kinfa_main_faq.json",
     "KINFA_MICROFINANCE_BRANCHES_20251231": "kinfa_microfinance_branches.json",
     "FTC_TELEMARKETING_SELLERS": "ftc_telemarketing_sellers_seoul_gyeonggi.json",
     "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": "kpf_voice_phishing_news_metadata.json",
     "FINANCIAL_CONSUMER_PROTECTION_PDF": "financial_consumer_protection_pdf_pages.json",
+    "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320": "ftc_financial_unfair_terms_briefing_pages.json",
+    "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227": "ftc_consumer_complaint_examples.json",
+    "POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231": "post_office_financial_fraud_accounts.json",
+    "POLICE_VOICE_PHISHING_STATS_20251231": "police_voice_phishing_stats.json",
+    "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231": "police_voice_phishing_regional_damage.json",
+    "FTC_BANK_STANDARD_TERMS_20240927": "ftc_bank_standard_terms.json",
 }
 
 
@@ -73,11 +80,18 @@ def _normalize_records(dataset_id: str, rows: list[dict[str, Any]]) -> list[Offi
     normalizers = {
         "FSC_FINANCIAL_TERMS_20260630": _term_record,
         "KDIC_DEPOSIT_INSURANCE_TERMS_20220825": _term_record,
+        "KDIC_INSURED_FINANCIAL_COMPANIES_20250930": _insured_company_record,
         "KINFA_MAIN_FAQ_20251031": _faq_record,
         "KINFA_MICROFINANCE_BRANCHES_20251231": _branch_record,
         "FTC_TELEMARKETING_SELLERS": _telemarketing_record,
         "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": _news_record,
         "FINANCIAL_CONSUMER_PROTECTION_PDF": _pdf_page_record,
+        "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320": _pdf_page_record,
+        "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227": _complaint_example_record,
+        "POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231": _fraud_account_record,
+        "POLICE_VOICE_PHISHING_STATS_20251231": _police_voice_phishing_stat_record,
+        "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231": _police_regional_damage_record,
+        "FTC_BANK_STANDARD_TERMS_20240927": _standard_terms_record,
     }
     normalize = normalizers[dataset_id]
     return [normalize(row) for row in rows]
@@ -114,6 +128,16 @@ def _branch_record(row: dict[str, Any]) -> OfficialRecord:
     )
 
 
+def _insured_company_record(row: dict[str, Any]) -> OfficialRecord:
+    return OfficialRecord(
+        dataset_id=row["dataset_id"],
+        title=row.get("name", ""),
+        body=f"{row.get('sector', '')} {row.get('address', '')} {row.get('phone', '')} {row.get('website', '')}",
+        source_title=row.get("source_title", ""),
+        metadata={"type": "insured_company", "sector": row.get("sector", ""), "phone": row.get("phone", "")},
+    )
+
+
 def _telemarketing_record(row: dict[str, Any]) -> OfficialRecord:
     return OfficialRecord(
         dataset_id=row["dataset_id"],
@@ -141,6 +165,77 @@ def _pdf_page_record(row: dict[str, Any]) -> OfficialRecord:
         body=row.get("text", ""),
         source_title=row.get("source_title", ""),
         metadata={"type": "pdf_page", "page": str(row.get("page", ""))},
+    )
+
+
+def _complaint_example_record(row: dict[str, Any]) -> OfficialRecord:
+    return OfficialRecord(
+        dataset_id=row["dataset_id"],
+        title=row.get("title", ""),
+        body=f"{row.get('content', '')} {row.get('answer', '')}",
+        source_title=row.get("source_title", ""),
+        metadata={"type": "complaint_example", "case_no": row.get("case_no", "")},
+    )
+
+
+def _fraud_account_record(row: dict[str, Any]) -> OfficialRecord:
+    return OfficialRecord(
+        dataset_id=row["dataset_id"],
+        title=f"{row.get('fraud_type', '')} · {row.get('impersonated_institution', '')}",
+        body=(
+            f"{row.get('age_group', '')}대 {row.get('gender', '')} "
+            f"{row.get('year', '')}-{row.get('month', '')} "
+            f"피해금액 {row.get('damage_amount', '')} "
+            f"피해구제 사유 {row.get('relief_reason', '')} "
+            f"접근매체 {row.get('access_channel', '')}"
+        ),
+        source_title=row.get("source_title", ""),
+        metadata={
+            "type": "fraud_account",
+            "age_group": row.get("age_group", ""),
+            "access_channel": row.get("access_channel", ""),
+        },
+    )
+
+
+def _police_voice_phishing_stat_record(row: dict[str, Any]) -> OfficialRecord:
+    return OfficialRecord(
+        dataset_id=row["dataset_id"],
+        title=f"{row.get('year', '')}년 보이스피싱 현황",
+        body=(
+            f"기관사칭형 발생 {row.get('institution_impersonation_cases', '')}건, "
+            f"피해액 {row.get('institution_impersonation_damage_억원', '')}억원, "
+            f"검거인원 {row.get('institution_impersonation_arrests', '')}명. "
+            f"대출사기형 발생 {row.get('loan_fraud_cases', '')}건, "
+            f"피해액 {row.get('loan_fraud_damage_억원', '')}억원, "
+            f"검거인원 {row.get('loan_fraud_arrests', '')}명."
+        ),
+        source_title=row.get("source_title", ""),
+        metadata={"type": "voice_phishing_stat", "year": row.get("year", "")},
+    )
+
+
+def _police_regional_damage_record(row: dict[str, Any]) -> OfficialRecord:
+    return OfficialRecord(
+        dataset_id=row["dataset_id"],
+        title=f"{row.get('region', '')} 보이스피싱 피해금액",
+        body=(
+            f"2023년 {row.get('damage_2023_억원', '')}억원, "
+            f"2024년 {row.get('damage_2024_억원', '')}억원, "
+            f"2025년 {row.get('damage_2025_억원', '')}억원"
+        ),
+        source_title=row.get("source_title", ""),
+        metadata={"type": "voice_phishing_regional_damage", "region": row.get("region", "")},
+    )
+
+
+def _standard_terms_record(row: dict[str, Any]) -> OfficialRecord:
+    return OfficialRecord(
+        dataset_id=row["dataset_id"],
+        title=row.get("title", ""),
+        body=row.get("text", ""),
+        source_title=row.get("source_title", ""),
+        metadata={"type": "standard_terms", "source_file": row.get("source_file", "")},
     )
 
 

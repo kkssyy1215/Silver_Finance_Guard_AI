@@ -1,0 +1,2852 @@
+[
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "BNP파리바은행",
+    "address": "서울특별시 중구 퇴계로 100 스테이트타워 남산 24-25층",
+    "phone": "02-317-1700",
+    "website": "http://www.bnpparibas.co.kr/ko/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "DBS은행",
+    "address": "서울특별시 중구 세종대로 136 서울파이낸스센터 18층",
+    "phone": "02-6322-2660",
+    "website": "http://www.dbs.com/kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "OCBC",
+    "address": "서울특별시 중구 세종대로 136 서울파이낸스센터 25층",
+    "phone": "02-2021-3900",
+    "website": "http://www.ocbc.com/group/group-home.html",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "경남은행",
+    "address": "경상남도 창원시 마산회원구 3·15대로 642",
+    "phone": "055-290-8000",
+    "website": "http://www.knbank.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "광주은행",
+    "address": "광주광역시 동구 제봉로 225",
+    "phone": "062-239-5000",
+    "website": "http://www.kjbank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "교통은행",
+    "address": "서울특별시 중구 을지로 29 더존을지타워 6층",
+    "phone": "02-2022-6888",
+    "website": "http://www.bankcomm.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "국민은행",
+    "address": "서울특별시 영등포구 국제금융로 8길 26",
+    "phone": "02-2073-7114",
+    "website": "https://www.kbstar.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "농협은행",
+    "address": "서울특별시 중구 통일로 120",
+    "phone": "02-2080-5114",
+    "website": "http://banking.nonghyup.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "뉴욕멜론은행",
+    "address": "서울특별시 영등포구 국제금융로 10 원아이에프씨 29층",
+    "phone": "02-6137-0001",
+    "website": "https://www.bnymellon.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "iM뱅크",
+    "address": "대구광역시 수성구 달구벌대로 2310",
+    "phone": "053-756-2001",
+    "website": "https://www.dgb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "대화은행(UOB)",
+    "address": "서울특별시 중구 세종대로 136 서울파이낸스센터 4층",
+    "phone": "02-739-3916",
+    "website": "http://www.uobgroup.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "도이치은행",
+    "address": "서울특별시 종로구 우정국로 26 센트로폴리스A동 12층",
+    "phone": "02-724-4500",
+    "website": "https://country.db.com/korea/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "메트로은행",
+    "address": "서울특별시 중구 소월로 10 단암빌딩 2층",
+    "phone": "02-779-2751",
+    "website": "http://www.metrobank.com.ph",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "멜라트은행",
+    "address": "서울특별시 강남구 테헤란로 410 금강타워 13, 14층",
+    "phone": "02-2007-6700",
+    "website": "http://www.bankmellat.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "모간스탠리은행",
+    "address": "서울특별시 종로구 새문안로 68 흥국생명빌딩 23층",
+    "phone": "02-399-4848",
+    "website": "http://www.morganstanley.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "미쓰이스미토모은행",
+    "address": "서울특별시 중구 을지로5길 26 미래에셋센터원빌딩 서관 12층",
+    "phone": "02-6364-7000",
+    "website": "http://www.e-smbc.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "미즈호은행",
+    "address": "서울특별시 중구 세종대로 136 서울 파이낸스센터 5층",
+    "phone": "02-3782-8500",
+    "website": "http://www.mizuhogroup.com/bank",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "바덴뷔르템베르크주립은행서울지점",
+    "address": "서울특별시 중구 세종대로 136 서울 파이낸스센터 22층",
+    "phone": "02-6730-0100",
+    "website": "http://www.lbbw.de",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "뱅크오브아메리카",
+    "address": "서울특별시 중구 세종대로 136 서울파이낸스센터 27층",
+    "phone": "02-788-1400",
+    "website": "http://www.bankofamerica.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "부산은행",
+    "address": "부산광역시 남구 문현금융로 30",
+    "phone": "1588-6200",
+    "website": "http://www.busanbank.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "소시에테제네랄은행",
+    "address": "서울특별시 종로구 종로3길 17 D타워 23층",
+    "phone": "02-2195-7777",
+    "website": "https://www.societegenerale.com/en",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "수협은행",
+    "address": "서울특별시 송파구 오금로 62(신천동 11-6)",
+    "phone": "02-2240-2010",
+    "website": "https://www.suhyup-bank.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "스테이트뱅크오브인디아",
+    "address": "서울특별시 종로구 종로 1 교보빌딩 20층",
+    "phone": "02-720-9810",
+    "website": "https://kr.statebank",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "스테이트스트리트은행",
+    "address": "서울특별시 중구 을지로5길 26 미래에셋센터원빌딩 서관 31층",
+    "phone": "02-3706-4500",
+    "website": "http://www.statestreet.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "신한은행",
+    "address": "서울특별시 중구 세종대로9길 20",
+    "phone": "02-756-0505",
+    "website": "http://www.shinhan.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "아이엔지은행",
+    "address": "서울특별시 중구 세종대로 136 서울파이낸스센터 11층",
+    "phone": "02-317-1800",
+    "website": "https://www.ingwb.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "엠유에프지은행",
+    "address": "서울특별시 중구 세종대로 14 B-26층",
+    "phone": "02-751-2700",
+    "website": "http://www.bk.mufg.jp/global/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "우리은행",
+    "address": "서울특별시 중구 소공로 51",
+    "phone": "02-2002-3000",
+    "website": "http://www.wooribank.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "웰스파고은행",
+    "address": "서울특별시 종로구 종로3길 17 D타워 D1 21층",
+    "phone": "02-3706-3114",
+    "website": "https://www.wellsfargo.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "유바프은행",
+    "address": "서울특별시 서대문구 충정로 60 케이티앤지 서대문타워 5층",
+    "phone": "02-3455-5300",
+    "website": "https://www.ubaf.fr/en",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "인도네시아느가라은행",
+    "address": "서울 중구 세종대로 39 5층",
+    "phone": "02-6050-1946",
+    "website": "https://www.bni.co.id/en-us/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "전북은행",
+    "address": "전라북도 전주시 덕진구 백제대로 566",
+    "phone": "063-250-7114",
+    "website": "http://www.jbbank.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "제이피모간체이스은행",
+    "address": "서울특별시 중구 서소문로11길 35?제이피모간 프라자",
+    "phone": "02-758-5500",
+    "website": "http://www.jpmorgan.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "제주은행",
+    "address": "제주특별자치도 제주시 1100로 3351",
+    "phone": "064-720-0200",
+    "website": "http://www.e-jejubank.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "중국건설은행",
+    "address": "서울시 중구 명동11길 24 중국건설은행타워",
+    "phone": "02-6730-3600",
+    "website": "http://kr.ccb.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "중국공상은행",
+    "address": "서울특별시 중구 세종대로73 태평로빌딩 1층, 16층",
+    "phone": "02-755-5688",
+    "website": "http://www.icbc.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "중국광대은행",
+    "address": "서울 종로구 청계천로 41 영풍빌딩 23층",
+    "phone": "02-3788-3700",
+    "website": "http://www.cebbank.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "중국농업은행",
+    "address": "서울시 중구 세종대로 136 서울파이낸스센터 14층",
+    "phone": "02-3788-3900",
+    "website": "http://www.kr.abchina.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "중국은행",
+    "address": "서울특별시 종로구 청계천로 41 영풍빌딩 1층",
+    "phone": "02-399-6288",
+    "website": "http://www.bankofchina.com/kr/kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "IBK기업은행",
+    "address": "서울특별시 중구 을지로 79",
+    "phone": "02-729-6114",
+    "website": "http://www.ibk.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "케이뱅크",
+    "address": "서울특별시 중구 을지로 170 을지트윈타워 동관 6층",
+    "phone": "1522-1000",
+    "website": "http://www.kbanknow.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "크레디 아그리콜 코퍼레이트 앤 인베스트먼트 뱅크",
+    "address": "서울특별시 종로구 종로 1 교보빌딩 21층",
+    "phone": "02-3700-9500",
+    "website": "http://www.ca-cib.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "유비에스은행",
+    "address": "서울특별시 종로구 우정국로 26 센트로폴리스 타워A 15층",
+    "phone": "02-3707-3800",
+    "website": "https://www.ubs.com/kr/ko.html",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "토스뱅크",
+    "address": "서울특별시 강남구 테헤란로131, 13층",
+    "phone": "1661-7654",
+    "website": "http://www.tossbank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "파키스탄국립은행",
+    "address": "서울특별시 종로구 종로 1 교보빌딩 22층",
+    "phone": "02-732-0277",
+    "website": "http://www.sbp.org.pk/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "하나은행",
+    "address": "서울특별시 중구 을지로 35",
+    "phone": "02-2002-1111",
+    "website": "http://www.kebhana.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "한국산업은행",
+    "address": "서울특별시 영등포구 은행로 14",
+    "phone": "02-787-7000",
+    "website": "http://www.kdb.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "한국스탠다드차타드은행",
+    "address": "서울특별시 종로구 종로 47",
+    "phone": "02-3702-3114",
+    "website": "http://www.standardchartered.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "한국씨티은행",
+    "address": "서울 종로구 새문안로 50(신문로 2가)",
+    "phone": "02-3455-2114",
+    "website": "http://www.citibank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "카카오뱅크",
+    "address": "경기도 성남시 분당구 분당내곡로 131, 11층",
+    "phone": "1599-3333",
+    "website": "http://www.kakaobank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "호주뉴질랜드은행",
+    "address": "서울 영등포구 국제금융로 10 Three IFC 30층",
+    "phone": "02-3700-3114",
+    "website": "http://institutional.anz.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "은행",
+    "name": "홍콩상하이은행",
+    "address": "서울특별시 중구 칠패로 37 HSBC빌딩",
+    "phone": "02-2004-0000",
+    "website": "https://www.hsbc.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "BNK투자증권",
+    "address": "부산광역시 부산진구 새싹로1(부전동) 부산은행 부전동별관 4층",
+    "phone": "051-669-8000",
+    "website": "www.bnkfn.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "DB증권",
+    "address": "서울특별시 영등포구 국제금융로 8길 32 DB증권빌딩 1~2층",
+    "phone": "02-369-3000",
+    "website": "www.dbsec.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "DS투자증권",
+    "address": "서울시 영등포구 국제금융로 10 (여의도동 Three IFC) 13층",
+    "phone": "02-709-2300",
+    "website": "www.ds-sec.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "다올투자증권",
+    "address": "서울시 영등포구 여의나루로 60, 여의도 포스트타워 27층",
+    "phone": "02-2184-2000",
+    "website": "www.daolsecurities.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "NH투자증권",
+    "address": "서울특별시 영등포구 여의대로 108 파크원 NH금융타워(타워2)",
+    "phone": "02-768-7000",
+    "website": "www.nhqv.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "SK증권",
+    "address": "서울시 영등포구 국제금융로 8길 31(여의도동 SK증권빌딩)",
+    "phone": "02-3773-8245",
+    "website": "www.sks.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "교보증권",
+    "address": "서울특별시 영등포구 의사당대로97 교보증권빌딩",
+    "phone": "02-3771-9000",
+    "website": "www.iprovest.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "대신증권",
+    "address": "서울시 중구 삼일대로 343(저동1가 대신파이낸스센터)",
+    "phone": "1588-4488",
+    "website": "www.daishin.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "리딩투자증권",
+    "address": "서울시 영등포구 여의대로 108, 44층",
+    "phone": "1544-7004",
+    "website": "www.leading.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "메리츠증권",
+    "address": "서울특별시 영등포구 국제금융로 10 Three IFC 22층 24-27층",
+    "phone": "02-758-6611",
+    "website": "home.imeritz.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "미래에셋증권",
+    "address": "서울특별시 중구 을지로5길 26 미래에셋 센터원빌딩 이스트타워",
+    "phone": "02-1588-6800",
+    "website": "securities.miraeasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "부국증권",
+    "address": "서울시 영등포구 국제금융로6길 17",
+    "phone": "02-368-9200",
+    "website": "www.bookook.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "삼성증권",
+    "address": "서울특별시 서초구 서초대로 74길 11 삼성전자빌딩",
+    "phone": "02-2020-8000",
+    "website": "www.samsungpop.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "상상인증권",
+    "address": "서울시 영등포구 여의대로 108 파크원 타워1 48·49층",
+    "phone": "02-1566-0900",
+    "website": "www.sangsanginib.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "신영증권",
+    "address": "서울 영등포구 국제금융로 8길 16 신영증권빌딩",
+    "phone": "02-2004-9000",
+    "website": "www.shinyoung.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "신한투자증권",
+    "address": "서울특별시 영등포구 의사당대로 96 (여의도동,TP Tower)",
+    "phone": "02-3772-1000",
+    "website": "www.shinhansec.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "아이비케이투자증권",
+    "address": "서울특별시 영등포구 국제금융로6길 11(여의도동)",
+    "phone": "02-6915-5000",
+    "website": "www.ibks.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "유진투자증권",
+    "address": "서울시 영등포구 국제금융로 24 (유진그룹빌딩)",
+    "phone": "02-368-6000",
+    "website": "www.eugenefn.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "유화증권",
+    "address": "서울특별시 영등포구 국제금융2길 36 유화증권빌딩",
+    "phone": "02-3770-0100",
+    "website": "www.yhs.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "LS증권",
+    "address": "서울특별시 영등포구 여의나루로 60 포스트타워 24층",
+    "phone": "02-3779-0100",
+    "website": "www.ls-sec.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "카카오페이증권",
+    "address": "경기도 성남시 분당구 판교역로 166 카카오 판교아지트 B동 8층",
+    "phone": "1600-8515",
+    "website": "kakaopaysec.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "KB증권",
+    "address": "서울특별시 영등포구 여의나루로 50 The-K타워",
+    "phone": "02-6114-0114",
+    "website": "www.kbsec.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "케이알투자증권",
+    "address": "서울시 영등포구 여의나루로57 신송센터빌딩 14층",
+    "phone": "02-2168-7400",
+    "website": "www.krsec.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "케이프투자증권",
+    "address": "서울특별시 영등포구 여의대로 108 파크원타워2 38층",
+    "phone": "02-6923-7000",
+    "website": "www.capefn.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "코리아에셋투자증권",
+    "address": "서울 영등포구 여의나루로 57(신송센터빌딩 12층)",
+    "phone": "02-550-6200",
+    "website": "www.kasset.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "키움증권",
+    "address": "서울 영등포구 여의나루로4길 18 (여의도동 키움파이낸스스퀘어)",
+    "phone": "02-3787-5000",
+    "website": "www.kiwoom.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "토스증권",
+    "address": "서울특별시 강남구 테헤란로 133, 4층",
+    "phone": "1599-7987",
+    "website": "http://tossinvest.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "하나증권",
+    "address": "서울 영등포구 의사당대로 82 (여의도동 27-3)",
+    "phone": "02-3771-7114",
+    "website": "www.hanaw.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "아이엠증권",
+    "address": "서울특별시 영등포구 여의대로 66 iM증권빌딩",
+    "phone": "02-318-9111",
+    "website": "www.imfnsec.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "한국투자증권",
+    "address": "서울특별시 영등포구 의사당대로 88",
+    "phone": "02-3276-5000",
+    "website": "securities.koreainvestment.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "우리투자증권",
+    "address": "서울시 영등포구 여의당대로 96 19-22층",
+    "phone": "1644-1744",
+    "website": "www.fundsupermarket.wooriib.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "한양증권",
+    "address": "서울특별시 영등포구 국제금융로6길 7",
+    "phone": "02-3770-5000",
+    "website": "www.hygood.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "한화투자증권",
+    "address": "서울특별시 영등포구 여의대로 56 한화투자증권빌딩",
+    "phone": "02-3772-7000",
+    "website": "www.hanwhawm.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "현대차증권",
+    "address": "서울특별시 영등포구 국제금융로 2길 28",
+    "phone": "02-3787-2114",
+    "website": "www.hmsec.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "흥국증권",
+    "address": "서울시 영등포구 국제금융로 2길 32(여의도파이낸스타워 14층)",
+    "phone": "02-6742-3600",
+    "website": "www.heungkuksec.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "JP모건 서울지점",
+    "address": "서울특별시 중구 서소문로11길 35 (정동) 제이피모간플라자",
+    "phone": "02-758-5430",
+    "website": "www.jpmorgan.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "골드만삭스증권 서울지점",
+    "address": "서울시 종로구 새문안로 68 흥국생명빌딩 21층",
+    "phone": "02-3788-1000",
+    "website": "www.goldmansachs.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "노무라금융투자",
+    "address": "서울시 중구 세종대로 136 서울파이낸스센터 17층",
+    "phone": "02-3783-2000",
+    "website": "www.nomura.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "다이와증권캐피탈마켓코리아",
+    "address": "서울특별시 영등포구 여의도동 국제금융로 10 One IFC빌딩 21층",
+    "phone": "02-787-9100",
+    "website": "www.daiwa-grp.jp",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "도이치증권",
+    "address": "서울특별시 종로구 우정국로 26 11층 (공평동 센트로폴리스 에이동)",
+    "phone": "02-316-8888",
+    "website": "www.db.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "맥쿼리증권",
+    "address": "서울시 종로구 우정국로 26 A동 17층(공평동, 센트로폴리스)",
+    "phone": "02-3705-8788",
+    "website": "www.macquarie.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "메릴린치인터내셔날엘엘씨증권 서울지점",
+    "address": "서울특별시 중구 세종대로 136(무교동 서울파이낸스센터 29층)",
+    "phone": "02-3707-0400",
+    "website": "www.ml.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "모간스탠리인터내셔날증권서울지점",
+    "address": "서울 종로구 새문안로 68 흥국생명 빌딩 22층, 23층",
+    "phone": "02-399-4848",
+    "website": "www.morganstanley.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "미즈호증권 아시아리미티드 서울지점",
+    "address": "서울시 중구 세종대로 136, 5층(태평로1가, 서울파이낸스센터)",
+    "phone": "02-2206-1800",
+    "website": "www.mizuho-sc.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "비엔피파리바증권",
+    "address": "서울특별시 중구 퇴계로 100 스테이트타워 남산 25층",
+    "phone": "02-2125-0500",
+    "website": "www.bnpparibas.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "씨엘에스에이코리아증권",
+    "address": "서울시 영등포구 국제금융로 10번지 원아이에프씨 30층",
+    "phone": "02-397-8400",
+    "website": "www.clsa.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "씨지에스 인터내셔널증권 홍콩 한국지점",
+    "address": "서울시 종로구 새문안로 82 에스타워 15층",
+    "phone": "02-6730-6050",
+    "website": "www.cgsi.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "씨티그룹글로벌마켓증권",
+    "address": "서울특별시 종로구 새문안로 50 씨티뱅크센터 15층",
+    "phone": "02-3705-0600",
+    "website": "www.citigroup.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "아이엔지증권 서울지점",
+    "address": "서울시 중구 세종대로 136 서울파이낸스센터 11층",
+    "phone": "02-317-8900",
+    "website": "www.ing.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "유비에스증권 리미티드 서울지점",
+    "address": "서울시 종로구 우정국로 26 (공평동) 센트로폴리스빌딩 B동 9층",
+    "phone": "02-3702-8888",
+    "website": "www.ubs.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "유안타증권",
+    "address": "서울특별시 중구 을지로 76 유안타증권빌딩",
+    "phone": "02-3770-2000",
+    "website": "www.myasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "씨엠에스증권",
+    "address": "서울시 영등포구 국제금융로10 IFC3 44층",
+    "phone": "02-6292-4001",
+    "website": "www.cmschina.com.hk",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "크레디아그리콜 아시아증권",
+    "address": "서울시 종로구 종로1 교보빌딩 21층",
+    "phone": "02-3700-3500",
+    "website": "www.ca-cib.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "한국스탠다드차타드증권",
+    "address": "서울특별시 종로구 종로 47",
+    "phone": "02-3703-5000",
+    "website": "www.standardcharteredsecurities.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "한국아이엠씨증권",
+    "address": "서울시 영등포구 여의대로 24 40층",
+    "phone": "02-2070-1500",
+    "website": "www.imc.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "한국에스지증권",
+    "address": "서울시 종로구 종로3길 17 D타워 D1 24층",
+    "phone": "02-2195-7777",
+    "website": "www.sgcib.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "홍콩상하이증권 서울지점",
+    "address": "서울시 중구 칠패로 37 HSBC빌딩 7층",
+    "phone": "02-3706-8700",
+    "website": "www.hsbc.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "BNK자산운용",
+    "address": "서울 영등포구 국제금융로2길 32 여의도 파이낸스센터 21층",
+    "phone": "02-6910-1100",
+    "website": "www.bnkasset.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "DB자산운용",
+    "address": "서울 영등포구 여의대로 24 전경련회관 41층",
+    "phone": "02-787-3700",
+    "website": "www.db-asset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "KB자산운용",
+    "address": "서울시 영등포구 국제금융로 10(여의도동, 쓰리아이에프씨) 41층",
+    "phone": "02-2167-8200",
+    "website": "www.kbam.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "다올자산운용",
+    "address": "서울시 영등포구 여의나루로 60 포스트타워 28층",
+    "phone": "02-788-8400",
+    "website": "http://www.daolfund.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "골든브릿지자산운용",
+    "address": "서울특별시 강서구 개화동로29길 29 2층 202호",
+    "phone": "02-360-9500",
+    "website": "www.gbam.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "교보악사자산운용",
+    "address": "서울 종로구 종로 1 교보생명빌딩 15층",
+    "phone": "02-767-9600",
+    "website": "https://www.kyoboaxa-im.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "대신자산운용",
+    "address": "서울시 중구 삼일대로 343(저동1가, 대신파이낸스센터) 19층",
+    "phone": "02-769-3200",
+    "website": "asset.daishin.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "아이엠에셋자산운용",
+    "address": "서울특별시 영등포구 의사당대로 97 교보증권빌딩 14층",
+    "phone": "02-707-4200",
+    "website": "http://www.im-fund.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "리치먼드자산운용",
+    "address": "서울시 중구 을지로148 5층 (을지로3가 중앙데코플라자)",
+    "phone": "02-6276-3000",
+    "website": "www.richmondam.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "마이다스에셋자산운용",
+    "address": "서울특별시 종로구 경희궁길 20",
+    "phone": "02-3787-3500",
+    "website": "www.midasasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "브이자산운용",
+    "address": "서울특별시 강남구 테헤란로 447, 6층(삼성동, KB우준타워)",
+    "phone": "02-3703-9800",
+    "website": "www.feynmanasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "KCGI자산운용",
+    "address": "서울특별시 영등포구 국제금융로 10 One IFC 15층",
+    "phone": "1588-5533",
+    "website": "www.kcgiam.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "미래에셋자산운용",
+    "address": "서울시 종로구 종로33, 그랑서울",
+    "phone": "1577-1640",
+    "website": "investments.miraeasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "브레인자산운용",
+    "address": "서울특별시 영등포구 국제금융로8길2, 6층(여의도동 농협재단빌딩)",
+    "phone": "02-6277-5000",
+    "website": "www.brainib.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "브이아이자산운용",
+    "address": "서울시 영등포구 국제금융로 10 Three IFC 16층",
+    "phone": "02-727-2700",
+    "website": "http://www.hi-am.com/web/kr/compInfo/overView/list",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "삼성에스알에이자산운용",
+    "address": "서울 서초구 서초대로 74길 4 삼성생명 서초타워 16층",
+    "phone": "02-310-2500",
+    "website": "www.samsungsra.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "삼성자산운용",
+    "address": "서울 서초구 서초대로 74길 11 삼성자산운용 16-18층",
+    "phone": "02-3774-7600",
+    "website": "www.samsungfund.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "신영자산운용",
+    "address": "서울특별시 영등포구 국제금융로8길 6 신영빌딩 6-7층",
+    "phone": "02-6711-7500",
+    "website": "www.syfund.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "신한자산운용",
+    "address": "서울시 영등포구 의사당대로 96 23~26층",
+    "phone": "02-767-5777",
+    "website": "www.shinhanfund.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "아이비케이자산운용",
+    "address": "서울특별시 영등포구 은행로30(여의도동 중소기업중앙회 신관11층)",
+    "phone": "02-727-8800",
+    "website": "www.ibkasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "안다자산운용",
+    "address": "서울시 강남구 도산대로 318 9층 (논현동 SB타워)",
+    "phone": "02-2156-2800",
+    "website": "www.andaasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "알파자산운용",
+    "address": "서울시 영등포구 국제금융로8길 31 8층(여의도동, SK증권빌딩)",
+    "phone": "02-769-7600",
+    "website": "www.alphasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "에셋플러스자산운용",
+    "address": "경기도 성남시 분당구 판교역로192번길 14(삼평동리치투게더센터)",
+    "phone": "02-501-7707",
+    "website": "www.assetplus.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "에이치디씨자산운용",
+    "address": "서울시 영등포구 국제금융로8길 11 대영빌딩 2층(여의도동)",
+    "phone": "02-3215-3000",
+    "website": "www.hdcasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "넥스트증권",
+    "address": "서울특별시 영등포구 국제금융로 10 Three IFC 15층",
+    "phone": "02-788-7000",
+    "website": "www.nextsecurities.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "엔에이치아문디자산운용",
+    "address": "서울특별시 영등포구 국제금융로8길 2 농협재단빌딩 10층",
+    "phone": "02-368-3600",
+    "website": "www.nh-amundi.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "엠플러스자산운용",
+    "address": "서울특별시 강남구 남부순환로 2806 군인공제회관 22층",
+    "phone": "02-6007-4700",
+    "website": "www.mplusasset.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "우리자산운용",
+    "address": "서울특별시 영등포구 여의대로 108 파크원1 37층",
+    "phone": "02-2118-0500",
+    "website": "https://www.wooriam.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "유리자산운용",
+    "address": "서울시 영등포구 국제금융로6길 17 부국증권빌딩 8층",
+    "phone": "02-2168-7900",
+    "website": "www.yurieasset.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "유진자산운용",
+    "address": "서울특별시 영등포구 국제금융로39 앵커원 15, 16층",
+    "phone": "02-2129-3300",
+    "website": "www.fund.eugenefn.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "이지스자산운용",
+    "address": "서울시 영등포구 여의공원로 115 세우빌딩 13층",
+    "phone": "02-6959-3100",
+    "website": "www.igisam.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "제이비자산운용",
+    "address": "서울시 영등포구 의사당대로 97 교보증권빌딩 9층",
+    "phone": "02-3782-5000",
+    "website": "www.jbam.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "칸서스자산운용",
+    "address": "서울특별시 영등포구 국제금융로8길 31 SK증권빌딩 10층",
+    "phone": "02-2077-5000",
+    "website": "www.consus.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "코람코자산운용",
+    "address": "서울특별시 강남구 삼성로 511, 2층(삼성동, 아이콘 삼성)",
+    "phone": "02-787-0101",
+    "website": "www.koramcofund.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "키움투자자산운용",
+    "address": "서울특별시 영등포구 의사당대로 96, 11,12층",
+    "phone": "02-789-0300",
+    "website": "www.kiwoomam.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "트러스톤자산운용",
+    "address": "서울특별시 성동구 뚝섬로1길 10",
+    "phone": "02-6308-0500",
+    "website": "www.trustonasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "플러스자산운용",
+    "address": "서울특별시 영등포구 국제금융로 10 Three IFC 36층",
+    "phone": "02-3787-2700",
+    "website": "www.plusasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "하나자산운용",
+    "address": "서울 영등포구 의사당대로 82 15층 (여의도동)",
+    "phone": "02-3771-7800",
+    "website": "https://www.hanaam.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "하우자산운용",
+    "address": "서울특별시 강남구 테헤란로 223 15층 (삼성동)",
+    "phone": "02-2050-4700",
+    "website": "www.howasset.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "한국투자밸류자산운용",
+    "address": "서울시 영등포구 국제금융로2길 28 현대차증권빌딩 16~17층",
+    "phone": "02-3276-6000",
+    "website": "vam.koreainvestment.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "한국투자신탁운용",
+    "address": "서울특별시 영등포구 여의대로 24, 11-12층(여의도동, FKI타워)",
+    "phone": "02-2055-5555",
+    "website": "kim.koreainvestment.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "한화자산운용",
+    "address": "서울시 영등포구 63로 50 한화금융센터",
+    "phone": "02-6950-0000",
+    "website": "www.hanwhafund.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "현대인베스트먼트자산운용",
+    "address": "서울특별시 영등포구 국제금융로8길 16 신영증권빌딩 10층",
+    "phone": "02-6276-7000",
+    "website": "www.hdfund.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "현대자산운용",
+    "address": "서울시 영등포구 여의대로24 38층",
+    "phone": "02-2090-0500",
+    "website": "www.hyundaiam.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "흥국자산운용",
+    "address": "서울시 종로구 새문안로 68 흥국생명빌딩 19층",
+    "phone": "02-2122-2800",
+    "website": "www.hkfund.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "NH선물",
+    "address": "서울시 영등포구 국제금융로8길 2 농협문화복지재단 빌딩 16-17층",
+    "phone": "02-3774-0300",
+    "website": "www.futures.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "삼성선물",
+    "address": "서울시 서초구 서초대로 74길11 삼성전자 서초사옥 20층",
+    "phone": "02-3707-3699",
+    "website": "www.ssfutures.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "한국증권금융",
+    "address": "서울시 영등포구 국제금융로8길 10",
+    "phone": "02-3770-8800",
+    "website": "www.ksfc.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "금융투자",
+    "name": "나틱시스증권 서울지점",
+    "address": "서울시 종로구 종로 1, 교보생명빌딩 14층",
+    "phone": "02-6021-7600",
+    "website": "https://apac.cib.natixis.com/south-korea",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "ABL생명보험 주식회사",
+    "address": "서울특별시 영등포구 의사당대로 147 (ABL타워)",
+    "phone": "1588-6500",
+    "website": "http://www.abllife.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "AIA생명보험 주식회사",
+    "address": "서울특별시 중구 통일로 2길 16 (순화동 216) AIA 타워",
+    "phone": "1588-9898",
+    "website": "http://www.aia.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "DB생명보험㈜",
+    "address": "서울특별시 강남구 테헤란로 432 DB금융센터?7층",
+    "phone": "1588-3131",
+    "website": "https://www.idblife.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "아이엠라이프생명보험 주식회사",
+    "address": "서울특별시 중구 남대문로 125(다동85)",
+    "phone": "1588-4770",
+    "website": "https://www.imlifeins.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "교보라이프플래닛생명보험주식회사",
+    "address": "서울특별시 용산구 한강대로 35 5층(한강로 3가)",
+    "phone": "1566-0999",
+    "website": "https://www.lifeplanet.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "교보생명보험주식회사",
+    "address": "서울특별시 종로구 종로1(종로1가)",
+    "phone": "1588-1001",
+    "website": "http://www.kyobo.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "농협생명보험주식회사",
+    "address": "서울특별시 서대문구 통일로 87",
+    "phone": "1544-4000",
+    "website": "http://www.nhlife.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "동양생명보험주식회사",
+    "address": "서울특별시 종로구 종로33(청진동) 그랑서울",
+    "phone": "1577-1004",
+    "website": "http://www.myangel.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "라이나생명보험㈜",
+    "address": "서울시 종로구 삼봉로 48번지 라이나타워",
+    "phone": "1588-0058",
+    "website": "http://www.lina.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "메트라이프생명보험㈜",
+    "address": "서울특별시 강남구 테헤란로 316(메트라이프 타워)",
+    "phone": "1588-9600",
+    "website": "http://www.metlife.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "미래에셋생명보험주식회사",
+    "address": "서울특별시 영등포구 국제금융로 56",
+    "phone": "1588-0220",
+    "website": "http://life.miraeasset.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "비엔피파리바카디프생명보험주식회사",
+    "address": "서울특별시 영등포구 국회대로 612 BNP파리바 카디프생명보험",
+    "phone": "1688-1118",
+    "website": "http://www.cardif.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "삼성생명보험주식회사",
+    "address": "서울특별시 서초구 서초대로74길 11",
+    "phone": "1588-3114",
+    "website": "http://www.samsunglife.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "신한라이프생명보험주식회사",
+    "address": "서울특별시 중구 삼일대로 358(을지로2가 신한L Tower 2층)",
+    "phone": "1588-5580",
+    "website": "http://www.shinhanlife.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "아이비케이연금보험주식회사",
+    "address": "서울특별시 중구 칠패로 37?(봉래동 1가 HSBC빌딩)",
+    "phone": "1577-4117",
+    "website": "http://www.ibki.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "처브라이프생명보험 주식회사",
+    "address": "서울시 강남구 테헤란로 401 남경센터, 11층",
+    "phone": "1599-4600",
+    "website": "http://www.chubblife.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "케이디비생명보험주식회사",
+    "address": "서울특별시 용산구 한강대로 372?(KDB생명타워)",
+    "phone": "1588-4040",
+    "website": "http://www.kdblife.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "푸본현대생명보험주식회사",
+    "address": "서울특별시 영등포구 여의나루로 57 푸본현대생명",
+    "phone": "1577-3311",
+    "website": "http://www.fubonhyundai.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "하나생명보험주식회사",
+    "address": "서울특별시 중구 을지로 66",
+    "phone": "1577-1112",
+    "website": "http://www.hanalife.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "한화생명보험주식회사",
+    "address": "서울특별시 영등포구 63로 50",
+    "phone": "1588-6363",
+    "website": "http://www.hanwhalife.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "흥국생명보험주식회사",
+    "address": "서울특별시 종로구 새문안로 68?(신문로 1가)",
+    "phone": "1588-2288",
+    "website": "http://www.heungkuklife.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "생명보험",
+    "name": "주식회사 케이비라이프생명보험",
+    "address": "서울특별시 강남구 강남대로 298(역삼동, KB라이프타워)",
+    "phone": "1588-3374",
+    "website": "www.kblife.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "AIG 손해보험주식회사",
+    "address": "서울특별시 영등포구 국제금융로 10 국제금융센터 Two IFC 27층",
+    "phone": "1544-2792",
+    "website": "http://www.aig.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "DB손해보험주식회사",
+    "address": "서울특별시 강남구 테헤란로 432(대치동 DB금융센터)",
+    "phone": "1588-0100",
+    "website": "http://www.idbins.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "농협손해보험 주식회사",
+    "address": "서울특별시 서대문구 충정로 60",
+    "phone": "1644-9000",
+    "website": "http://www.nhfire.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "롯데손해보험주식회사",
+    "address": "서울특별시 중구 소월로 3 (남창동 롯데손해보험빌딩)",
+    "phone": "1588-3344",
+    "website": "http://www.lotteins.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "메리츠화재해상보험㈜",
+    "address": "서울시 강남구 강남대로 382 메리츠타워",
+    "phone": "1566-7711",
+    "website": "http://www.meritzfire.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "미쓰이스미토모해상화재보험㈜ 한국지점",
+    "address": "서울특별시 영등포구 국제금융로 10, TWO IFC 7층",
+    "phone": "02-3702-5800",
+    "website": "http://www.ms-ins.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "신한EZ손해보험주식회사",
+    "address": "서울특별시 중구 남대문로 113 DB 다동빌딩 4,5층",
+    "phone": "1544-2580",
+    "website": "http://www.shinhanez.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "삼성화재해상보험주식회사",
+    "address": "서울특별시 서초구 서초대로74길 14",
+    "phone": "1588-5114",
+    "website": "http://www.samsungfire.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "서울보증보험㈜",
+    "address": "서울특별시 종로구 김상옥로 29",
+    "phone": "1670-7000",
+    "website": "http://www.sgic.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "악사손해보험㈜",
+    "address": "서울시 용산구 한강대로 71길 4  한진중공업빌딩 11층",
+    "phone": "1566-1566",
+    "website": "http://www.axa.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "알리안츠글로벌코퍼레이트앤스페셜티에스이 한국지점",
+    "address": "서울특별시 중구 세종대로 136 서울파이낸스센터 22",
+    "phone": "02-6940-4702",
+    "website": "https://commercial.allianz.com/global-offices/south-korea.html",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "에이스아메리칸화재해상보험주식회사 한국지점",
+    "address": "서울특별시 종로구 삼봉로 48 라이나타워14, 15층",
+    "phone": "1566-5800",
+    "website": "http://www.chubb.com/kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "엠지손해보험주식회사",
+    "address": "서울특별시 강남구 테헤란로 335(역삼동 MG손해보험빌딩)",
+    "phone": "1588-5959",
+    "website": "http://www.mggeneralins.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "㈜케이비손해보험",
+    "address": "서울특별시 강남구 테헤란로 117 KB손해보험빌딩",
+    "phone": "1544-0114",
+    "website": "http://www.kbinsure.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "캐롯손해보험주식회사",
+    "address": "서울 중구 을지로 100 파인에비뉴 B동 20층",
+    "phone": "1566-0300",
+    "website": "http://www.carrotins.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "퍼스트어메리칸권원보험㈜한국지점",
+    "address": "서울시 마포구 마포대로4다길 41(마포동) 마포타워14층",
+    "phone": "02-3144-2460",
+    "website": "http://www.firstam.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "하나손해보험주식회사",
+    "address": "서울특별시 종로구 창경궁로 117(인의동 하나손해보험빌딩)",
+    "phone": "02-6670-8400",
+    "website": "http://www.hanainsure.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "한화손해보험주식회사",
+    "address": "서울특별시 영등포구 여의대로 56(여의도동 23-5)",
+    "phone": "1566-8000",
+    "website": "http://www.hwgeneralins.com/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "현대해상화재보험주식회사",
+    "address": "서울특별시 종로구 세종대로 163, 현대해상빌딩(세종로)",
+    "phone": "1588-5656",
+    "website": "http://www.hi.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "흥국화재해상보험주식회사",
+    "address": "서울특별시 종로구 새문안로 68(신문로1가)",
+    "phone": "1688-1688",
+    "website": "http://www.heungkukfire.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "(주)카카오페이손해보험",
+    "address": "경기도 성남시 분당구 판교역로 152 (백현동, 알파돔타워) 4층",
+    "phone": "1544-0022",
+    "website": "http://www.kakaopayinscorp.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "팩토리 뮤츄얼 인슈런스 컴퍼니 한국지점",
+    "address": "서울특별시 중구 을지로 5길 26 미래에셋센터원빌딩 서관 27층",
+    "phone": "02-6370-6000",
+    "website": "http://www.fmglobal.com/korea/kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "스타인터내셔널인슈어런스싱가포르피티이엘티디 한국지점",
+    "address": "서울특별시 중구 세종대로 136, 9층(태평로1가, 서울파이낸스센터)",
+    "phone": "02-6271-6965",
+    "website": "http://www.starrcompanies.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "마이브라운주식회사",
+    "address": "서울특별시 서초구 서초중앙로 24길 10 316타워 7층",
+    "phone": "1800-8600",
+    "website": "http://www.fsb.or.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "손해보험",
+    "name": "예별손해보험주식회사",
+    "address": "서울특별시 강남구 테헤란로 335(역삼동)",
+    "phone": "1588-5959",
+    "website": "http://www.nhsavingsbank.co.kr/",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "저축은행중앙회",
+    "address": "서울특별시 마포구 마포대로 163 11-13층",
+    "phone": "02-397-8600",
+    "website": "www.nybank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "NH저축은행㈜",
+    "address": "서울특별시 강남구 역삼동 테헤란로 317 동훈타워 2-4층",
+    "phone": "1588-5191",
+    "website": "bank.daishin.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "남양저축은행",
+    "address": "경기 구리시 검배로 10 (수택동)",
+    "phone": "031-566-3300",
+    "website": "http://d-banks.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "대신저축은행",
+    "address": "서울시 중구 삼일대로 343",
+    "phone": "1644-5600",
+    "website": "www.thekbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "대원상호저축은행",
+    "address": "경북 경주시 북문로 126 (성동동)",
+    "phone": "054-773-2222",
+    "website": "www.dreamsb.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "더케이저축은행㈜",
+    "address": "서울 강남구 테헤란로 323 (역삼동 702-23)",
+    "phone": "1877-0015",
+    "website": "www.samilbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "드림저축은행",
+    "address": "대구 중구 국채보상로 645 (동인동2가)",
+    "phone": "053-663-5000",
+    "website": "www.sangsanginsb.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "머스트삼일저축은행",
+    "address": "경북 포항시 북구 장량로 154 (양덕동)",
+    "phone": "054-275-4060",
+    "website": "www.serambank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "상상인저축은행",
+    "address": "경기 성남시 분당구 황새울로 358(서현동)",
+    "phone": "031-698-8200",
+    "website": "www.estarbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "세람저축은행",
+    "address": "경기 이천시 중리천로 50 (중리동)",
+    "phone": "031-633-6781",
+    "website": "www.mssb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "스타저축은행",
+    "address": "전북 전주시 덕진구 팔달로 320",
+    "phone": "063-277-1311",
+    "website": "www.osb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "엠에스상호저축은행",
+    "address": "대구 중구 동덕로 173",
+    "phone": "053-749-5000",
+    "website": "www.woorisavingsbank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "오에스비저축은행",
+    "address": "서울특별시 서초구 서초중앙로 203",
+    "phone": "1644-0052",
+    "website": "https://www.wooleebank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "우리금융저축은행",
+    "address": "충북 청주시 상당구 남사로 135(남문로2가)",
+    "phone": "043-279-9100",
+    "website": "www.welcomebank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "우리저축은행",
+    "address": "부산 부산진구 중앙대로 723 (부전동)",
+    "phone": "051-811-9400",
+    "website": "www.yuantasavings.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "웰컴저축은행",
+    "address": "서울시 용산구 한강대로 148",
+    "phone": "1661-0001",
+    "website": "www.ycbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "유안타저축은행㈜",
+    "address": "서울 강남구 강남대로 542 (논현동영풍빌딩)",
+    "phone": "02-6022-3700",
+    "website": "www.yjbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "융창저축은행",
+    "address": "경기 광명시 철산로 5  1층 (철산3동융창빌딩)",
+    "phone": "02-2685-0001",
+    "website": "www.jt-bank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈖영진저축은행",
+    "address": "경기 부천시 부일로 472",
+    "phone": "032-651-2121",
+    "website": "http://www.jtchinae-bank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "제이티저축은행",
+    "address": "경기 성남시 분당구 황새울로 324 (서현동)",
+    "phone": "1688-8877",
+    "website": "www.choeunbank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "제이티친애저축은행 주식회사",
+    "address": "서울시 중구 을지로 100 파인에비뉴B동 15-17층",
+    "phone": "1544-9191",
+    "website": "www.dhsavingsbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "(주)조은저축은행",
+    "address": "서울시 강남구 강남대로 574 1층",
+    "phone": "1644-7200",
+    "website": "www.hbsb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜DH저축은행",
+    "address": "부산 진구 중앙대로 935 (양정동)",
+    "phone": "051-867-7701",
+    "website": "www.ibksb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜HB저축은행",
+    "address": "서울 강남구 강남대로 556",
+    "phone": "1833-8889",
+    "website": "http://www.sbisb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜IBK저축은행",
+    "address": "부산 부산진구 중앙대로 735 4층 (부전동)",
+    "phone": "1522-7900",
+    "website": "www.goryosb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜SBI저축은행",
+    "address": "서울특별시 중구 을지로5길 26 9층",
+    "phone": "1566-2210",
+    "website": "www.kukjebank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜고려저축은행",
+    "address": "부산 동구 중앙대로 244 3-5층",
+    "phone": "1877-9900",
+    "website": "www.kuemhwabank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜국제저축은행",
+    "address": "부산 부산진구 중앙대로 612 (범천동)",
+    "phone": "051-636-2121",
+    "website": "www.daemyungbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜금화저축은행",
+    "address": "인천 부평구 부흥로 307 (부평4동)",
+    "phone": "032-526-6000",
+    "website": "http://www.debecbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜대명상호저축은행",
+    "address": "충북 제천시 의림대로 137(중앙로2가)",
+    "phone": "043-640-5000",
+    "website": "www.daeabank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜대백저축은행",
+    "address": "대구 수성구 달구벌대로 2382-1 (범어1동)",
+    "phone": "053-742-3301",
+    "website": "www.daehanbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜대아상호저축은행",
+    "address": "경북 포항시 북구 중흥로 321 (죽도동)",
+    "phone": "054-274-4111",
+    "website": "www.doublebank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜대한저축은행",
+    "address": "광주 동구 금남로 183 (금남로5가)",
+    "phone": "062-527-5701",
+    "website": "http://www.dysbank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜더블저축은행",
+    "address": "광주 동구 중앙로 165 (충장로4가)",
+    "phone": "062-223-5506",
+    "website": "http://www.dongwonjeilbank.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜동양저축은행",
+    "address": "광주 동구 중앙로 198 동양저축은행 (금남로3가)",
+    "phone": "062-720-0800",
+    "website": "www.idbsb.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜동원제일저축은행",
+    "address": "부산광역시 연제구 연제로 30",
+    "phone": "1544-8811",
+    "website": "www.raonsb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜디비저축은행",
+    "address": "서울시 중구 남대문로 113",
+    "phone": "02-3705-1700",
+    "website": "www.moasb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜라온저축은행",
+    "address": "경북 구미시 역전로 18",
+    "phone": "054-452-1101",
+    "website": "www.mkb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜모아저축은행",
+    "address": "인천광역시 미추홀구 경인로 406 (주안동)",
+    "phone": "032-430-3300",
+    "website": "www.barosavings.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜민국저축은행",
+    "address": "서울시 중구 퇴계로234",
+    "phone": "02-2271-0071",
+    "website": "www.bulimbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜바로저축은행",
+    "address": "서울시 강남구 테헤란로512 신안빌딩 1F",
+    "phone": "02-3467-0100",
+    "website": "www.samjungsavingsbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜부림저축은행",
+    "address": "경기 안양시 만안구 장내로 124 부림저축은행(안양동)",
+    "phone": "031-443-3800",
+    "website": "http://www.samhosb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜삼정저축은행",
+    "address": "경기 하남시 미사강변대로 208 2층(우승프라자)",
+    "phone": "031-791-6411",
+    "website": "www.sangsanginplussb.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜삼호저축은행",
+    "address": "전북 전주시 완산구 현무2길 70",
+    "phone": "063-900-2000",
+    "website": "http://www.centralbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜상상인플러스저축은행",
+    "address": "충남 천안시 서북구 불당21로 67-12 2층 (불당동 퍼스트프라자)",
+    "phone": "1600-2100",
+    "website": "http://www.soulbrainsb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜센트럴저축은행",
+    "address": "광주 동구 금남로 167 (금남로5가)",
+    "phone": "062-224-4010",
+    "website": "www.smartbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜솔브레인저축은행",
+    "address": "부산 연제구 중앙대로 1094 (연산동)",
+    "phone": "051-861-8600",
+    "website": "www.skysb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜스마트저축은행",
+    "address": "광주광역시 서구 상무대로 799(치평동국제빌딩)",
+    "phone": "1577-3800",
+    "website": "www.bnksb.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜스카이저축은행",
+    "address": "서울 강남구 학동로 103 3, 4층(스카이빌딩)",
+    "phone": "1588-4111",
+    "website": "www.shinhansavings.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "주식회사 비엔케이저축은행",
+    "address": "부산광역시 동구 범일로 92 2층",
+    "phone": "1644-9988",
+    "website": "http://www.cksavingsbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "주식회사 신한저축은행",
+    "address": "서울시 중구 청계천로 54",
+    "phone": "1644-7777",
+    "website": "www.asanbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜씨케이저축은행",
+    "address": "강원 춘천시 금강로 40 (낙원동씨케이저축은행)",
+    "phone": "033-252-8411",
+    "website": "www.angukbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜아산저축은행",
+    "address": "충남 아산시 시민로 381 (온천동)",
+    "phone": "041-537-9000",
+    "website": "www.anyangbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜안국저축은행",
+    "address": "경기 파주시 금정20길 22",
+    "phone": "031-941-7271",
+    "website": "http://www.acuonsb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜안양저축은행",
+    "address": "경기 안양시 만안구 안양로 250",
+    "phone": "031-441-4141",
+    "website": "www.hisntm.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜애큐온저축은행",
+    "address": "서울시 강남구 선릉로 514 성원타워",
+    "phone": "1588-6161",
+    "website": "www.yegaramsb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜에스앤티저축은행",
+    "address": "경남 창원시 성산구 중앙대로 85 1층 (중앙동리제스타워)",
+    "phone": "055-222-8100",
+    "website": "www.osungbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜예가람저축은행",
+    "address": "서울시 중구 세종대로50",
+    "phone": "1877-7788",
+    "website": "http://www.oksavingsbank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜오성저축은행",
+    "address": "경북 구미시 역전로 8 (원평동)",
+    "phone": "054-452-7861",
+    "website": "www.o2banking.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜오케이저축은행",
+    "address": "서울 중구 세종대로39 10층",
+    "phone": "1899-7979",
+    "website": "www.kusb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜오투저축은행",
+    "address": "대전 서구 둔산남로 103 (둔산동) 2층",
+    "phone": "1661-0022",
+    "website": "www.daolsb.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜유니온저축은행",
+    "address": "대구 중구 달구벌대로 2210",
+    "phone": "053-256-4000",
+    "website": "www.insungsavingsbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜다올저축은행",
+    "address": "서울 강남구 테헤란로 504 해성빌딩(대치동)",
+    "phone": "1544-6700",
+    "website": "www.incheonbank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜인성저축은행",
+    "address": "인천 미추홀구 경인로 339",
+    "phone": "032-865-3911",
+    "website": "chbank.net",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜인천저축은행",
+    "address": "인천 미추홀구 경인로 473 (주안6동)",
+    "phone": "032-421-2111",
+    "website": "http://www.jinjubank.net",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜조흥저축은행",
+    "address": "경남 통영시 항남5길 9 (항남동)",
+    "phone": "055-645-4411",
+    "website": "www.charmbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜진주저축은행",
+    "address": "경남 진주시 진양호로 532 (동성동)",
+    "phone": "1877-0030",
+    "website": "www.cheongjubank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜참저축은행",
+    "address": "대구 수성구 달구벌대로 2421 (범어동참저축은행)",
+    "phone": "053-720-7300",
+    "website": "www.kbsavings.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜청주저축은행",
+    "address": "충북 청주시 상당구 사직대로350번길 53 (서문동)",
+    "phone": "043-256-9114",
+    "website": "http://www.kiwoomyesbank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜케이비저축은행",
+    "address": "서울시 송파구 송파대로 260",
+    "phone": "1899-0900",
+    "website": "www.kiwoombank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜키움예스저축은행",
+    "address": "서울 강남구 논현로 422 (역삼2동)",
+    "phone": "02-558-2501",
+    "website": "http://www.ptbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜키움저축은행",
+    "address": "경기 부천시 부천로 157 (춘의동)",
+    "phone": "1670-0077",
+    "website": "http://www.hanasavings.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "(주)평택저축은행",
+    "address": "경기도 평택시 평택1로 23 (평택동)",
+    "phone": "031-659-3300",
+    "website": "https://sb.koreainvestment.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜하나저축은행",
+    "address": "서울시 강남구 테헤란로 127 하나금융그룹강남사옥 2층",
+    "phone": "1899-1122",
+    "website": "www.hsbank.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜한국투자저축은행",
+    "address": "경기 성남시 분당구 서현로 184",
+    "phone": "1577-6333",
+    "website": "http://www.hanwhasbank.com",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜한성저축은행",
+    "address": "충북 옥천군 옥천읍 중앙로 32",
+    "phone": "043-730-0500",
+    "website": "www.hkbanking.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜한화저축은행",
+    "address": "경기 부천시 신흥로 179 6층(중동)",
+    "phone": "032-657-5000",
+    "website": "www.pepperbank.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "㈜흥국저축은행",
+    "address": "부산 연제구 중앙대로 1076 (연산동)",
+    "phone": "051-925-2100",
+    "website": "www.prsb.co.kr",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "페퍼저축은행",
+    "address": "경기 성남시 분당구 황새울로 340 6층(경기도 성남시 분당구 서현동 262-1, 페퍼존빌딩)",
+    "phone": "1599-0722",
+    "website": "",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "sector": "저축은행",
+    "name": "푸른저축은행",
+    "address": "서울 서초구 강남대로 581",
+    "phone": "02-545-9000",
+    "website": "",
+    "source_title": "예금보험공사_부보금융회사 목록_20250930",
+    "source_file": "예금보험공사_부보금융회사 목록_20250930.csv"
+  }
+]

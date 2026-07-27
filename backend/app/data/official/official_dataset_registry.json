@@ -290,5 +290,194 @@
       "explanation_duty"
     ],
     "summary": "금융소비자 보호 관련 PDF를 페이지 단위 텍스트로 추출해 설명의무, 민원 초안, 절차 안내의 근거 자료로 활용합니다."
+  },
+  {
+    "dataset_id": "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320",
+    "title": "금융 분야 불공정약관 개선 공동 설명회 자료",
+    "publisher": "공정거래위원회·금융감독원",
+    "portal": "KDI 경제정보센터",
+    "url": "https://eiec.kdi.re.kr/policy/materialView.do?num=264605&pg=&pp=20&topic=L",
+    "format": "PDF",
+    "row_count": 3,
+    "license": "공식 공개 자료",
+    "fee": "무료",
+    "modified_at": "2025-03-20",
+    "status": "imported",
+    "local_path": "backend/app/data/official/ftc_financial_unfair_terms_briefing_pages.json",
+    "tags": [
+      "불공정약관",
+      "금융약관",
+      "약관심사",
+      "표준약관",
+      "독소조항"
+    ],
+    "use_cases": [
+      "dark_pattern_detection",
+      "contract_comparison",
+      "risk_dictionary"
+    ],
+    "summary": "금융 분야 약관 심사 제도와 불공정약관 유형을 설명하는 공식 자료로, 독소조항 탐지 규칙 고도화에 활용합니다."
+  },
+  {
+    "dataset_id": "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227",
+    "title": "공정거래위원회_소비자 민원학습데이터 모범상담 사례_20211227",
+    "publisher": "공정거래위원회",
+    "portal": "공공데이터포털",
+    "url": "https://www.data.go.kr/data/15098335/fileData.do",
+    "format": "CSV",
+    "row_count": 566,
+    "license": "이용허락범위 제한 없음",
+    "fee": "무료",
+    "modified_at": "2025-08-01",
+    "status": "imported",
+    "local_path": "backend/app/data/official/ftc_consumer_complaint_examples.json",
+    "tags": [
+      "소비자민원",
+      "모범상담",
+      "피해구제",
+      "민원초안",
+      "보험"
+    ],
+    "use_cases": [
+      "complaint_draft",
+      "case_reference",
+      "answer_style"
+    ],
+    "summary": "사건 제목, 사건 내용, 답변 내용으로 구성된 소비자 모범상담 사례로, 유사 사례 검색과 민원 초안 작성에 활용합니다."
+  },
+  {
+    "dataset_id": "POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231",
+    "title": "우체국금융개발원_우체국 금융 사기계좌 정보_20251231",
+    "publisher": "우체국금융개발원",
+    "portal": "공공데이터포털",
+    "url": "https://www.data.go.kr/data/15021794/fileData.do?recommendDataYn=Y",
+    "format": "CSV",
+    "row_count": 1209,
+    "license": "공공데이터포털 파일데이터",
+    "fee": "무료",
+    "modified_at": "2026-01-23",
+    "status": "imported",
+    "local_path": "backend/app/data/official/post_office_financial_fraud_accounts.json",
+    "tags": [
+      "금융사기",
+      "보이스피싱",
+      "피해금액",
+      "연령대",
+      "사칭기관"
+    ],
+    "use_cases": [
+      "voice_phishing_trend",
+      "senior_risk_analysis",
+      "incident_classification"
+    ],
+    "summary": "전기통신금융사기 피해 사례의 연령대, 성별, 피해금액, 사기유형, 사칭기관, 접근매체 정보를 제공합니다."
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "title": "경찰청_보이스피싱 현황_20251231",
+    "publisher": "경찰청",
+    "portal": "공공데이터포털",
+    "url": "https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EB%B3%B4%EC%9D%B4%EC%8A%A4%ED%94%BC%EC%8B%B1",
+    "format": "CSV",
+    "row_count": 10,
+    "license": "공공데이터포털 파일데이터",
+    "fee": "무료",
+    "modified_at": "2026-01-21",
+    "status": "imported",
+    "local_path": "backend/app/data/official/police_voice_phishing_stats.json",
+    "tags": [
+      "보이스피싱",
+      "기관사칭형",
+      "대출사기형",
+      "피해액",
+      "발생건수"
+    ],
+    "use_cases": [
+      "voice_phishing_trend",
+      "demo_statistics",
+      "problem_definition"
+    ],
+    "summary": "연도별 기관사칭형·대출사기형 보이스피싱 발생건수, 피해액, 검거인원 통계입니다."
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "publisher": "경찰청",
+    "portal": "공공데이터포털",
+    "url": "https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EB%B3%B4%EC%9D%B4%EC%8A%A4%ED%94%BC%EC%8B%B1",
+    "format": "CSV",
+    "row_count": 18,
+    "license": "공공데이터포털 파일데이터",
+    "fee": "무료",
+    "modified_at": "2026-01-21",
+    "status": "imported",
+    "local_path": "backend/app/data/official/police_voice_phishing_regional_damage.json",
+    "tags": [
+      "보이스피싱",
+      "지역별",
+      "피해금액",
+      "시도청",
+      "통계"
+    ],
+    "use_cases": [
+      "voice_phishing_trend",
+      "demo_statistics",
+      "regional_analysis"
+    ],
+    "summary": "시도청별 보이스피싱 피해금액을 연도별로 제공하여 지역별 피해 규모 분석에 활용합니다."
+  },
+  {
+    "dataset_id": "KDIC_INSURED_FINANCIAL_COMPANIES_20250930",
+    "title": "예금보험공사_부보금융회사 목록_20250930",
+    "publisher": "예금보험공사",
+    "portal": "공공데이터포털",
+    "url": "https://www.data.go.kr/tcs/dss/selectDataSetList.do?conditionType=search&dType=&keyword=&org=%EC%98%88%EA%B8%88%EB%B3%B4%ED%97%98%EA%B3%B5%EC%82%AC&orgFilter=%EC%98%88%EA%B8%88%EB%B3%B4%ED%97%98%EA%B3%B5%EC%82%AC&orgFullName=%EC%98%88%EA%B8%88%EB%B3%B4%ED%97%98%EA%B3%B5%EC%82%AC",
+    "format": "CSV",
+    "row_count": 285,
+    "license": "이용허락범위 제한 없음",
+    "fee": "무료",
+    "modified_at": "2026-07-22",
+    "status": "imported",
+    "local_path": "backend/app/data/official/kdic_insured_financial_companies.json",
+    "tags": [
+      "부보금융회사",
+      "예금자보호",
+      "금융회사",
+      "주소",
+      "홈페이지"
+    ],
+    "use_cases": [
+      "deposit_protection",
+      "institution_lookup",
+      "product_precheck"
+    ],
+    "summary": "예금보험 적용 대상 금융회사 목록으로, 기관명·주소·연락처·홈페이지 확인에 활용합니다."
+  },
+  {
+    "dataset_id": "FTC_BANK_STANDARD_TERMS_20240927",
+    "title": "공정거래위원회 은행 표준약관 3종_20240927",
+    "publisher": "공정거래위원회",
+    "portal": "공정거래위원회",
+    "url": "https://www.ftc.go.kr/www/selectBbsNttList.do?bordCd=201&key=202",
+    "format": "HWPX",
+    "row_count": 3,
+    "license": "공식 공개 표준약관",
+    "fee": "무료",
+    "modified_at": "2024-09-27",
+    "status": "imported",
+    "local_path": "backend/app/data/official/ftc_bank_standard_terms.json",
+    "tags": [
+      "표준약관",
+      "예금거래",
+      "은행여신",
+      "가계대출",
+      "기업대출"
+    ],
+    "use_cases": [
+      "contract_comparison",
+      "dark_pattern_detection",
+      "standard_terms_reference"
+    ],
+    "summary": "예금거래기본약관, 은행여신거래기본약관 가계용·기업용을 텍스트로 추출해 약관 비교 기준으로 활용합니다."
   }
 ]

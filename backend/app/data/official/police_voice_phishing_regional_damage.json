@@ -1,0 +1,164 @@
+[
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "서울",
+    "damage_2023_억원": "1604",
+    "damage_2024_억원": "2524",
+    "damage_2025_억원": "4028",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "부산",
+    "damage_2023_억원": "195",
+    "damage_2024_억원": "403",
+    "damage_2025_억원": "620",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "대구",
+    "damage_2023_억원": "100",
+    "damage_2024_억원": "292",
+    "damage_2025_억원": "492",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "인천",
+    "damage_2023_억원": "160",
+    "damage_2024_억원": "433",
+    "damage_2025_억원": "631",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "광주",
+    "damage_2023_억원": "98",
+    "damage_2024_억원": "201",
+    "damage_2025_억원": "266",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "대전",
+    "damage_2023_억원": "129",
+    "damage_2024_억원": "211",
+    "damage_2025_억원": "317",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "울산",
+    "damage_2023_억원": "58",
+    "damage_2024_억원": "173",
+    "damage_2025_억원": "388",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "세종",
+    "damage_2023_억원": "17",
+    "damage_2024_억원": "71",
+    "damage_2025_억원": "84",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "경기남부",
+    "damage_2023_억원": "846",
+    "damage_2024_억원": "1813",
+    "damage_2025_억원": "2364",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "경기북부",
+    "damage_2023_억원": "243",
+    "damage_2024_억원": "480",
+    "damage_2025_억원": "557",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "강원",
+    "damage_2023_억원": "141",
+    "damage_2024_억원": "253",
+    "damage_2025_억원": "389",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "충북",
+    "damage_2023_억원": "145",
+    "damage_2024_억원": "352",
+    "damage_2025_억원": "355",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "충남",
+    "damage_2023_억원": "134",
+    "damage_2024_억원": "304",
+    "damage_2025_억원": "540",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "전북",
+    "damage_2023_억원": "137",
+    "damage_2024_억원": "253",
+    "damage_2025_억원": "342",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "전남",
+    "damage_2023_억원": "102",
+    "damage_2024_억원": "198",
+    "damage_2025_억원": "262",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "경북",
+    "damage_2023_억원": "134",
+    "damage_2024_억원": "266",
+    "damage_2025_억원": "351",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "경남",
+    "damage_2023_억원": "121",
+    "damage_2024_억원": "199",
+    "damage_2025_억원": "433",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231",
+    "region": "제주",
+    "damage_2023_억원": "109",
+    "damage_2024_억원": "120",
+    "damage_2025_억원": "159",
+    "source_title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
+    "source_file": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231.csv"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "year": "2016",
+    "institution_impersonation_cases": "3384",
+    "institution_impersonation_damage_억원": "541",
+    "institution_impersonation_arrests": "5682",
+    "loan_fraud_cases": "13656",
+    "loan_fraud_damage_억원": "927",
+    "loan_fraud_arrests": "9884",
+    "source_title": "경찰청_보이스피싱 현황_20251231",
+    "source_file": "경찰청_보이스피싱 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "year": "2017",
+    "institution_impersonation_cases": "5685",
+    "institution_impersonation_damage_억원": "967",
+    "institution_impersonation_arrests": "4925",
+    "loan_fraud_cases": "18574",
+    "loan_fraud_damage_억원": "1503",
+    "loan_fraud_arrests": "20548",
+    "source_title": "경찰청_보이스피싱 현황_20251231",
+    "source_file": "경찰청_보이스피싱 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "year": "2018",
+    "institution_impersonation_cases": "6221",
+    "institution_impersonation_damage_억원": "1430",
+    "institution_impersonation_arrests": "5491",
+    "loan_fraud_cases": "27911",
+    "loan_fraud_damage_억원": "2610",
+    "loan_fraud_arrests": "32133",
+    "source_title": "경찰청_보이스피싱 현황_20251231",
+    "source_file": "경찰청_보이스피싱 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "year": "2019",
+    "institution_impersonation_cases": "7219",
+    "institution_impersonation_damage_억원": "2506",
+    "institution_impersonation_arrests": "6045",
+    "loan_fraud_cases": "30448",
+    "loan_fraud_damage_억원": "3892",
+    "loan_fraud_arrests": "42668",
+    "source_title": "경찰청_보이스피싱 현황_20251231",
+    "source_file": "경찰청_보이스피싱 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "year": "2020",
+    "institution_impersonation_cases": "7844",
+    "institution_impersonation_damage_억원": "2144",
+    "institution_impersonation_arrests": "4797",
+    "loan_fraud_cases": "23837",
+    "loan_fraud_damage_억원": "4856",
+    "loan_fraud_arrests": "34527",
+    "source_title": "경찰청_보이스피싱 현황_20251231",
+    "source_file": "경찰청_보이스피싱 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "year": "2021",
+    "institution_impersonation_cases": "7017",
+    "institution_impersonation_damage_억원": "1741",
+    "institution_impersonation_arrests": "1895",
+    "loan_fraud_cases": "23965",
+    "loan_fraud_damage_억원": "6003",
+    "loan_fraud_arrests": "24502",
+    "source_title": "경찰청_보이스피싱 현황_20251231",
+    "source_file": "경찰청_보이스피싱 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "year": "2022",
+    "institution_impersonation_cases": "8930",
+    "institution_impersonation_damage_억원": "2077",
+    "institution_impersonation_arrests": "4500",
+    "loan_fraud_cases": "12902",
+    "loan_fraud_damage_억원": "3361",
+    "loan_fraud_arrests": "20530",
+    "source_title": "경찰청_보이스피싱 현황_20251231",
+    "source_file": "경찰청_보이스피싱 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "year": "2023",
+    "institution_impersonation_cases": "11314",
+    "institution_impersonation_damage_억원": "2364",
+    "institution_impersonation_arrests": "8039",
+    "loan_fraud_cases": "7588",
+    "loan_fraud_damage_억원": "2108",
+    "loan_fraud_arrests": "14347",
+    "source_title": "경찰청_보이스피싱 현황_20251231",
+    "source_file": "경찰청_보이스피싱 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "year": "2024",
+    "institution_impersonation_cases": "9519",
+    "institution_impersonation_damage_억원": "5349",
+    "institution_impersonation_arrests": "7449",
+    "loan_fraud_cases": "11320",
+    "loan_fraud_damage_억원": "3196",
+    "loan_fraud_arrests": "14384",
+    "source_title": "경찰청_보이스피싱 현황_20251231",
+    "source_file": "경찰청_보이스피싱 현황_20251231.csv"
+  },
+  {
+    "dataset_id": "POLICE_VOICE_PHISHING_STATS_20251231",
+    "year": "2025",
+    "institution_impersonation_cases": "13323",
+    "institution_impersonation_damage_억원": "9884",
+    "institution_impersonation_arrests": "15161",
+    "loan_fraud_cases": "10037",
+    "loan_fraud_damage_억원": "2694",
+    "loan_fraud_arrests": "17209",
+    "source_title": "경찰청_보이스피싱 현황_20251231",
+    "source_file": "경찰청_보이스피싱 현황_20251231.csv"
+  }
+]

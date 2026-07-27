@@ -74,3 +74,13 @@ def test_official_record_search_uses_imported_financial_terms() -> None:
 
     assert results
     assert any("예금" in result.title or "예금" in result.body for result in results)
+
+
+def test_official_record_search_uses_new_complaint_and_phishing_data() -> None:
+    complaint_results = search_official_records("보험금", dataset_id="FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227", limit=3)
+    phishing_results = search_official_records("기관사칭", dataset_id="POLICE_VOICE_PHISHING_STATS_20251231", limit=3)
+    standard_terms_results = search_official_records("기한의 이익", dataset_id="FTC_BANK_STANDARD_TERMS_20240927", limit=3)
+
+    assert complaint_results
+    assert phishing_results
+    assert standard_terms_results

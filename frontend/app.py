@@ -323,7 +323,7 @@ def render_official_data() -> None:
 
     st.divider()
     st.subheader("정제 데이터 검색")
-    st.write("금융용어, 서민금융 FAQ, 예금보험 용어, 전화권유판매 사업자, 보이스피싱 뉴스 메타데이터를 한 번에 검색합니다.")
+    st.write("금융용어, 표준약관, 민원 사례, 서민금융 FAQ, 예금보험 자료, 전화권유판매 사업자, 보이스피싱 통계를 한 번에 검색합니다.")
     record_query = st.text_input("데이터 검색어", value="예금자보호", placeholder="예: 예금자보호, 미소금융, 보이스피싱, 자동연장")
     if st.button("공식 데이터에서 검색", use_container_width=True):
         try:

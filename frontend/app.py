@@ -107,6 +107,22 @@ def render_faq_matches(faq_matches: list[dict[str, str]]) -> None:
             st.link_button("FAQ 출처 보기", faq["source_url"])
 
 
+def render_incident_evidence(evidence: list[dict[str, Any]], urgency_reasons: list[str]) -> None:
+    if urgency_reasons:
+        st.subheader("왜 지금 바로 해야 하나요?")
+        for reason in urgency_reasons:
+            st.warning(reason)
+    if evidence:
+        st.subheader("공식 데이터 근거")
+        for item in evidence:
+            with st.container(border=True):
+                st.markdown(f"**{item['title']}**")
+                st.write(item["summary"])
+                st.caption(item["source_title"])
+                if item.get("matched_fields"):
+                    st.write("확인 항목: " + ", ".join(item["matched_fields"]))
+
+
 def render_contract_check() -> None:
     st.header("가입 전 점검")
     st.write("약관, 계약서, 문자, 상담 내용을 넣으면 위험한 표현을 쉬운 말로 알려드립니다.")
@@ -214,6 +230,7 @@ def render_incident_response() -> None:
         st.metric("분류 결과", classified["incident_type"])
         st.metric("긴급도", risk_label(classified["urgency_level"]))
         st.info(classified["first_action_summary"])
+        render_incident_evidence(classified.get("evidence", []), classified.get("urgency_reasons", []))
         render_faq_matches(classified.get("faq_matches", []))
         render_references(classified.get("references", []))
 
@@ -234,6 +251,8 @@ def render_incident_response() -> None:
             for step in plan[key]:
                 st.write(f"{step['order']}. {step['action']}")
                 st.caption(step["reason"])
+
+        render_incident_evidence(plan.get("evidence", []), plan.get("urgency_reasons", []))
 
         st.subheader("준비할 서류")
         for doc in plan["required_documents"]:

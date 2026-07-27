@@ -4,6 +4,7 @@ import re
 
 from app.schemas.common import Confidence, RiskLevel
 from app.schemas.incident import ExtractedFacts, IncidentClassifyResponse
+from app.services.incident_evidence_service import build_incident_evidence
 from app.services.official_faq_service import search_kdic_mistaken_transfer_faq
 from app.services.reference_service import references_for
 from app.services.risk_detector import DISCLAIMER, _contains_any
@@ -22,11 +23,12 @@ def classify_incident(content: str) -> IncidentClassifyResponse:
             matched_score = score
 
     if incident_type == "unknown":
+        facts = _extract_facts(content)
         return IncidentClassifyResponse(
             incident_type="unknown",
             urgency_level=RiskLevel.unknown,
             confidence=Confidence.low,
-            extracted_facts=_extract_facts(content),
+            extracted_facts=facts,
             risk_signals=[],
             first_action_summary="상황을 조금 더 알려주세요.",
             needs_more_info=True,
@@ -37,16 +39,20 @@ def classify_incident(content: str) -> IncidentClassifyResponse:
         )
 
     rule = rules[incident_type]
+    facts = _extract_facts(content)
+    evidence, urgency_reasons = build_incident_evidence(incident_type, content, facts)
     faq_matches = search_kdic_mistaken_transfer_faq(content) if incident_type == "mistaken_transfer" else []
     return IncidentClassifyResponse(
         incident_type=incident_type,
         urgency_level=rule["urgency_level"],
         confidence=Confidence.high if matched_score >= 2 else Confidence.medium,
-        extracted_facts=_extract_facts(content),
+        extracted_facts=facts,
         risk_signals=rule["risk_signals"],
         first_action_summary=rule["first_action_summary"],
         needs_more_info=False,
         follow_up_questions=[],
+        evidence=evidence,
+        urgency_reasons=urgency_reasons,
         references=references_for(incident_type),
         faq_matches=faq_matches,
         disclaimer=DISCLAIMER,

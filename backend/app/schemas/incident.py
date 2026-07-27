@@ -19,6 +19,13 @@ class ExtractedFacts(BaseModel):
     channel: Optional[str] = None
 
 
+class IncidentEvidence(BaseModel):
+    title: str
+    summary: str
+    source_title: str
+    matched_fields: list[str] = Field(default_factory=list)
+
+
 class IncidentClassifyResponse(BaseModel):
     incident_type: str
     urgency_level: RiskLevel
@@ -28,6 +35,8 @@ class IncidentClassifyResponse(BaseModel):
     first_action_summary: str
     needs_more_info: bool
     follow_up_questions: list[str]
+    evidence: list[IncidentEvidence] = Field(default_factory=list)
+    urgency_reasons: list[str] = Field(default_factory=list)
     references: list[SourceReference]
     faq_matches: list[OfficialFaqItem]
     disclaimer: str
@@ -60,6 +69,8 @@ class ActionPlanResponse(BaseModel):
     follow_up: list[ActionStep]
     required_documents: list[RequiredDocument]
     related_orgs: list[str]
+    evidence: list[IncidentEvidence] = Field(default_factory=list)
+    urgency_reasons: list[str] = Field(default_factory=list)
     references: list[SourceReference]
     faq_matches: list[OfficialFaqItem]
     disclaimer: str

@@ -1,5 +1,6 @@
 from app.services.explanation_detector import analyze_explanation_risk
 from app.services.incident_classifier import classify_incident
+from app.services.action_plan_service import build_action_plan
 from app.services.risk_detector import analyze_contract_risk
 from app.services.document_exporter import export_document
 from app.services.complaint_service import draft_complaint
@@ -35,6 +36,8 @@ def test_incident_classifier_prioritizes_voice_phishing() -> None:
 
     assert result.incident_type == "voice_phishing"
     assert result.urgency_level == "critical"
+    assert result.evidence
+    assert result.urgency_reasons
 
 
 def test_incident_classifier_does_not_mark_wrong_account_number_as_info_leak() -> None:
@@ -42,6 +45,14 @@ def test_incident_classifier_does_not_mark_wrong_account_number_as_info_leak() -
 
     assert result.incident_type == "mistaken_transfer"
     assert result.extracted_facts.personal_info_shared is False
+
+
+def test_voice_phishing_action_plan_includes_official_evidence() -> None:
+    result = build_action_plan("voice_phishing", "은행이라고 전화가 와서 앱을 설치하고 50만원을 송금했어요.")
+
+    assert result.evidence
+    assert any("경찰청" in item.source_title for item in result.evidence)
+    assert result.urgency_reasons
 
 
 def test_document_exporter_generates_html() -> None:

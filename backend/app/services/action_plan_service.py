@@ -1,12 +1,14 @@
 from app.schemas.common import RiskLevel
 from app.schemas.incident import ActionPlanResponse, ActionStep, RequiredDocument
+from app.services.incident_classifier import _extract_facts
+from app.services.incident_evidence_service import build_incident_evidence
 from app.services.official_faq_service import default_kdic_mistaken_transfer_faq
 from app.services.reference_service import references_for
 from app.services.risk_detector import DISCLAIMER
 from app.services.rule_loader import load_rule_file
 
 
-def build_action_plan(incident_type: str) -> ActionPlanResponse:
+def build_action_plan(incident_type: str, content: str = "") -> ActionPlanResponse:
     rules = load_rule_file("incident_rules.json")
     rule = rules.get(incident_type)
     if rule is None:
@@ -24,6 +26,9 @@ def build_action_plan(incident_type: str) -> ActionPlanResponse:
             disclaimer=DISCLAIMER,
         )
 
+    facts = _extract_facts(content)
+    evidence, urgency_reasons = build_incident_evidence(incident_type, content, facts)
+
     return ActionPlanResponse(
         incident_type=incident_type,
         urgency_level=rule["urgency_level"],
@@ -36,6 +41,8 @@ def build_action_plan(incident_type: str) -> ActionPlanResponse:
             for item in rule["documents"]
         ],
         related_orgs=rule["related_orgs"],
+        evidence=evidence,
+        urgency_reasons=urgency_reasons,
         references=references_for(incident_type),
         faq_matches=default_kdic_mistaken_transfer_faq() if incident_type == "mistaken_transfer" else [],
         disclaimer=DISCLAIMER,

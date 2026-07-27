@@ -19,5 +19,4 @@ def classify(request: IncidentClassifyRequest) -> IncidentClassifyResponse:
 
 @router.post("/action-plan", response_model=ActionPlanResponse)
 def action_plan(request: ActionPlanRequest) -> ActionPlanResponse:
-    return build_action_plan(request.incident_type)
-
+    return build_action_plan(request.incident_type, request.content)

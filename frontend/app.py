@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from html import escape
 from typing import Any
 
 import requests
@@ -10,29 +11,134 @@ API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
 
 st.set_page_config(page_title="실버 금융가드 AI", page_icon="🛡️", layout="wide")
 
+FONT_SCALE_OPTIONS = {
+    "기본": {"base": "18px", "large": "1.25rem", "xlarge": "1.55rem"},
+    "크게": {"base": "21px", "large": "1.45rem", "xlarge": "1.8rem"},
+    "아주 크게": {"base": "24px", "large": "1.65rem", "xlarge": "2.05rem"},
+}
+
+with st.sidebar:
+    st.header("보기 편하게")
+    font_mode = st.radio("글자 크기", ["기본", "크게", "아주 크게"], index=1)
+    high_contrast = st.toggle("고대비 화면", value=True)
+    magnifier_enabled = st.toggle("돋보기 보기", value=True)
+    st.caption("고령층 사용자가 글자를 크게 보고, 중요한 내용을 한 번 더 확대해서 확인할 수 있습니다.")
+
+font_tokens = FONT_SCALE_OPTIONS[font_mode]
+surface_color = "#fffdf4" if high_contrast else "#ffffff"
+text_color = "#111827" if high_contrast else "#243044"
+border_color = "#111827" if high_contrast else "#d7dce2"
+accent_color = "#b42318" if high_contrast else "#2f6fed"
+
 st.markdown(
-    """
+    f"""
     <style>
-    .main .block-container { max-width: 1080px; padding-top: 2rem; }
+    html, body, [class*="css"] {{
+      font-size: {font_tokens["base"]};
+      color: {text_color};
+    }}
+    .main .block-container {{ max-width: 1120px; padding-top: 1.4rem; }}
+    h1 {{ font-size: 2.5rem !important; line-height: 1.2; }}
+    h2, h3 {{ letter-spacing: -0.02em; }}
     div[data-testid="stButton"] button {
-      min-height: 3rem;
-      font-size: 1.05rem;
+      min-height: 3.8rem;
+      font-size: {font_tokens["large"]};
       font-weight: 700;
+      border-radius: 14px;
     }
-    textarea { font-size: 1.05rem !important; }
-    .risk-card {
-      border: 1px solid #d7dce2;
-      border-radius: 8px;
+    textarea {{
+      font-size: {font_tokens["large"]} !important;
+      line-height: 1.75 !important;
+      background: {surface_color} !important;
+    }}
+    .notice {{
+      border-left: 8px solid {accent_color};
+      background: {surface_color};
+      color: {text_color};
+      padding: 1.1rem 1.2rem;
+      margin: 0.8rem 0 1.2rem;
+      border-radius: 14px;
+      font-size: {font_tokens["large"]};
+      line-height: 1.65;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }}
+    .senior-guide {{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }}
+    .guide-card, .big-card, .emergency-card, .magnifier-card {{
+      border: 2px solid {border_color};
+      border-radius: 18px;
+      padding: 1rem 1.1rem;
+      background: {surface_color};
+      color: {text_color};
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    }}
+    .guide-card strong {{
+      display: block;
+      font-size: {font_tokens["large"]};
+      margin-bottom: 0.25rem;
+    }}
+    .guide-card span {{
+      font-size: 1rem;
+      line-height: 1.55;
+    }}
+    .magnifier-card {{
+      border-color: {accent_color};
+      font-size: {font_tokens["xlarge"]};
+      line-height: 1.85;
+      margin: 0.7rem 0 1rem;
+    }}
+    .step-card {{
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      border: 2px solid {border_color};
+      border-radius: 18px;
       padding: 1rem;
       margin-bottom: 0.8rem;
-      background: #ffffff;
-    }
-    .notice {
-      border-left: 5px solid #2f6fed;
-      background: #f5f8ff;
-      padding: 0.9rem 1rem;
-      margin: 0.8rem 0;
-    }
+      background: {surface_color};
+    }}
+    .step-number {{
+      min-width: 3rem;
+      height: 3rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: {accent_color};
+      color: white;
+      font-weight: 800;
+      font-size: 1.35rem;
+    }}
+    .step-body strong {{
+      display: block;
+      font-size: {font_tokens["large"]};
+      margin-bottom: 0.25rem;
+    }}
+    .step-body span {{
+      line-height: 1.55;
+    }}
+    .emergency-grid {{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }}
+    .emergency-card strong {{
+      display: block;
+      font-size: {font_tokens["xlarge"]};
+      color: {accent_color};
+      margin-bottom: 0.2rem;
+    }}
+    .emergency-card span {{
+      line-height: 1.5;
+    }}
+    @media (max-width: 760px) {{
+      .senior-guide, .emergency-grid {{ grid-template-columns: 1fr; }}
+    }}
     </style>
     """,
     unsafe_allow_html=True,
@@ -75,6 +181,62 @@ def risk_label(level: str) -> str:
         "unknown": "확인 필요",
     }
     return labels.get(level, "확인 필요")
+
+
+def render_senior_guide() -> None:
+    st.markdown(
+        """
+        <div class="senior-guide">
+          <div class="guide-card"><strong>1. 크게 읽기</strong><span>왼쪽에서 글자 크기를 키우고 고대비 화면을 켤 수 있습니다.</span></div>
+          <div class="guide-card"><strong>2. 천천히 확인</strong><span>중요한 문장은 돋보기 보기로 한 번 더 크게 보여드립니다.</span></div>
+          <div class="guide-card"><strong>3. 바로 행동</strong><span>사고가 의심되면 먼저 전화, 증거 저장, 지급정지 순서로 안내합니다.</span></div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_magnifier(title: str, text: str) -> None:
+    if not magnifier_enabled or not text:
+        return
+    cleaned = escape(text.strip()).replace("\n", "<br>")
+    st.markdown(
+        f"""
+        <div class="magnifier-card">
+          <strong>{escape(title)}</strong><br>
+          {cleaned}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_step_card(order: int, action: str, reason: str) -> None:
+    st.markdown(
+        f"""
+        <div class="step-card">
+          <div class="step-number">{order}</div>
+          <div class="step-body">
+            <strong>{escape(action)}</strong>
+            <span>{escape(reason)}</span>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_emergency_cards() -> None:
+    st.markdown(
+        """
+        <div class="emergency-grid">
+          <div class="emergency-card"><strong>112</strong><span>보이스피싱·현금 전달·협박이 있으면 경찰에 바로 신고하세요.</span></div>
+          <div class="emergency-card"><strong>은행</strong><span>돈을 보냈다면 송금한 은행에 지급정지부터 요청하세요.</span></div>
+          <div class="emergency-card"><strong>1332</strong><span>금융감독원 상담이 필요할 때 금융소비자 상담센터로 문의하세요.</span></div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def render_easy_summary(summary: dict[str, str]) -> None:
@@ -138,6 +300,7 @@ def render_contract_check() -> None:
 
     if input_mode == "텍스트 입력":
         content = st.text_area("확인할 내용을 입력하세요.", value=sample, height=180)
+        render_magnifier("돋보기: 내가 입력한 내용", content)
     else:
         uploaded_file = st.file_uploader("PDF 또는 텍스트 파일을 올려주세요.", type=["pdf", "txt", "md", "json"])
         st.caption("사진 OCR은 다음 단계에서 연결할 예정입니다. 현재는 PDF와 텍스트 파일을 먼저 지원합니다.")
@@ -163,6 +326,7 @@ def render_contract_check() -> None:
                 with st.container(border=True):
                     st.markdown(f"**{item['label']} · {risk_label(item['severity'])}**")
                     st.write(item["simplified_text"])
+                    render_magnifier("돋보기: 쉬운 설명", item["simplified_text"])
                     st.caption(item["why_it_matters"])
                     st.warning(item["must_ask_question"])
                     if item.get("senior_action"):
@@ -211,6 +375,7 @@ def render_contract_check() -> None:
 def render_incident_response() -> None:
     st.header("사고 대응")
     st.write("착오송금이나 보이스피싱이 의심될 때 지금 해야 할 일을 순서대로 알려드립니다.")
+    render_emergency_cards()
 
     quick = st.radio(
         "상황 예시",
@@ -221,6 +386,7 @@ def render_incident_response() -> None:
         ],
     )
     content = st.text_area("상황을 편하게 적어주세요.", value=quick, height=140)
+    render_magnifier("돋보기: 내 사고 상황", content)
 
     if st.button("사고 대응 시작", use_container_width=True):
         classified = post_json("/api/v1/incidents/classify", {"content": content})
@@ -249,8 +415,7 @@ def render_incident_response() -> None:
         ]:
             st.subheader(title)
             for step in plan[key]:
-                st.write(f"{step['order']}. {step['action']}")
-                st.caption(step["reason"])
+                render_step_card(step["order"], step["action"], step["reason"])
 
         render_incident_evidence(plan.get("evidence", []), plan.get("urgency_reasons", []))
 
@@ -282,6 +447,7 @@ def render_complaint_draft() -> None:
         index=0,
     )
     statement = st.text_area("상황 설명", value=default_statement, height=180)
+    render_magnifier("돋보기: 민원 상황 설명", statement)
 
     if st.button("민원 초안 만들기", use_container_width=True):
         result = post_json(
@@ -292,6 +458,7 @@ def render_complaint_draft() -> None:
             st.subheader(result["title"])
             st.write(result["summary"])
             draft_body = st.text_area("초안", value=result["draft_body"], height=260)
+            render_magnifier("돋보기: 민원 초안", draft_body)
             if result.get("claim_points"):
                 st.subheader("주장 포인트")
                 for point in result["claim_points"]:
@@ -400,6 +567,7 @@ st.markdown(
     '<div class="notice">고령층 사용자가 이해하기 어려운 금융 약관의 위험 요소를 사전에 탐지하고, 금융사고 발생 시 골든타임 내 필요한 조치와 서류 작성을 지원합니다.</div>',
     unsafe_allow_html=True,
 )
+render_senior_guide()
 
 tab_contract, tab_incident, tab_complaint, tab_data = st.tabs(["가입 전 점검", "사고 대응", "민원 초안", "공식 데이터"])
 

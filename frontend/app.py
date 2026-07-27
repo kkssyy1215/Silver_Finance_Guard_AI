@@ -16,13 +16,25 @@ FONT_SCALE_OPTIONS = {
     "크게": {"base": "21px", "large": "1.45rem", "xlarge": "1.8rem"},
     "아주 크게": {"base": "24px", "large": "1.65rem", "xlarge": "2.05rem"},
 }
+FONT_SCALE_LABELS = list(FONT_SCALE_OPTIONS.keys())
+
+if "font_scale_index" not in st.session_state:
+    st.session_state["font_scale_index"] = 1
 
 with st.sidebar:
     st.header("보기 편하게")
-    font_mode = st.radio("글자 크기", ["기본", "크게", "아주 크게"], index=1)
+    minus_col, plus_col = st.columns(2)
+    with minus_col:
+        if st.button("- 작게", use_container_width=True):
+            st.session_state["font_scale_index"] = max(0, st.session_state["font_scale_index"] - 1)
+    with plus_col:
+        if st.button("+ 크게", use_container_width=True):
+            st.session_state["font_scale_index"] = min(len(FONT_SCALE_LABELS) - 1, st.session_state["font_scale_index"] + 1)
+    font_mode = st.radio("글자 크기", FONT_SCALE_LABELS, index=st.session_state["font_scale_index"])
+    st.session_state["font_scale_index"] = FONT_SCALE_LABELS.index(font_mode)
     high_contrast = st.toggle("고대비 화면", value=True)
     magnifier_enabled = st.toggle("돋보기 보기", value=True)
-    st.caption("고령층 사용자가 글자를 크게 보고, 중요한 내용을 한 번 더 확대해서 확인할 수 있습니다.")
+    st.caption("돋보기 보기와 + 버튼으로 전체 글씨를 더 크게 볼 수 있습니다.")
 
 font_tokens = FONT_SCALE_OPTIONS[font_mode]
 surface_color = "#fffdf4" if high_contrast else "#ffffff"
@@ -194,6 +206,31 @@ def incident_label(incident_type: str) -> str:
     return labels.get(incident_type, "상황 확인 필요")
 
 
+def risk_item_label(label: str) -> str:
+    labels = {
+        "auto_renewal": "자동 연장",
+        "excessive_penalty": "과도한 위약금",
+        "third_party_data": "개인정보 제3자 제공",
+        "principal_guarantee_misleading": "원금 보장 오해",
+        "pressure_sales": "급한 가입 압박",
+        "unclear_fee": "수수료 불명확",
+        "termination_limit": "해지 제한",
+    }
+    return labels.get(label, "확인 필요")
+
+
+def explanation_label(label: str) -> str:
+    labels = {
+        "missing_risk_explanation": "손실 위험 설명 부족",
+        "exaggerated_return": "수익 과장 표현",
+        "principal_guarantee_misleading": "원금 보장 오해",
+        "omitted_fee": "비용 설명 부족",
+        "pressure_sales": "급한 가입 압박",
+        "suitability_risk": "내 상황에 맞는지 확인 필요",
+    }
+    return labels.get(label, "확인 필요")
+
+
 def render_senior_guide() -> None:
     st.markdown(
         """
@@ -285,7 +322,7 @@ def build_contract_report(result: dict[str, Any]) -> tuple[str, str, list[str]]:
     for index, item in enumerate(result.get("risk_items", []), start=1):
         lines.extend(
             [
-                f"{index}. {item['label']} - {risk_label(item['severity'])}",
+                f"{index}. {risk_item_label(item['label'])} - {risk_label(item['severity'])}",
                 f"문제 문장: {item['original_text']}",
                 f"감지된 핵심 단어: {', '.join(item.get('detected_keywords', []))}",
                 f"쉬운 설명: {item['simplified_text']}",
@@ -315,7 +352,7 @@ def build_explanation_report(result: dict[str, Any]) -> tuple[str, str, list[str
     for index, point in enumerate(result.get("suspicious_points", []), start=1):
         lines.extend(
             [
-                f"{index}. {point['label']} - {risk_label(point['severity'])}",
+                f"{index}. {explanation_label(point['label'])} - {risk_label(point['severity'])}",
                 f"쉬운 설명: {point['easy_explanation']}",
                 f"이유: {point['reason']}",
                 f"확인 질문: {point['must_ask_question']}",
@@ -438,7 +475,7 @@ def render_contract_check() -> None:
             st.metric("전체 위험도", risk_label(result["overall_risk"]))
             for item in result["risk_items"]:
                 with st.container(border=True):
-                    st.markdown(f"**{item['label']} · {risk_label(item['severity'])}**")
+                    st.markdown(f"**{risk_item_label(item['label'])} · {risk_label(item['severity'])}**")
                     if item.get("detected_keywords"):
                         st.error("주의가 필요하다고 본 단어: " + ", ".join(item["detected_keywords"]))
                     if item.get("original_text"):
@@ -481,7 +518,7 @@ def render_contract_check() -> None:
             st.metric("위험도", risk_label(result["risk_level"]))
             for point in result["suspicious_points"]:
                 with st.container(border=True):
-                    st.markdown(f"**{point['label']} · {risk_label(point['severity'])}**")
+                    st.markdown(f"**{explanation_label(point['label'])} · {risk_label(point['severity'])}**")
                     st.write(point["easy_explanation"])
                     st.caption(point["reason"])
                     st.warning(point["must_ask_question"])
@@ -563,11 +600,18 @@ def render_complaint_draft() -> None:
         "last_statement",
         "상품 가입 당시 원금 손실 가능성과 해지 비용에 대한 설명을 충분히 듣지 못했습니다.",
     )
-    incident_type = st.selectbox(
+    complaint_type_options = {
+        "금융상품 설명을 제대로 못 들었어요": "mis_selling",
+        "돈을 잘못 보냈어요": "mistaken_transfer",
+        "보이스피싱을 당한 것 같아요": "voice_phishing",
+        "기타 금융 민원이에요": "general_complaint",
+    }
+    selected_complaint_type = st.selectbox(
         "문제 유형",
-        ["mis_selling", "mistaken_transfer", "voice_phishing", "general_complaint"],
+        list(complaint_type_options.keys()),
         index=0,
     )
+    incident_type = complaint_type_options[selected_complaint_type]
     statement = st.text_area("상황 설명", value=default_statement, height=180)
     render_magnifier("돋보기: 민원 상황 설명", statement)
 

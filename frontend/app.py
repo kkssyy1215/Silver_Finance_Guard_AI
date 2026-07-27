@@ -52,15 +52,15 @@ st.markdown(
       background: {surface_color} !important;
     }}
     .notice {{
-      border-left: 8px solid {accent_color};
-      background: {surface_color};
+      border: 1px solid {border_color};
+      background: #ffffff;
       color: {text_color};
-      padding: 1.1rem 1.2rem;
+      padding: 1rem 1.1rem;
       margin: 0.8rem 0 1.2rem;
-      border-radius: 14px;
+      border-radius: 10px;
       font-size: {font_tokens["large"]};
       line-height: 1.65;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      box-shadow: none;
     }}
     .senior-guide {{
       display: grid;

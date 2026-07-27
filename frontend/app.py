@@ -149,10 +149,22 @@ def render_contract_check() -> None:
                     st.write(item["simplified_text"])
                     st.caption(item["why_it_matters"])
                     st.warning(item["must_ask_question"])
+                    if item.get("senior_action"):
+                        st.info(f"어르신용 행동 안내: {item['senior_action']}")
+                    if item.get("comparison_result"):
+                        st.write(f"표준약관 비교: {item['comparison_result']}")
+                    if item.get("standard_references"):
+                        with st.expander("표준약관 근거 보기"):
+                            for reference in item["standard_references"]:
+                                st.write(reference)
             if result["must_ask_questions"]:
                 st.subheader("가입 전 꼭 물어볼 질문")
                 for question in result["must_ask_questions"]:
                     st.write(f"- {question}")
+            if result.get("standard_comparison_summary"):
+                st.subheader("표준약관 기준 확인 요약")
+                for summary in result["standard_comparison_summary"]:
+                    st.write(f"- {summary}")
             render_references(result.get("references", []))
             st.caption(result["disclaimer"])
 

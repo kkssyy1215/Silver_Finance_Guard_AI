@@ -14,6 +14,9 @@ def test_contract_risk_detects_auto_renewal() -> None:
 
     assert result.overall_risk == "medium"
     assert result.risk_items[0].label == "auto_renewal"
+    assert result.risk_items[0].senior_action
+    assert result.risk_items[0].standard_references
+    assert result.standard_comparison_summary
 
 
 def test_explanation_risk_detects_exaggerated_return() -> None:

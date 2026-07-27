@@ -24,6 +24,9 @@ class RiskItem(BaseModel):
     simplified_text: str
     why_it_matters: str
     must_ask_question: str
+    senior_action: str = ""
+    standard_references: list[str] = Field(default_factory=list)
+    comparison_result: str = ""
 
 
 class ContractRiskResponse(BaseModel):
@@ -31,6 +34,7 @@ class ContractRiskResponse(BaseModel):
     document_summary: EasyExplanation
     risk_items: list[RiskItem]
     must_ask_questions: list[str]
+    standard_comparison_summary: list[str] = Field(default_factory=list)
     references: list[SourceReference]
     disclaimer: str
 

@@ -1,5 +1,6 @@
 from app.schemas.common import RiskLevel
 from app.schemas.incident import ActionPlanResponse, ActionStep, RequiredDocument
+from app.services.reference_service import references_for
 from app.services.risk_detector import DISCLAIMER
 from app.services.rule_loader import load_rule_file
 
@@ -17,6 +18,7 @@ def build_action_plan(incident_type: str) -> ActionPlanResponse:
             follow_up=[],
             required_documents=[],
             related_orgs=[],
+            references=[],
             disclaimer=DISCLAIMER,
         )
 
@@ -32,6 +34,7 @@ def build_action_plan(incident_type: str) -> ActionPlanResponse:
             for item in rule["documents"]
         ],
         related_orgs=rule["related_orgs"],
+        references=references_for(incident_type),
         disclaimer=DISCLAIMER,
     )
 
@@ -41,4 +44,3 @@ def _steps(raw_steps: list[list[str]]) -> list[ActionStep]:
         ActionStep(order=index + 1, action=step[0], reason=step[1])
         for index, step in enumerate(raw_steps)
     ]
-

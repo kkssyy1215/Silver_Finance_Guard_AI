@@ -83,6 +83,18 @@ def render_easy_summary(summary: dict[str, str]) -> None:
     st.info(summary["next_action"])
 
 
+def render_references(references: list[dict[str, str]]) -> None:
+    if not references:
+        return
+    st.subheader("근거 자료")
+    for reference in references:
+        with st.container(border=True):
+            st.markdown(f"**{reference['title']}**")
+            st.caption(reference["publisher"])
+            st.write(reference["summary"])
+            st.link_button("원문 보기", reference["url"])
+
+
 def render_contract_check() -> None:
     st.header("가입 전 점검")
     st.write("약관, 계약서, 문자, 상담 내용을 넣으면 위험한 표현을 쉬운 말로 알려드립니다.")
@@ -129,6 +141,7 @@ def render_contract_check() -> None:
                 st.subheader("가입 전 꼭 물어볼 질문")
                 for question in result["must_ask_questions"]:
                     st.write(f"- {question}")
+            render_references(result.get("references", []))
             st.caption(result["disclaimer"])
 
     if analyze_explanation:
@@ -151,6 +164,7 @@ def render_contract_check() -> None:
             st.subheader("확인 질문")
             for question in result["must_ask_questions"]:
                 st.write(f"- {question}")
+            render_references(result.get("references", []))
             st.caption(result["disclaimer"])
 
 
@@ -176,6 +190,7 @@ def render_incident_response() -> None:
         st.metric("분류 결과", classified["incident_type"])
         st.metric("긴급도", risk_label(classified["urgency_level"]))
         st.info(classified["first_action_summary"])
+        render_references(classified.get("references", []))
 
         plan = post_json(
             "/api/v1/incidents/action-plan",
@@ -200,6 +215,8 @@ def render_incident_response() -> None:
             st.write(f"- {doc['name']}: {doc['reason']}")
             if doc["alternative"]:
                 st.caption(f"대체 자료: {doc['alternative']}")
+
+        render_references(plan.get("references", []))
 
         st.session_state["last_incident_type"] = classified["incident_type"]
         st.session_state["last_statement"] = content

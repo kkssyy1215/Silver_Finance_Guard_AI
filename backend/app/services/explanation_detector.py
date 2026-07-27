@@ -4,6 +4,7 @@ from app.schemas.analysis import (
     TextAnalysisRequest,
 )
 from app.schemas.common import Confidence, EasyExplanation, RiskLevel
+from app.services.reference_service import references_for
 from app.services.risk_detector import DISCLAIMER, _contains_any, _find_context
 from app.services.rule_loader import load_rule_file
 
@@ -48,6 +49,7 @@ def analyze_explanation_risk(request: TextAnalysisRequest) -> ExplanationRiskRes
         missing_explanations=missing,
         must_ask_questions=questions,
         recommended_next_step="상품설명서와 약관을 받아 보호자와 함께 확인하세요.",
+        references=references_for("consumer_protection"),
         disclaimer=DISCLAIMER,
     )
 
@@ -59,4 +61,3 @@ def _missing_explanations(content: str) -> list[str]:
         "해지 조건": ["해지", "취소", "청약철회"],
     }
     return [label for label, keywords in checks.items() if not _contains_any(content, keywords)]
-

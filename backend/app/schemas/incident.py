@@ -2,7 +2,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from app.schemas.common import Confidence, RiskLevel
+from app.schemas.common import Confidence, RiskLevel, SourceReference
 
 
 class IncidentClassifyRequest(BaseModel):
@@ -28,6 +28,7 @@ class IncidentClassifyResponse(BaseModel):
     first_action_summary: str
     needs_more_info: bool
     follow_up_questions: list[str]
+    references: list[SourceReference]
     disclaimer: str
 
 
@@ -58,4 +59,5 @@ class ActionPlanResponse(BaseModel):
     follow_up: list[ActionStep]
     required_documents: list[RequiredDocument]
     related_orgs: list[str]
+    references: list[SourceReference]
     disclaimer: str

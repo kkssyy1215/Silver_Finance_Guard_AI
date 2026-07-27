@@ -31,6 +31,7 @@ async def analyze_document_file(file: UploadFile = File(...)) -> ContractRiskRes
             },
             risk_items=[],
             must_ask_questions=[],
+            references=[],
             disclaimer="이 결과는 법적 판단이 아니라 소비자 보호를 위한 확인 보조 정보입니다.",
         )
     return analyze_contract_risk(TextAnalysisRequest(content=text, content_type=source_type))

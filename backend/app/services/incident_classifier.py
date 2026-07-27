@@ -4,6 +4,7 @@ import re
 
 from app.schemas.common import Confidence, RiskLevel
 from app.schemas.incident import ExtractedFacts, IncidentClassifyResponse
+from app.services.reference_service import references_for
 from app.services.risk_detector import DISCLAIMER, _contains_any
 from app.services.rule_loader import load_rule_file
 
@@ -29,6 +30,7 @@ def classify_incident(content: str) -> IncidentClassifyResponse:
             first_action_summary="상황을 조금 더 알려주세요.",
             needs_more_info=True,
             follow_up_questions=["돈을 이미 보내셨나요?", "전화나 문자 지시를 받으셨나요?"],
+            references=[],
             disclaimer=DISCLAIMER,
         )
 
@@ -42,6 +44,7 @@ def classify_incident(content: str) -> IncidentClassifyResponse:
         first_action_summary=rule["first_action_summary"],
         needs_more_info=False,
         follow_up_questions=[],
+        references=references_for(incident_type),
         disclaimer=DISCLAIMER,
     )
 

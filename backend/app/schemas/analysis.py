@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from app.schemas.common import Confidence, EasyExplanation, RiskLevel
+from app.schemas.common import Confidence, EasyExplanation, RiskLevel, SourceReference
 
 
 class TextAnalysisRequest(BaseModel):
@@ -31,6 +31,7 @@ class ContractRiskResponse(BaseModel):
     document_summary: EasyExplanation
     risk_items: list[RiskItem]
     must_ask_questions: list[str]
+    references: list[SourceReference]
     disclaimer: str
 
 
@@ -51,4 +52,5 @@ class ExplanationRiskResponse(BaseModel):
     missing_explanations: list[str]
     must_ask_questions: list[str]
     recommended_next_step: str
+    references: list[SourceReference]
     disclaimer: str

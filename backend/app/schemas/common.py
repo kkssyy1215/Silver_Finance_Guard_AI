@@ -20,3 +20,11 @@ class EasyExplanation(BaseModel):
     one_line: str
     easy_summary: str
     next_action: str
+
+
+class SourceReference(BaseModel):
+    source_id: str
+    title: str
+    publisher: str
+    url: str
+    summary: str

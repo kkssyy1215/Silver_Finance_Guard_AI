@@ -1,0 +1,65 @@
+[
+  {
+    "source_id": "KB-FSC-SALES-PRINCIPLES",
+    "title": "금융소비자보호법 6대 판매원칙",
+    "publisher": "금융위원회",
+    "url": "https://fsc.go.kr/po010105/73992?curPage=23&srchBeginDt=&srchCtgry=5&srchEndDt=&srchKey=&srchText=",
+    "category": "consumer_protection",
+    "tags": ["설명의무", "적합성", "적정성", "부당권유", "허위과장광고", "불완전판매"],
+    "summary": "금융상품 판매 시 적합성 원칙, 적정성 원칙, 설명의무, 불공정영업행위 금지, 부당권유 금지, 허위·과장 광고 금지 등 6대 판매규제가 적용된다."
+  },
+  {
+    "source_id": "KB-FSC-CONSUMER-CHECK",
+    "title": "금융상품 가입 전 소비자 주의사항",
+    "publisher": "금융위원회",
+    "url": "https://www.fsc.go.kr/no040101?cnId=1253&curPage=249&pastPage=249&srchKey=&srchText=",
+    "category": "consumer_protection",
+    "tags": ["상품설명서", "계약서", "원금손실", "거래비용", "소비자주의사항"],
+    "summary": "금융거래 시 상품설명서와 계약서 등 관련 자료를 보관하고, 원금 손실 가능성 및 거래 비용을 정확히 확인해야 한다."
+  },
+  {
+    "source_id": "KB-KDIC-MISTAKEN-TRANSFER",
+    "title": "착오송금 반환지원 신청대상 확인",
+    "publisher": "예금보험공사 금융안심포털",
+    "url": "https://mkcs.kdic.or.kr/ir/msdrpr/selectAplyQlfcIdntyRslt.do",
+    "category": "mistaken_transfer",
+    "tags": ["착오송금", "반환지원", "5만원", "1억원", "1년", "은행반환요청"],
+    "summary": "착오송금 반환지원은 건당 5만원 이상 1억원 이하, 2021년 7월 6일 이후 발생, 신청일이 착오송금일로부터 1년 이내, 금융회사를 통한 반환신청 선행 등의 요건을 확인한다."
+  },
+  {
+    "source_id": "KB-DATA-KDIC-FAQ",
+    "title": "예금보험공사 착오송금 반환지원제도 FAQ",
+    "publisher": "공공데이터포털",
+    "url": "https://www.data.go.kr/data/15130623/fileData.do?recommendDataYn=Y",
+    "category": "mistaken_transfer",
+    "tags": ["착오송금", "FAQ", "반환지원", "신청절차", "구비서류"],
+    "summary": "예금보험공사의 착오송금 반환지원제도 FAQ 데이터로, 지원 대상 기간, 금액, 선행절차, 제외 대상, 온라인·방문 신청 안내를 포함한다."
+  },
+  {
+    "source_id": "KB-CREFIA-VOICE-PHISHING",
+    "title": "보이스피싱 피해신고 및 피해금 환급절차",
+    "publisher": "여신금융협회 소비자지원센터",
+    "url": "https://customer.crefia.or.kr/common/forward.xx?url=%2Fcustomer%2Fguard%2FguardPlan3",
+    "category": "voice_phishing",
+    "tags": ["보이스피싱", "피해신고", "지급정지", "피해구제신청서", "채권소멸", "피해환급"],
+    "summary": "피해 신고, 지급정지 조치, 피해구제 신청서 제출, 채권소멸절차 개시공고, 피해환급금 결정 및 통보, 피해금 환급 순서의 절차를 안내한다."
+  },
+  {
+    "source_id": "KB-KOREA-POLICY-FACE-TO-FACE-PHISHING",
+    "title": "대면편취형 보이스피싱 피해구제 확대",
+    "publisher": "대한민국 정책브리핑",
+    "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148922924",
+    "category": "voice_phishing",
+    "tags": ["대면편취", "보이스피싱", "피해구제", "현금전달"],
+    "summary": "2023년 11월 17일부터 직접 현금을 건넨 대면편취형 보이스피싱도 피해구제 대상에 포함된다는 정책 안내이다."
+  },
+  {
+    "source_id": "KB-FSC-PAYMENT-SUSPENSION",
+    "title": "보이스피싱 지급정지제도 개선",
+    "publisher": "금융위원회",
+    "url": "https://www.fsc.go.kr/po010101/72137?srchCtgry=1",
+    "category": "voice_phishing",
+    "tags": ["보이스피싱", "지급정지", "피해구제신청서", "사기이용계좌"],
+    "summary": "보이스피싱 피해자가 금융회사에 피해구제를 신청하면 사기이용계좌 지급정지 등 절차가 진행되며, 피해구제 신청서 제출과 관련한 제도 개선 내용을 포함한다."
+  }
+]

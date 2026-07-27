@@ -1,5 +1,6 @@
 from app.schemas.analysis import ContractRiskResponse, RiskItem, TextAnalysisRequest
 from app.schemas.common import EasyExplanation, RiskLevel
+from app.services.reference_service import references_for
 from app.services.rule_loader import load_rule_file
 
 DISCLAIMER = "이 결과는 법적 판단이 아니라 소비자 보호를 위한 확인 보조 정보입니다."
@@ -49,6 +50,7 @@ def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
         document_summary=summary,
         risk_items=matched_items,
         must_ask_questions=questions,
+        references=references_for("consumer_protection"),
         disclaimer=DISCLAIMER,
     )
 
@@ -69,4 +71,3 @@ def _overall_risk(items: list[RiskItem]) -> RiskLevel:
     if items:
         return RiskLevel.low
     return RiskLevel.low
-

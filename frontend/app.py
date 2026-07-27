@@ -246,10 +246,28 @@ def render_complaint_draft() -> None:
         if result:
             st.subheader(result["title"])
             st.write(result["summary"])
-            st.text_area("초안", value=result["draft_body"], height=260)
+            draft_body = st.text_area("초안", value=result["draft_body"], height=260)
             st.subheader("첨부 권장 자료")
             for attachment in result["recommended_attachments"]:
                 st.write(f"- {attachment}")
+            export_format = st.radio("다운로드 형식", ["txt", "md", "html"], horizontal=True)
+            exported = post_json(
+                "/api/v1/documents/export",
+                {
+                    "title": result["title"],
+                    "body": draft_body,
+                    "attachments": result["recommended_attachments"],
+                    "export_format": export_format,
+                },
+            )
+            if exported:
+                st.download_button(
+                    "초안 다운로드",
+                    data=exported["content"].encode("utf-8"),
+                    file_name=exported["filename"],
+                    mime=f"{exported['media_type']}; charset=utf-8",
+                    use_container_width=True,
+                )
             st.caption(result["disclaimer"])
 
 

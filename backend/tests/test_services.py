@@ -1,6 +1,7 @@
 from app.services.explanation_detector import analyze_explanation_risk
 from app.services.incident_classifier import classify_incident
 from app.services.risk_detector import analyze_contract_risk
+from app.services.document_exporter import export_document
 from app.schemas.analysis import TextAnalysisRequest
 
 
@@ -29,3 +30,15 @@ def test_incident_classifier_prioritizes_voice_phishing() -> None:
     assert result.incident_type == "voice_phishing"
     assert result.urgency_level == "critical"
 
+
+def test_document_exporter_generates_html() -> None:
+    result = export_document(
+        title="민원 초안",
+        body="설명을 충분히 듣지 못했습니다.",
+        attachments=["상품설명서", "약관"],
+        export_format="html",
+    )
+
+    assert result.filename.endswith(".html")
+    assert result.media_type == "text/html"
+    assert "상품설명서" in result.content

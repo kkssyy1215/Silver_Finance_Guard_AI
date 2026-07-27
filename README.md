@@ -6,6 +6,7 @@ It supports two core flows:
 
 - Pre-signup check: detect risky clauses or misleading sales language and explain them in plain Korean.
 - Incident response: classify financial incidents such as mistaken transfers or voice phishing, then generate action steps, document checklists, and complaint drafts.
+- Document export: download complaint drafts as TXT, Markdown, or HTML.
 
 ## Project Structure
 
@@ -42,4 +43,3 @@ streamlit run app.py
 ```
 
 By default, the frontend calls `http://127.0.0.1:8000`.
-

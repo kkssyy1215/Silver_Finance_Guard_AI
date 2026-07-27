@@ -276,6 +276,7 @@ def build_contract_report(result: dict[str, Any]) -> tuple[str, str, list[str]]:
             [
                 f"{index}. {item['label']} - {risk_label(item['severity'])}",
                 f"문제 문장: {item['original_text']}",
+                f"감지된 핵심 단어: {', '.join(item.get('detected_keywords', []))}",
                 f"쉬운 설명: {item['simplified_text']}",
                 f"확인 질문: {item['must_ask_question']}",
                 f"어르신 행동 안내: {item.get('senior_action', '')}",
@@ -427,6 +428,10 @@ def render_contract_check() -> None:
             for item in result["risk_items"]:
                 with st.container(border=True):
                     st.markdown(f"**{item['label']} · {risk_label(item['severity'])}**")
+                    if item.get("detected_keywords"):
+                        st.error("주의가 필요하다고 본 단어: " + ", ".join(item["detected_keywords"]))
+                    if item.get("original_text"):
+                        st.info(f"탐지된 원문: {item['original_text']}")
                     st.write(item["simplified_text"])
                     render_magnifier("돋보기: 쉬운 설명", item["simplified_text"])
                     st.caption(item["why_it_matters"])

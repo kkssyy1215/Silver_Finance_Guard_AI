@@ -21,6 +21,7 @@ class RiskItem(BaseModel):
     severity: RiskLevel
     confidence: Confidence
     original_text: str
+    detected_keywords: list[str] = Field(default_factory=list)
     simplified_text: str
     why_it_matters: str
     must_ask_question: str

@@ -37,6 +37,11 @@ def _contains_any(text: str, keywords: list[str]) -> bool:
     return any(keyword.lower() in normalized for keyword in keywords)
 
 
+def _matched_keywords(text: str, keywords: list[str]) -> list[str]:
+    normalized = text.lower()
+    return [keyword for keyword in keywords if keyword.lower() in normalized]
+
+
 def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
     labels = load_rule_file("contract_risk_labels.json")
     matched_items: list[RiskItem] = []
@@ -45,6 +50,7 @@ def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
     for rule in labels:
         if _contains_any(request.content, rule["keywords"]):
             context = _find_context(request.content, rule["keywords"])
+            detected_keywords = _matched_keywords(context, rule["keywords"])
             standard_refs = find_standard_clause_references(rule["label"], context)
             comparison = compare_with_standard_terms(rule["label"], context, standard_refs)
             comparison_summaries.append(comparison)
@@ -54,6 +60,7 @@ def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
                     severity=rule["severity"],
                     confidence="high",
                     original_text=context,
+                    detected_keywords=detected_keywords,
                     simplified_text=rule["simplified_text"],
                     why_it_matters=rule["why_it_matters"],
                     must_ask_question=rule["must_ask_question"],

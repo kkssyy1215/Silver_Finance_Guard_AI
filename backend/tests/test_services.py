@@ -21,6 +21,17 @@ def test_contract_risk_detects_auto_renewal() -> None:
     assert result.standard_comparison_summary
 
 
+def test_contract_risk_exposes_detected_keywords() -> None:
+    result = analyze_contract_risk(
+        TextAnalysisRequest(content="마케팅 목적의 개인정보 제3자 제공에 동의합니다.")
+    )
+
+    item = result.risk_items[0]
+    assert item.label == "third_party_data"
+    assert "제3자" in item.detected_keywords
+    assert "마케팅 목적" in item.detected_keywords
+
+
 def test_explanation_risk_detects_exaggerated_return() -> None:
     result = analyze_explanation_risk(
         TextAnalysisRequest(content="이 상품은 확실히 오릅니다. 지금 가입해야 합니다.")

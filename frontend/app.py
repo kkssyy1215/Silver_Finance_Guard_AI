@@ -273,6 +273,22 @@ def render_complaint_draft() -> None:
             st.subheader(result["title"])
             st.write(result["summary"])
             draft_body = st.text_area("초안", value=result["draft_body"], height=260)
+            if result.get("claim_points"):
+                st.subheader("주장 포인트")
+                for point in result["claim_points"]:
+                    st.write(f"- {point}")
+            if result.get("similar_cases"):
+                st.subheader("공식 모범상담 유사 사례")
+                for case in result["similar_cases"]:
+                    with st.container(border=True):
+                        st.markdown(f"**{case['title']}**")
+                        st.caption(f"사건번호: {case['case_no']}")
+                        st.write(case["relevance_reason"])
+                        st.info(case["answer_summary"])
+            if result.get("submission_checklist"):
+                st.subheader("접수 전 체크리스트")
+                for item in result["submission_checklist"]:
+                    st.write(f"- {item}")
             st.subheader("첨부 권장 자료")
             for attachment in result["recommended_attachments"]:
                 st.write(f"- {attachment}")

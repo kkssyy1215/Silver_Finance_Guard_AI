@@ -2,6 +2,7 @@ from app.services.explanation_detector import analyze_explanation_risk
 from app.services.incident_classifier import classify_incident
 from app.services.risk_detector import analyze_contract_risk
 from app.services.document_exporter import export_document
+from app.services.complaint_service import draft_complaint
 from app.schemas.analysis import TextAnalysisRequest
 from app.services.official_faq_service import search_kdic_mistaken_transfer_faq
 from app.services.official_dataset_service import find_official_datasets, search_official_records
@@ -54,6 +55,18 @@ def test_document_exporter_generates_html() -> None:
     assert result.filename.endswith(".html")
     assert result.media_type == "text/html"
     assert "상품설명서" in result.content
+
+
+def test_complaint_draft_uses_similar_official_cases() -> None:
+    result = draft_complaint(
+        "보험 가입할 때 고지의무와 보험금 지급 제한을 제대로 설명받지 못했습니다.",
+        "mis_selling",
+    )
+
+    assert result.similar_cases
+    assert result.claim_points
+    assert result.submission_checklist
+    assert "공식 모범상담 사례" in result.draft_body
 
 
 def test_official_kdic_faq_search_uses_imported_csv_data() -> None:

@@ -49,19 +49,25 @@ def _to_html(title: str, body: str, attachments: list[str]) -> str:
   <title>{_escape(title)}</title>
   <style>
     body {{
-      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
-      line-height: 1.7;
-      max-width: 760px;
-      margin: 48px auto;
-      color: #1f2933;
+      font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.85;
+      max-width: 840px;
+      margin: 40px auto;
+      color: #111827;
+      font-size: 20px;
+      background: #fffdf4;
+      padding: 0 24px;
     }}
-    h1 {{ font-size: 28px; }}
-    h2 {{ font-size: 20px; margin-top: 32px; }}
+    h1 {{ font-size: 34px; line-height: 1.25; }}
+    h2 {{ font-size: 25px; margin-top: 34px; border-bottom: 3px solid #111827; padding-bottom: 8px; }}
+    li {{ margin-bottom: 8px; }}
     .notice {{
-      border-left: 4px solid #2f6fed;
-      padding: 12px 16px;
-      background: #f5f8ff;
+      border-left: 8px solid #b42318;
+      padding: 16px 18px;
+      background: #fff7ed;
       margin-top: 32px;
+      border-radius: 12px;
+      font-weight: 700;
     }}
   </style>
 </head>
@@ -89,4 +95,3 @@ def _escape(value: str) -> str:
         .replace('"', "&quot;")
         .replace("'", "&#x27;")
     )
-

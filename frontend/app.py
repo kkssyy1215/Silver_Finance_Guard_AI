@@ -239,6 +239,108 @@ def render_emergency_cards() -> None:
     )
 
 
+def export_report_button(title: str, body: str, attachments: list[str], button_label: str, key: str) -> None:
+    exported = post_json(
+        "/api/v1/documents/export",
+        {
+            "title": title,
+            "body": body,
+            "attachments": attachments,
+            "export_format": "html",
+        },
+    )
+    if exported:
+        st.download_button(
+            button_label,
+            data=exported["content"].encode("utf-8"),
+            file_name=exported["filename"],
+            mime=f"{exported['media_type']}; charset=utf-8",
+            use_container_width=True,
+            key=key,
+        )
+
+
+def build_contract_report(result: dict[str, Any]) -> tuple[str, str, list[str]]:
+    lines = [
+        f"전체 위험도: {risk_label(result['overall_risk'])}",
+        "",
+        "쉬운 요약",
+        result["document_summary"]["one_line"],
+        result["document_summary"]["easy_summary"],
+        result["document_summary"]["next_action"],
+        "",
+        "위험 항목",
+    ]
+    for index, item in enumerate(result.get("risk_items", []), start=1):
+        lines.extend(
+            [
+                f"{index}. {item['label']} - {risk_label(item['severity'])}",
+                f"문제 문장: {item['original_text']}",
+                f"쉬운 설명: {item['simplified_text']}",
+                f"확인 질문: {item['must_ask_question']}",
+                f"어르신 행동 안내: {item.get('senior_action', '')}",
+                f"표준약관 비교: {item.get('comparison_result', '')}",
+                "",
+            ]
+        )
+    if result.get("standard_comparison_summary"):
+        lines.append("표준약관 기준 확인 요약")
+        lines.extend(f"- {summary}" for summary in result["standard_comparison_summary"])
+    return "약관 위험 점검 리포트", "\n".join(lines), ["약관 원문", "상품설명서", "상담 녹취 또는 문자 안내"]
+
+
+def build_explanation_report(result: dict[str, Any]) -> tuple[str, str, list[str]]:
+    lines = [
+        f"위험도: {risk_label(result['risk_level'])}",
+        "",
+        "쉬운 요약",
+        result["summary"]["one_line"],
+        result["summary"]["easy_summary"],
+        result["summary"]["next_action"],
+        "",
+        "의심 표현",
+    ]
+    for index, point in enumerate(result.get("suspicious_points", []), start=1):
+        lines.extend(
+            [
+                f"{index}. {point['label']} - {risk_label(point['severity'])}",
+                f"쉬운 설명: {point['easy_explanation']}",
+                f"이유: {point['reason']}",
+                f"확인 질문: {point['must_ask_question']}",
+                "",
+            ]
+        )
+    lines.append("확인 질문")
+    lines.extend(f"- {question}" for question in result.get("must_ask_questions", []))
+    return "설명의무 위험 점검 리포트", "\n".join(lines), ["상담 녹취", "문자 안내", "상품설명서", "가입 신청서"]
+
+
+def build_incident_report(classified: dict[str, Any], plan: dict[str, Any]) -> tuple[str, str, list[str]]:
+    lines = [
+        f"사고 유형: {classified['incident_type']}",
+        f"긴급도: {risk_label(classified['urgency_level'])}",
+        f"첫 행동: {classified['first_action_summary']}",
+        "",
+        "왜 지금 바로 해야 하나요?",
+    ]
+    lines.extend(f"- {reason}" for reason in classified.get("urgency_reasons", []))
+    lines.append("")
+    lines.append("공식 데이터 근거")
+    for item in classified.get("evidence", []):
+        lines.append(f"- {item['title']}: {item['summary']} ({item['source_title']})")
+    for title, key in [
+        ("지금 바로 할 일", "immediate"),
+        ("10분 안에 할 일", "within_10min"),
+        ("오늘 할 일", "today"),
+        ("이후 준비할 일", "follow_up"),
+    ]:
+        lines.extend(["", title])
+        for step in plan.get(key, []):
+            lines.append(f"{step['order']}. {step['action']} - {step['reason']}")
+    documents = [doc["name"] for doc in plan.get("required_documents", [])]
+    return "금융사고 대응 리포트", "\n".join(lines), documents
+
+
 def render_easy_summary(summary: dict[str, str]) -> None:
     st.subheader(summary["one_line"])
     st.write(summary["easy_summary"])
@@ -345,6 +447,8 @@ def render_contract_check() -> None:
                 st.subheader("표준약관 기준 확인 요약")
                 for summary in result["standard_comparison_summary"]:
                     st.write(f"- {summary}")
+            report_title, report_body, report_attachments = build_contract_report(result)
+            export_report_button(report_title, report_body, report_attachments, "약관 점검 리포트 다운로드", "contract_report")
             render_references(result.get("references", []))
             st.caption(result["disclaimer"])
 
@@ -368,6 +472,8 @@ def render_contract_check() -> None:
             st.subheader("확인 질문")
             for question in result["must_ask_questions"]:
                 st.write(f"- {question}")
+            report_title, report_body, report_attachments = build_explanation_report(result)
+            export_report_button(report_title, report_body, report_attachments, "설명의무 점검 리포트 다운로드", "explanation_report")
             render_references(result.get("references", []))
             st.caption(result["disclaimer"])
 
@@ -427,6 +533,9 @@ def render_incident_response() -> None:
 
         render_references(plan.get("references", []))
         render_faq_matches(plan.get("faq_matches", []))
+
+        report_title, report_body, report_attachments = build_incident_report(classified, plan)
+        export_report_button(report_title, report_body, report_attachments, "사고 대응 리포트 다운로드", "incident_report")
 
         st.session_state["last_incident_type"] = classified["incident_type"]
         st.session_state["last_statement"] = content

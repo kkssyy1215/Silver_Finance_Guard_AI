@@ -66,6 +66,7 @@ def test_document_exporter_generates_html() -> None:
     assert result.filename.endswith(".html")
     assert result.media_type == "text/html"
     assert "상품설명서" in result.content
+    assert "font-size: 20px" in result.content
 
 
 def test_complaint_draft_uses_similar_official_cases() -> None:

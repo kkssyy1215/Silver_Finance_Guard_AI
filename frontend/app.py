@@ -40,12 +40,12 @@ st.markdown(
     .main .block-container {{ max-width: 1120px; padding-top: 1.4rem; }}
     h1 {{ font-size: 2.5rem !important; line-height: 1.2; }}
     h2, h3 {{ letter-spacing: -0.02em; }}
-    div[data-testid="stButton"] button {
+    div[data-testid="stButton"] button {{
       min-height: 3.8rem;
       font-size: {font_tokens["large"]};
       font-weight: 700;
       border-radius: 14px;
-    }
+    }}
     textarea {{
       font-size: {font_tokens["large"]} !important;
       line-height: 1.75 !important;

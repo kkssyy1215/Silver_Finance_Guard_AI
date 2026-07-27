@@ -2,12 +2,24 @@
 
 `실버 금융가드 AI` is an MVP prototype for senior-friendly financial consumer protection.
 
-It supports two core flows:
+## One-Line Description
+
+고령층 사용자가 이해하기 어려운 금융 약관의 위험 요소를 사전에 탐지하고, 금융사고 발생 시 골든타임 내 필요한 조치와 서류 작성을 즉시 지원하는 금융소비자 보호 AI 에이전트입니다.
+
+## Core Flows
 
 - Pre-signup check: detect risky clauses or misleading sales language and explain them in plain Korean.
+- Standard terms comparison: compare detected risks with official bank standard terms and unfair-terms guidance.
 - Incident response: classify financial incidents such as mistaken transfers or voice phishing, then generate action steps, document checklists, and complaint drafts.
-- Document export: download complaint drafts as TXT, Markdown, or HTML.
+- Complaint drafting: ground complaint drafts in official model consultation cases.
+- Senior-friendly UX: provide large text, high contrast, magnifier view, emergency cards, and step-by-step action cards.
+- Document export: download complaint drafts and analysis reports as TXT, Markdown, or HTML.
 - Official data grounding: search imported public-data rows for financial terms, senior finance support, telemarketing seller checks, voice-phishing trend evidence, and mistaken-transfer guidance.
+
+## Demo And Portfolio Docs
+
+- `docs/demo_scenarios.md`: 3-minute demo script for pre-signup check, voice phishing response, and complaint drafting.
+- `docs/portfolio_brief.md`: portfolio-ready project overview, problem definition, architecture, data usage, and evaluation mapping.
 
 ## Official Data Currently Used
 

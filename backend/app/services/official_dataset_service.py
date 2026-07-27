@@ -322,7 +322,7 @@ def _easy_dictionary_results(query: str) -> list[FinancialTermExplanation]:
         results.append(
             FinancialTermExplanation(
                 term=item["term"],
-                official_definition="서비스 내 고령층 쉬운 말 변환 사전에 등록된 자주 쓰는 금융 표현입니다.",
+                official_definition="",
                 easy_explanation=item["easy"],
                 action_tip=item["action"],
                 source_title="고령층 쉬운 말 변환 사전",

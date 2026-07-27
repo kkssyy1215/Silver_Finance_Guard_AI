@@ -183,6 +183,17 @@ def risk_label(level: str) -> str:
     return labels.get(level, "확인 필요")
 
 
+def incident_label(incident_type: str) -> str:
+    labels = {
+        "mistaken_transfer": "착오송금",
+        "voice_phishing": "보이스피싱 의심",
+        "general_complaint": "일반 금융 민원",
+        "mis_selling": "불완전판매 의심",
+        "unknown": "상황 확인 필요",
+    }
+    return labels.get(incident_type, "상황 확인 필요")
+
+
 def render_senior_guide() -> None:
     st.markdown(
         """
@@ -318,7 +329,7 @@ def build_explanation_report(result: dict[str, Any]) -> tuple[str, str, list[str
 
 def build_incident_report(classified: dict[str, Any], plan: dict[str, Any]) -> tuple[str, str, list[str]]:
     lines = [
-        f"사고 유형: {classified['incident_type']}",
+        f"상황 판단: {incident_label(classified['incident_type'])}",
         f"긴급도: {risk_label(classified['urgency_level'])}",
         f"첫 행동: {classified['first_action_summary']}",
         "",
@@ -504,12 +515,9 @@ def render_incident_response() -> None:
         if not classified:
             return
 
-        st.metric("분류 결과", classified["incident_type"])
+        st.metric("상황 판단", incident_label(classified["incident_type"]))
         st.metric("긴급도", risk_label(classified["urgency_level"]))
         st.info(classified["first_action_summary"])
-        render_incident_evidence(classified.get("evidence", []), classified.get("urgency_reasons", []))
-        render_faq_matches(classified.get("faq_matches", []))
-        render_references(classified.get("references", []))
 
         plan = post_json(
             "/api/v1/incidents/action-plan",
@@ -528,7 +536,7 @@ def render_incident_response() -> None:
             for step in plan[key]:
                 render_step_card(step["order"], step["action"], step["reason"])
 
-        render_incident_evidence(plan.get("evidence", []), plan.get("urgency_reasons", []))
+        render_incident_evidence(plan.get("evidence", []) or classified.get("evidence", []), plan.get("urgency_reasons", []) or classified.get("urgency_reasons", []))
 
         st.subheader("준비할 서류")
         for doc in plan["required_documents"]:
@@ -646,8 +654,9 @@ def render_term_dictionary() -> None:
                 st.markdown("**쉽게 해석**")
                 st.info(term["easy_explanation"])
                 render_magnifier("돋보기: 쉬운 해석", term["easy_explanation"])
-                st.markdown("**본문 / 정의**")
-                st.write(term["official_definition"][:700] + ("..." if len(term["official_definition"]) > 700 else ""))
+                if term.get("official_definition"):
+                    st.markdown("**본문 / 정의**")
+                    st.write(term["official_definition"][:700] + ("..." if len(term["official_definition"]) > 700 else ""))
                 st.warning("확인할 일: " + term["action_tip"])
                 with st.expander("출처 보기"):
                     st.caption(term["source_title"])

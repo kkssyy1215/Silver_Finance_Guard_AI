@@ -79,7 +79,7 @@ st.markdown(
       gap: 0.8rem;
       margin: 1rem 0;
     }}
-    .guide-card, .big-card, .emergency-card, .magnifier-card {{
+    .guide-card, .big-card, .emergency-card, .magnifier-card, .question-card, .guardian-card {{
       border: 2px solid {border_color};
       border-radius: 18px;
       padding: 1rem 1.1rem;
@@ -146,6 +146,39 @@ st.markdown(
     }}
     .emergency-card span {{
       line-height: 1.5;
+    }}
+    .score-panel {{
+      border: 3px solid {accent_color};
+      background: {surface_color};
+      border-radius: 22px;
+      padding: 1.15rem;
+      margin: 1rem 0;
+    }}
+    .score-panel strong {{
+      display: block;
+      font-size: {font_tokens["xlarge"]};
+      color: {accent_color};
+      margin-bottom: 0.25rem;
+    }}
+    .score-panel span {{
+      font-size: {font_tokens["large"]};
+      line-height: 1.55;
+    }}
+    .question-card {{
+      margin-bottom: 0.7rem;
+      border-left: 10px solid {accent_color};
+      font-size: {font_tokens["large"]};
+      line-height: 1.6;
+    }}
+    .guardian-card {{
+      background: #f8fafc;
+      margin: 1rem 0;
+      line-height: 1.65;
+    }}
+    .guardian-card strong {{
+      display: block;
+      font-size: {font_tokens["large"]};
+      margin-bottom: 0.35rem;
     }}
     @media (max-width: 760px) {{
       .senior-guide, .emergency-grid {{ grid-template-columns: 1fr; }}
@@ -280,6 +313,69 @@ def render_emergency_cards() -> None:
           <div class="emergency-card"><strong>112</strong><span>보이스피싱·현금 전달·협박이 있으면 경찰에 바로 신고하세요.</span></div>
           <div class="emergency-card"><strong>은행</strong><span>돈을 보냈다면 송금한 은행에 지급정지부터 요청하세요.</span></div>
           <div class="emergency-card"><strong>1332</strong><span>금융감독원 상담이 필요할 때 금융소비자 상담센터로 문의하세요.</span></div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def safety_score_from_risks(overall_risk: str, item_count: int) -> tuple[int, str, str]:
+    base_scores = {
+        "low": 88,
+        "medium": 68,
+        "high": 44,
+        "critical": 24,
+        "unknown": 55,
+    }
+    score = max(10, base_scores.get(overall_risk, 55) - max(0, item_count - 1) * 5)
+    if score >= 80:
+        return score, "안심", "큰 위험 신호는 적지만, 가입 전 질문은 한 번 더 확인하세요."
+    if score >= 60:
+        return score, "주의", "불리하거나 헷갈릴 수 있는 조건이 있습니다. 바로 가입하지 말고 질문 카드를 확인하세요."
+    if score >= 40:
+        return score, "위험", "설명이 부족하거나 불리한 조건일 수 있습니다. 보호자와 함께 확인하는 것이 좋습니다."
+    return score, "매우 위험", "지금 가입을 멈추고 금융회사에 다시 설명을 요청하세요."
+
+
+def render_safety_score(overall_risk: str, item_count: int) -> None:
+    score, label, message = safety_score_from_risks(overall_risk, item_count)
+    st.markdown(
+        f"""
+        <div class="score-panel">
+          <strong>가입 전 안전점수 {score}점 · {escape(label)}</strong>
+          <span>{escape(message)}</span>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_question_cards(questions: list[str], title: str = "직원에게 보여줄 질문 카드") -> None:
+    if not questions:
+        return
+    st.subheader(title)
+    st.caption("상담 중 그대로 읽거나 화면을 보여줘도 되는 질문입니다.")
+    for index, question in enumerate(questions, start=1):
+        st.markdown(
+            f"""
+            <div class="question-card">
+              <strong>질문 {index}</strong><br>
+              {escape(question)}
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+
+def render_guardian_summary(title: str, points: list[str]) -> None:
+    if not points:
+        return
+    items = "".join(f"<li>{escape(point)}</li>" for point in points)
+    st.markdown(
+        f"""
+        <div class="guardian-card">
+          <strong>{escape(title)}</strong>
+          <ul>{items}</ul>
         </div>
         """,
         unsafe_allow_html=True,
@@ -436,8 +532,9 @@ def render_incident_evidence(evidence: list[dict[str, Any]], urgency_reasons: li
 
 
 def render_contract_check() -> None:
-    st.header("가입 전 점검")
-    st.write("약관, 계약서, 문자, 상담 내용을 넣으면 위험한 표현을 쉬운 말로 알려드립니다.")
+    st.header("가입 전 안심점검")
+    st.write("어르신이 금융상품에 가입하기 전, 상담 내용과 약관을 넣으면 설명 누락·불리한 조건·지금 물어봐야 할 질문을 한 번에 정리합니다.")
+    st.info("핵심 흐름: 가입 전에는 막고, 상담 중에는 물어보게 하고, 문제가 생기면 대응 자료까지 정리합니다.")
 
     input_mode = st.radio("입력 방식", ["텍스트 입력", "PDF/텍스트 파일 업로드"], horizontal=True)
     sample = (
@@ -471,7 +568,13 @@ def render_contract_check() -> None:
             result = post_json("/api/v1/analyze/document", {"content": content})
         if result:
             render_easy_summary(result["document_summary"])
-            st.metric("전체 위험도", risk_label(result["overall_risk"]))
+            render_safety_score(result["overall_risk"], len(result.get("risk_items", [])))
+            guardian_points = [
+                result["document_summary"]["one_line"],
+                f"발견된 위험 후보는 {len(result.get('risk_items', []))}개입니다.",
+                "계약 전 상품설명서, 약관, 상담 녹취 또는 문자 안내를 함께 보관하세요.",
+            ]
+            render_guardian_summary("보호자에게 공유할 요약", guardian_points)
             for item in result["risk_items"]:
                 with st.container(border=True):
                     st.markdown(f"**{risk_item_label(item['label'])} · {risk_label(item['severity'])}**")
@@ -492,9 +595,7 @@ def render_contract_check() -> None:
                             for reference in item["standard_references"]:
                                 st.write(reference)
             if result["must_ask_questions"]:
-                st.subheader("가입 전 꼭 물어볼 질문")
-                for question in result["must_ask_questions"]:
-                    st.write(f"- {question}")
+                render_question_cards(result["must_ask_questions"])
             if result.get("standard_comparison_summary"):
                 st.subheader("표준약관 기준 확인 요약")
                 for summary in result["standard_comparison_summary"]:
@@ -514,16 +615,20 @@ def render_contract_check() -> None:
         )
         if result:
             render_easy_summary(result["summary"])
-            st.metric("위험도", risk_label(result["risk_level"]))
+            render_safety_score(result["risk_level"], len(result.get("suspicious_points", [])))
+            guardian_points = [
+                result["summary"]["one_line"],
+                f"설명 부족 또는 오해 가능성이 있는 표현은 {len(result.get('suspicious_points', []))}개입니다.",
+                "가입을 재촉받았다면 오늘 바로 결정하지 말고 상품설명서와 약관을 받아 가족과 함께 확인하세요.",
+            ]
+            render_guardian_summary("보호자에게 공유할 요약", guardian_points)
             for point in result["suspicious_points"]:
                 with st.container(border=True):
                     st.markdown(f"**{explanation_label(point['label'])} · {risk_label(point['severity'])}**")
                     st.write(point["easy_explanation"])
                     st.caption(point["reason"])
                     st.warning(point["must_ask_question"])
-            st.subheader("확인 질문")
-            for question in result["must_ask_questions"]:
-                st.write(f"- {question}")
+            render_question_cards(result["must_ask_questions"])
             report_title, report_body, report_attachments = build_explanation_report(result)
             export_report_button(report_title, report_body, report_attachments, "설명의무 점검 리포트 다운로드", "explanation_report")
             render_references(result.get("references", []))
@@ -772,12 +877,12 @@ def render_official_data() -> None:
 
 st.title("실버 금융가드 AI")
 st.markdown(
-    '<div class="notice">고령층 사용자가 이해하기 어려운 금융 약관의 위험 요소를 사전에 탐지하고, 금융사고 발생 시 골든타임 내 필요한 조치와 서류 작성을 지원합니다.</div>',
+    '<div class="notice"><strong>가입 전 3분, 어르신 금융계약 안전점검 AI</strong><br>상담 내용과 약관을 쉬운 말로 점검해 설명의무 누락, 불완전판매 위험, 불리한 조항, 지금 물어봐야 할 질문을 알려주는 금융계약 동행 에이전트입니다.</div>',
     unsafe_allow_html=True,
 )
 render_senior_guide()
 
-tab_contract, tab_terms, tab_incident, tab_complaint, tab_data = st.tabs(["가입 전 점검", "금융용어검색", "사고 대응", "민원 초안", "공식 데이터"])
+tab_contract, tab_terms, tab_incident, tab_complaint, tab_data = st.tabs(["가입 전 안심점검", "금융용어검색", "사고 대응", "민원 초안", "공식 데이터"])
 
 with tab_contract:
     render_contract_check()

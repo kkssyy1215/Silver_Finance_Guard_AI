@@ -95,6 +95,18 @@ def render_references(references: list[dict[str, str]]) -> None:
             st.link_button("원문 보기", reference["url"])
 
 
+def render_faq_matches(faq_matches: list[dict[str, str]]) -> None:
+    if not faq_matches:
+        return
+    st.subheader("공식 FAQ 기반 답변")
+    for faq in faq_matches:
+        with st.container(border=True):
+            st.markdown(f"**Q. {faq['question']}**")
+            st.write(faq["answer"])
+            st.caption(f"{faq['source_title']} · {faq['category']}")
+            st.link_button("FAQ 출처 보기", faq["source_url"])
+
+
 def render_contract_check() -> None:
     st.header("가입 전 점검")
     st.write("약관, 계약서, 문자, 상담 내용을 넣으면 위험한 표현을 쉬운 말로 알려드립니다.")
@@ -190,6 +202,7 @@ def render_incident_response() -> None:
         st.metric("분류 결과", classified["incident_type"])
         st.metric("긴급도", risk_label(classified["urgency_level"]))
         st.info(classified["first_action_summary"])
+        render_faq_matches(classified.get("faq_matches", []))
         render_references(classified.get("references", []))
 
         plan = post_json(
@@ -217,6 +230,7 @@ def render_incident_response() -> None:
                 st.caption(f"대체 자료: {doc['alternative']}")
 
         render_references(plan.get("references", []))
+        render_faq_matches(plan.get("faq_matches", []))
 
         st.session_state["last_incident_type"] = classified["incident_type"]
         st.session_state["last_statement"] = content

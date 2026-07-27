@@ -7,6 +7,15 @@ It supports two core flows:
 - Pre-signup check: detect risky clauses or misleading sales language and explain them in plain Korean.
 - Incident response: classify financial incidents such as mistaken transfers or voice phishing, then generate action steps, document checklists, and complaint drafts.
 - Document export: download complaint drafts as TXT, Markdown, or HTML.
+- Official data grounding: search imported public-data FAQ rows for mistaken-transfer guidance.
+
+## Official Data Currently Used
+
+- `backend/app/data/official/kdic_mistaken_transfer_faq.json`
+- Source: 예금보험공사_착오송금 반환지원제도 FAQ_20240729
+- Portal: 공공데이터포털
+- License on portal: 이용허락범위 제한 없음
+- Rows imported: 12
 
 ## Project Structure
 

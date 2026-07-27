@@ -28,3 +28,12 @@ class SourceReference(BaseModel):
     publisher: str
     url: str
     summary: str
+
+
+class OfficialFaqItem(BaseModel):
+    faq_id: str
+    category: str
+    question: str
+    answer: str
+    source_title: str
+    source_url: str

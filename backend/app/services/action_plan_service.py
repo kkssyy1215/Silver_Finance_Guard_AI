@@ -1,5 +1,6 @@
 from app.schemas.common import RiskLevel
 from app.schemas.incident import ActionPlanResponse, ActionStep, RequiredDocument
+from app.services.official_faq_service import default_kdic_mistaken_transfer_faq
 from app.services.reference_service import references_for
 from app.services.risk_detector import DISCLAIMER
 from app.services.rule_loader import load_rule_file
@@ -19,6 +20,7 @@ def build_action_plan(incident_type: str) -> ActionPlanResponse:
             required_documents=[],
             related_orgs=[],
             references=[],
+            faq_matches=[],
             disclaimer=DISCLAIMER,
         )
 
@@ -35,6 +37,7 @@ def build_action_plan(incident_type: str) -> ActionPlanResponse:
         ],
         related_orgs=rule["related_orgs"],
         references=references_for(incident_type),
+        faq_matches=default_kdic_mistaken_transfer_faq() if incident_type == "mistaken_transfer" else [],
         disclaimer=DISCLAIMER,
     )
 

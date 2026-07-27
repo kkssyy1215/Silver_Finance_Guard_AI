@@ -4,6 +4,7 @@ import re
 
 from app.schemas.common import Confidence, RiskLevel
 from app.schemas.incident import ExtractedFacts, IncidentClassifyResponse
+from app.services.official_faq_service import search_kdic_mistaken_transfer_faq
 from app.services.reference_service import references_for
 from app.services.risk_detector import DISCLAIMER, _contains_any
 from app.services.rule_loader import load_rule_file
@@ -31,10 +32,12 @@ def classify_incident(content: str) -> IncidentClassifyResponse:
             needs_more_info=True,
             follow_up_questions=["돈을 이미 보내셨나요?", "전화나 문자 지시를 받으셨나요?"],
             references=[],
+            faq_matches=[],
             disclaimer=DISCLAIMER,
         )
 
     rule = rules[incident_type]
+    faq_matches = search_kdic_mistaken_transfer_faq(content) if incident_type == "mistaken_transfer" else []
     return IncidentClassifyResponse(
         incident_type=incident_type,
         urgency_level=rule["urgency_level"],
@@ -45,6 +48,7 @@ def classify_incident(content: str) -> IncidentClassifyResponse:
         needs_more_info=False,
         follow_up_questions=[],
         references=references_for(incident_type),
+        faq_matches=faq_matches,
         disclaimer=DISCLAIMER,
     )
 
@@ -56,7 +60,7 @@ def _extract_facts(content: str) -> ExtractedFacts:
         transfer_done=_contains_any(content, ["보냈", "송금", "이체"]),
         cash_delivery=_contains_any(content, ["현금", "전달", "만나서"]),
         app_installed=_contains_any(content, ["앱", "설치", "원격"]),
-        personal_info_shared=_contains_any(content, ["신분증", "비밀번호", "계좌번호", "인증서"]),
+        personal_info_shared=_contains_any(content, ["신분증", "비밀번호", "인증서", "주민등록번호", "개인정보"]),
         counterparty_claim=_claim(content),
         channel="phone" if _contains_any(content, ["전화", "통화"]) else "message" if _contains_any(content, ["문자", "카톡", "메시지"]) else None,
     )

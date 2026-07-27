@@ -24,7 +24,7 @@
     "url": "https://mkcs.kdic.or.kr/ir/msdrpr/selectAplyQlfcIdntyRslt.do",
     "category": "mistaken_transfer",
     "tags": ["착오송금", "반환지원", "5만원", "1억원", "1년", "은행반환요청"],
-    "summary": "착오송금 반환지원은 건당 5만원 이상 1억원 이하, 2021년 7월 6일 이후 발생, 신청일이 착오송금일로부터 1년 이내, 금융회사를 통한 반환신청 선행 등의 요건을 확인한다."
+    "summary": "착오송금 반환지원 신청대상 확인 자료이다. 실제 신청 조건은 예금보험공사 최신 안내와 FAQ 데이터 기준으로 확인해야 한다."
   },
   {
     "source_id": "KB-DATA-KDIC-FAQ",

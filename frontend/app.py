@@ -22,7 +22,7 @@ if "font_scale_index" not in st.session_state:
     st.session_state["font_scale_index"] = 1
 
 with st.sidebar:
-    st.header("보기 편하게")
+    st.header("도구")
     minus_col, plus_col = st.columns(2)
     with minus_col:
         if st.button("- 작게", use_container_width=True):
@@ -34,7 +34,6 @@ with st.sidebar:
     st.session_state["font_scale_index"] = FONT_SCALE_LABELS.index(font_mode)
     high_contrast = st.toggle("고대비 화면", value=True)
     magnifier_enabled = st.toggle("돋보기 보기", value=True)
-    st.caption("돋보기 보기와 + 버튼으로 전체 글씨를 더 크게 볼 수 있습니다.")
 
 font_tokens = FONT_SCALE_OPTIONS[font_mode]
 surface_color = "#fffdf4" if high_contrast else "#ffffff"

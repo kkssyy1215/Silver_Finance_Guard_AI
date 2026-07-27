@@ -243,6 +243,7 @@ def _standard_terms_record(row: dict[str, Any]) -> OfficialRecord:
 
 def search_official_records(query: str, dataset_id: Optional[str] = None, limit: int = 10) -> list[OfficialRecord]:
     normalized_query = query.strip().lower()
+    compact_query = normalized_query.replace(" ", "")
     if not normalized_query:
         return []
 
@@ -251,7 +252,8 @@ def search_official_records(query: str, dataset_id: Optional[str] = None, limit:
         if dataset_id and record.dataset_id != dataset_id:
             continue
         haystack = f"{record.title} {record.body} {record.source_title} {' '.join(record.metadata.values())}".lower()
-        if normalized_query not in haystack:
+        compact_haystack = haystack.replace(" ", "")
+        if normalized_query not in haystack and compact_query not in compact_haystack:
             continue
         title_hit = normalized_query in record.title.lower()
         score = (5 if title_hit else 1) + haystack.count(normalized_query)
@@ -268,7 +270,37 @@ def search_financial_terms(query: str, limit: int = 8) -> list[FinancialTermExpl
         for record in records
         if record.dataset_id in {"FSC_FINANCIAL_TERMS_20260630", "KDIC_DEPOSIT_INSURANCE_TERMS_20220825"}
     ]
-    return [_to_financial_term_explanation(record) for record in term_records[:limit]]
+    explanations = [_to_financial_term_explanation(record) for record in term_records[:limit]]
+    explanations.extend(_easy_dictionary_results(query))
+    deduped: list[FinancialTermExplanation] = []
+    seen: set[str] = set()
+    for item in explanations:
+        key = item.term.replace(" ", "").lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(item)
+    return deduped[:limit]
+
+
+def _easy_dictionary_results(query: str) -> list[FinancialTermExplanation]:
+    normalized_query = query.replace(" ", "").lower()
+    results = []
+    for item in load_rule_file("easy_language_dictionary.json"):
+        normalized_term = item["term"].replace(" ", "").lower()
+        if normalized_query not in normalized_term and normalized_term not in normalized_query:
+            continue
+        results.append(
+            FinancialTermExplanation(
+                term=item["term"],
+                official_definition="서비스 내 고령층 쉬운 말 변환 사전에 등록된 자주 쓰는 금융 표현입니다.",
+                easy_explanation=item["easy"],
+                action_tip=item["action"],
+                source_title="고령층 쉬운 말 변환 사전",
+                source_url=None,
+            )
+        )
+    return results
 
 
 def _to_financial_term_explanation(record: OfficialRecord) -> FinancialTermExplanation:
@@ -303,10 +335,30 @@ def _easy_dictionary_match(term: str) -> Optional[dict[str, str]]:
 def _simplify_definition(definition: str) -> str:
     if not definition:
         return "공식 설명을 찾았지만 쉬운 설명을 만들기 위한 내용이 부족합니다."
-    first_sentence = definition.replace("ㆍ", ", ").split(".")[0].strip()
-    if len(first_sentence) > 140:
-        first_sentence = first_sentence[:140].rstrip() + "..."
-    return f"쉽게 말하면, {first_sentence}"
+    text = definition.replace("ㆍ", ", ").strip()
+    lower_text = text.lower()
+    if "부실" in text and ("금융회사" in text or "정리" in text):
+        return "문제가 생긴 금융회사를 정리하거나 남은 자산을 관리하기 위해 만든 회사나 제도입니다."
+    if "사기이용계좌" in text or "입출금" in text and "금지" in text:
+        return "사기 피해가 의심되는 계좌에서 돈이 더 빠져나가지 못하게 막는 조치입니다."
+    if "예금자" in text and "보호" in text:
+        return "은행이나 금융회사가 문제가 생겼을 때 일정 한도 안에서 내 예금을 보호해 주는 제도입니다."
+    if "청약" in text and ("철회" in text or "취소" in text):
+        return "가입한 뒤 정해진 기간 안에 다시 생각해 보고 계약을 취소하는 제도입니다."
+    if "위약금" in text or "해지수수료" in text:
+        return "계약을 중간에 그만둘 때 내야 할 수 있는 돈입니다."
+    if "개인정보" in text or "제3자" in text:
+        return "내 이름, 전화번호 같은 정보를 다른 회사에 줄 수 있다는 뜻입니다."
+    if "원금" in text and "손실" in text:
+        return "처음 넣은 돈보다 적게 돌려받을 수 있다는 뜻입니다."
+    if "펀드" in lower_text or "투자" in text or "증권" in text:
+        return "돈을 불리기 위해 투자하는 상품이나 제도이며, 손실 가능성과 수수료를 꼭 확인해야 합니다."
+    if "대출" in text or "채무" in text or "상환" in text:
+        return "돈을 빌리고 갚는 조건과 관련된 용어입니다. 이자, 갚는 날짜, 수수료를 확인해야 합니다."
+    first_sentence = re.split(r"[.。]", text)[0].strip()
+    if len(first_sentence) > 120:
+        first_sentence = first_sentence[:120].rstrip() + "..."
+    return first_sentence
 
 
 def _action_tip_for_term(term: str, definition: str) -> str:

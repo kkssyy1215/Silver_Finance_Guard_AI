@@ -4,9 +4,11 @@ from app.schemas.analysis import (
     ContractRiskResponse,
     ExplanationRiskResponse,
     ExtractedDocumentText,
+    AudioTranscriptionResponse,
     TextAnalysisRequest,
 )
 from app.services.document_parser import extract_text_from_upload
+from app.services.audio_transcriber import transcribe_audio
 from app.services.explanation_detector import analyze_explanation_risk
 from app.services.risk_detector import analyze_contract_risk
 
@@ -46,3 +48,10 @@ async def extract_text(file: UploadFile = File(...)) -> ExtractedDocumentText:
 @router.post("/explanation-risk", response_model=ExplanationRiskResponse)
 def analyze_explanation(request: TextAnalysisRequest) -> ExplanationRiskResponse:
     return analyze_explanation_risk(request)
+
+
+@router.post("/transcribe-audio", response_model=AudioTranscriptionResponse)
+async def transcribe_audio_file(file: UploadFile = File(...)) -> AudioTranscriptionResponse:
+    content = await file.read()
+    text, available, message = transcribe_audio(content, file.filename)
+    return AudioTranscriptionResponse(text=text, available=available, message=message)

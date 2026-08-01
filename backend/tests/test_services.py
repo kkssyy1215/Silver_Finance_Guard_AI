@@ -58,6 +58,30 @@ def test_incident_classifier_does_not_mark_wrong_account_number_as_info_leak() -
     assert result.extracted_facts.personal_info_shared is False
 
 
+def test_incident_classifier_handles_negation_and_comma_amounts() -> None:
+    result = classify_incident("앱을 설치하지 않았지만 계좌번호를 잘못 눌러 1,000,000원을 보냈어요.")
+
+    assert result.extracted_facts.app_installed is False
+    assert result.extracted_facts.transfer_done is True
+    assert result.extracted_facts.amount == 1_000_000
+
+
+def test_contract_risk_does_not_flag_explicitly_free_fee() -> None:
+    result = analyze_contract_risk(TextAnalysisRequest(content="수수료가 없습니다."))
+
+    assert result.risk_items == []
+
+
+def test_risk_results_include_review_status_keywords_and_official_reason() -> None:
+    result = analyze_contract_risk(TextAnalysisRequest(content="마케팅 목적의 개인정보 제3자 제공에 동의합니다."))
+    item = result.risk_items[0]
+
+    assert item.review_status in {"확인 필요", "주의 후보"}
+    assert "제3자" in item.detected_keywords
+    assert item.official_references
+    assert item.official_references[0].application_reason
+
+
 def test_voice_phishing_action_plan_includes_official_evidence() -> None:
     result = build_action_plan("voice_phishing", "은행이라고 전화가 와서 앱을 설치하고 50만원을 송금했어요.")
 
@@ -123,10 +147,20 @@ def test_financial_term_search_returns_easy_explanation() -> None:
     assert results[0].action_tip
 
 
+def test_financial_term_search_handles_body_only_query() -> None:
+    results = search_financial_terms("예금", limit=8)
+
+    assert results
+    assert all(result.easy_explanation for result in results)
+    assert all(result.term != "예금자보호" for result in results)
+    assert all(result.match_type == "related" for result in results)
+
+
 def test_financial_term_search_prioritizes_exact_term_over_body_matches() -> None:
     results = search_financial_terms("예금자보호", limit=5)
 
     assert [result.term for result in results] == ["예금자보호"]
+    assert results[0].match_type == "exact"
 
 
 def test_official_record_search_uses_new_complaint_and_phishing_data() -> None:

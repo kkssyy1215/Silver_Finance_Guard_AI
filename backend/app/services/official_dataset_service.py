@@ -1,4 +1,5 @@
 import json
+import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Optional
@@ -282,9 +283,11 @@ def search_financial_terms(query: str, limit: int = 8) -> list[FinancialTermExpl
         body = record.body.lower()
         compact_body = body.replace(" ", "")
         if compact_query == compact_title:
-            score = 100
+            score = 1000
         elif compact_query in compact_title or compact_title in compact_query:
-            score = 80
+            # Prefer short, directly named terms over long titles that merely contain the query.
+            title_position_bonus = 18 if compact_title.startswith(compact_query) or compact_title.endswith(compact_query) else 8
+            score = 100 + title_position_bonus - max(0, len(compact_title) - len(compact_query)) * 3
         elif normalized_query in body or compact_query in compact_body:
             score = 10
         else:
@@ -300,7 +303,7 @@ def search_financial_terms(query: str, limit: int = 8) -> list[FinancialTermExpl
     else:
         selected_records = body_matches
 
-    explanations = easy_results + [_to_financial_term_explanation(record) for record in selected_records[:limit]]
+    explanations = easy_results + [_to_financial_term_explanation(record, compact_query) for record in selected_records[:limit]]
     deduped: list[FinancialTermExplanation] = []
     seen: set[str] = set()
     for item in explanations:
@@ -317,11 +320,13 @@ def _easy_dictionary_results(query: str) -> list[FinancialTermExplanation]:
     results = []
     for item in load_rule_file("easy_language_dictionary.json"):
         normalized_term = item["term"].replace(" ", "").lower()
-        if normalized_query not in normalized_term and normalized_term not in normalized_query:
+        # A generic query such as "예금" must not be presented as the exact term "예금자보호".
+        if normalized_query != normalized_term:
             continue
         results.append(
             FinancialTermExplanation(
                 term=item["term"],
+                match_type="exact",
                 official_definition="",
                 easy_explanation=item["easy"],
                 action_tip=item["action"],
@@ -332,7 +337,7 @@ def _easy_dictionary_results(query: str) -> list[FinancialTermExplanation]:
     return results
 
 
-def _to_financial_term_explanation(record: OfficialRecord) -> FinancialTermExplanation:
+def _to_financial_term_explanation(record: OfficialRecord, compact_query: str = "") -> FinancialTermExplanation:
     easy_match = _easy_dictionary_match(record.title)
     official_definition = record.body.strip()
     if easy_match:
@@ -344,6 +349,7 @@ def _to_financial_term_explanation(record: OfficialRecord) -> FinancialTermExpla
 
     return FinancialTermExplanation(
         term=record.title,
+        match_type="exact" if compact_query and record.title.replace(" ", "").lower() == compact_query else "related",
         official_definition=official_definition,
         easy_explanation=easy_explanation,
         action_tip=action_tip,
@@ -370,7 +376,7 @@ def _simplify_definition(definition: str) -> str:
         return "문제가 생긴 금융회사를 정리하거나 남은 자산을 관리하기 위해 만든 회사나 제도입니다."
     if "사기이용계좌" in text or "입출금" in text and "금지" in text:
         return "사기 피해가 의심되는 계좌에서 돈이 더 빠져나가지 못하게 막는 조치입니다."
-    if "예금자" in text and "보호" in text:
+    if ("예금자" in text and "보호" in text) or "예금보호한도" in text or "부보예금" in text:
         return "은행이나 금융회사가 문제가 생겼을 때 일정 한도 안에서 내 예금을 보호해 주는 제도입니다."
     if "청약" in text and ("철회" in text or "취소" in text):
         return "가입한 뒤 정해진 기간 안에 다시 생각해 보고 계약을 취소하는 제도입니다."

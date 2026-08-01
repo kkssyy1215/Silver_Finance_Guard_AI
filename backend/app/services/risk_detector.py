@@ -4,8 +4,9 @@ from functools import lru_cache
 from pathlib import Path
 
 from app.schemas.analysis import ContractRiskResponse, RiskItem, TextAnalysisRequest
-from app.schemas.common import EasyExplanation, RiskLevel
+from app.schemas.common import Confidence, EasyExplanation, RiskLevel
 from app.services.reference_service import references_for
+from app.services.reference_service import official_dataset_reference
 from app.services.rule_loader import load_rule_file
 
 DISCLAIMER = "이 결과는 법적 판단이 아니라 소비자 보호를 위한 확인 보조 정보입니다."
@@ -31,15 +32,54 @@ SENIOR_ACTIONS = {
     "termination_limit": "언제, 어디서, 어떤 서류로 해지할 수 있는지 적어 달라고 요청하세요.",
 }
 
+REFERENCE_REASONS = {
+    "auto_renewal": "자동 연장·해지 조건을 가입 전에 다시 확인하는 기준으로 사용했습니다.",
+    "excessive_penalty": "해지 비용과 거래 비용을 계약 전에 확인하는 기준으로 사용했습니다.",
+    "third_party_data": "개인정보 제공 동의가 필수인지 선택인지 확인하는 기준으로 사용했습니다.",
+    "principal_guarantee_misleading": "원금 손실과 예금자보호 여부를 구분해 확인하는 기준으로 사용했습니다.",
+    "pressure_sales": "충분한 설명과 판단 시간을 받았는지 확인하는 기준으로 사용했습니다.",
+    "unclear_fee": "가입·유지·해지 비용을 확인하는 기준으로 사용했습니다.",
+    "termination_limit": "해지 방법과 제한 조건을 확인하는 기준으로 사용했습니다.",
+}
+
 
 def _contains_any(text: str, keywords: list[str]) -> bool:
     normalized = text.lower()
     return any(keyword.lower() in normalized for keyword in keywords)
 
 
+def _keyword_is_active(text: str, keyword: str) -> bool:
+    """Treat explicit negative wording as evidence against a risk candidate."""
+    before_negation = re.compile(r"(안|않|못|아니|제외|거부)\s*$")
+    after_negation = re.compile(r"^\s*(?:(?:가|이|은|는|을|를|도|하지|되지)\s*)?(?:없(?!이)|아니|않|못|제외|미제공|거부|하지\s*(?:않|못))")
+    for match in re.finditer(re.escape(keyword), text, flags=re.IGNORECASE):
+        context = text[max(0, match.start() - 12) : min(len(text), match.end() + 14)]
+        before = text[max(0, match.start() - 6) : match.start()]
+        after = text[match.end() : match.end() + 14]
+        if before_negation.search(before) or after_negation.search(after):
+            continue
+        return True
+    return False
+
+
 def _matched_keywords(text: str, keywords: list[str]) -> list[str]:
-    normalized = text.lower()
-    return [keyword for keyword in keywords if keyword.lower() in normalized]
+    return [keyword for keyword in keywords if _keyword_is_active(text, keyword)]
+
+
+def _confidence_for(keywords: list[str], matched_keywords: list[str]) -> Confidence:
+    if len(matched_keywords) >= 2 or any(len(keyword.replace(" ", "")) >= 5 for keyword in matched_keywords):
+        return Confidence.high
+    return Confidence.medium
+
+
+def _references_for_risk(label: str):
+    reason = REFERENCE_REASONS.get(label, "공식 소비자보호 자료와 관련 표준약관을 확인하는 기준으로 사용했습니다.")
+    references = references_for("consumer_protection", application_reason=reason)
+    for dataset_id in ["FTC_BANK_STANDARD_TERMS_20240927", "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320"]:
+        reference = official_dataset_reference(dataset_id, reason)
+        if reference:
+            references.append(reference)
+    return references
 
 
 def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
@@ -48,9 +88,12 @@ def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
     comparison_summaries: list[str] = []
 
     for rule in labels:
-        if _contains_any(request.content, rule["keywords"]):
+        if any(_contains_any(request.content, [excluded]) for excluded in rule.get("exclude_keywords", [])):
+            continue
+        if any(_keyword_is_active(request.content, keyword) for keyword in rule["keywords"]):
             context = _find_context(request.content, rule["keywords"])
             detected_keywords = _matched_keywords(context, rule["keywords"])
+            confidence = _confidence_for(rule["keywords"], detected_keywords)
             standard_refs = find_standard_clause_references(rule["label"], context)
             comparison = compare_with_standard_terms(rule["label"], context, standard_refs)
             comparison_summaries.append(comparison)
@@ -58,7 +101,8 @@ def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
                 RiskItem(
                     label=rule["label"],
                     severity=rule["severity"],
-                    confidence="high",
+                    confidence=confidence,
+                    review_status="주의 후보" if confidence == Confidence.high else "확인 필요",
                     original_text=context,
                     detected_keywords=detected_keywords,
                     simplified_text=rule["simplified_text"],
@@ -67,6 +111,7 @@ def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
                     senior_action=SENIOR_ACTIONS.get(rule["label"], "중요한 조건은 서면으로 받아 가족이나 신뢰할 수 있는 사람과 함께 확인하세요."),
                     standard_references=standard_refs,
                     comparison_result=comparison,
+                    official_references=_references_for_risk(rule["label"]),
                 )
             )
 
@@ -181,9 +226,9 @@ def _score_text(text: str, query_terms: list[str]) -> int:
 
 
 def _find_context(content: str, keywords: list[str]) -> str:
-    sentences = [part.strip() for part in content.replace("\n", " ").split(".")]
+    sentences = [part.strip() for part in re.split(r"[.!?。！？\n]+", content)]
     for sentence in sentences:
-        if _contains_any(sentence, keywords):
+        if any(_keyword_is_active(sentence, keyword) for keyword in keywords):
             return sentence[:240]
     return content[:240]
 

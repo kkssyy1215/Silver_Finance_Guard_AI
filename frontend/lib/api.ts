@@ -2,6 +2,7 @@ const CONFIGURED_API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\
 
 function apiUrl(path: string): string {
   if (CONFIGURED_API_BASE_URL) return `${CONFIGURED_API_BASE_URL}${path}`;
+  if (process.env.NODE_ENV === "development") return `http://127.0.0.1:8000${path}`;
   if (typeof window !== "undefined") return `${window.location.origin}${path}`;
   return `http://127.0.0.1:8000${path}`;
 }

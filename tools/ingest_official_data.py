@@ -4,15 +4,11 @@ import csv
 import json
 import re
 import time
-import zipfile
 from datetime import date
 from html import unescape
 from pathlib import Path
 from typing import Any
 from urllib.request import Request, urlopen
-from xml.etree import ElementTree
-
-from pypdf import PdfReader
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_INBOX = PROJECT_ROOT / "data_inbox"
@@ -38,6 +34,15 @@ def write_json(path: Path, rows: list[dict[str, Any]] | dict[str, Any]) -> None:
     with path.open("w", encoding="utf-8") as json_file:
         json.dump(rows, json_file, ensure_ascii=False, indent=2)
         json_file.write("\n")
+
+
+def count_normalized_rows(filename: str) -> int:
+    path = OFFICIAL_DATA_DIR / filename
+    if not path.exists():
+        return 0
+    with path.open(encoding="utf-8") as json_file:
+        rows = json.load(json_file)
+    return len(rows) if isinstance(rows, list) else 0
 
 
 def clean_text(value: str) -> str:
@@ -162,76 +167,6 @@ def ingest_telemarketing_sellers() -> int:
     return len(normalized)
 
 
-def ingest_voice_phishing_news() -> int:
-    source_path = find_inbox_file("뉴스빅데이터_메타데이터_보이스피싱")
-    rows = read_csv_rows(source_path)
-    normalized = [
-        {
-            "dataset_id": "KPF_VOICE_PHISHING_NEWS_METADATA_20241231",
-            "date": row.get("일자", "").strip(),
-            "publisher": row.get("언론사", "").strip(),
-            "title": row.get("제목", "").strip(),
-            "category_1": row.get("통합 분류1", "").strip(),
-            "category_2": row.get("통합 분류2", "").strip(),
-            "category_3": row.get("통합 분류3", "").strip(),
-            "people": row.get("개체명(인물)", "").strip(),
-            "regions": row.get("개체명(지역)", "").strip(),
-            "source_title": "한국언론진흥재단_뉴스빅데이터_메타데이터_보이스피싱_20241231",
-            "source_file": source_path.name,
-        }
-        for row in rows
-        if row.get("제목")
-    ]
-    write_json(OFFICIAL_DATA_DIR / "kpf_voice_phishing_news_metadata.json", normalized)
-    return len(normalized)
-
-
-def ingest_financial_consumer_protection_pdf() -> int:
-    matches = list(DATA_INBOX.glob("*금융소비자 보호*.pdf"))
-    if not matches:
-        return 0
-    source_path = matches[0]
-    reader = PdfReader(str(source_path))
-    pages = []
-    for index, page in enumerate(reader.pages, start=1):
-        text = clean_text(page.extract_text() or "")
-        if text:
-            pages.append(
-                {
-                    "dataset_id": "FINANCIAL_CONSUMER_PROTECTION_PDF",
-                    "page": index,
-                    "text": text,
-                    "source_title": "금융소비자 보호.pdf",
-                    "source_file": source_path.name,
-                }
-            )
-    write_json(OFFICIAL_DATA_DIR / "financial_consumer_protection_pdf_pages.json", pages)
-    return len(pages)
-
-
-def ingest_unfair_terms_briefing_pdf() -> int:
-    matches = list(DATA_INBOX.glob("R2503897*.pdf"))
-    if not matches:
-        return 0
-    source_path = matches[0]
-    reader = PdfReader(str(source_path))
-    pages = []
-    for index, page in enumerate(reader.pages, start=1):
-        text = clean_text(page.extract_text() or "")
-        if text:
-            pages.append(
-                {
-                    "dataset_id": "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320",
-                    "page": index,
-                    "text": text,
-                    "source_title": "금융 분야 불공정약관 개선 공동 설명회 자료",
-                    "source_file": source_path.name,
-                }
-            )
-    write_json(OFFICIAL_DATA_DIR / "ftc_financial_unfair_terms_briefing_pages.json", pages)
-    return len(pages)
-
-
 def ingest_consumer_complaint_examples() -> int:
     source_path = find_inbox_file("소비자 민원학습데이터 모범상담 사례")
     rows = read_csv_rows(source_path)
@@ -341,39 +276,6 @@ def ingest_kdic_insured_companies() -> int:
     return len(normalized)
 
 
-def extract_hwpx_text(path: Path) -> str:
-    paragraphs: list[str] = []
-    with zipfile.ZipFile(path) as archive:
-        section_names = sorted(name for name in archive.namelist() if name.startswith("Contents/section") and name.endswith(".xml"))
-        for name in section_names:
-            root = ElementTree.fromstring(archive.read(name))
-            for node in root.iter():
-                if node.tag.endswith("}t") or node.tag == "t":
-                    if node.text:
-                        paragraphs.append(node.text)
-    return clean_text(" ".join(paragraphs))
-
-
-def ingest_bank_standard_terms() -> int:
-    documents = []
-    for source_path in sorted(DATA_INBOX.glob("*.hwpx")):
-        title = source_path.stem
-        text = extract_hwpx_text(source_path)
-        if not text:
-            continue
-        documents.append(
-            {
-                "dataset_id": "FTC_BANK_STANDARD_TERMS_20240927",
-                "title": title,
-                "text": text,
-                "source_title": title,
-                "source_file": source_path.name,
-            }
-        )
-    write_json(OFFICIAL_DATA_DIR / "ftc_bank_standard_terms.json", documents)
-    return len(documents)
-
-
 def fetch_fsc_page(page: int) -> str:
     url = f"{FSC_TERMS_URL}?curPage={page}"
     request = Request(url, headers={"User-Agent": USER_AGENT})
@@ -426,15 +328,18 @@ def update_registry(row_counts: dict[str, int]) -> None:
         "KINFA_MICROFINANCE_BRANCHES_20251231": "backend/app/data/official/kinfa_microfinance_branches.json",
         "KINFA_MICROFINANCE_AGE_LOAN_20241231": "backend/app/data/official/kinfa_microfinance_age_loan_stats.json",
         "FTC_TELEMARKETING_SELLERS": "backend/app/data/official/ftc_telemarketing_sellers_seoul_gyeonggi.json",
-        "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": "backend/app/data/official/kpf_voice_phishing_news_metadata.json",
-        "FINANCIAL_CONSUMER_PROTECTION_PDF": "backend/app/data/official/financial_consumer_protection_pdf_pages.json",
-        "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320": "backend/app/data/official/ftc_financial_unfair_terms_briefing_pages.json",
         "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227": "backend/app/data/official/ftc_consumer_complaint_examples.json",
         "POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231": "backend/app/data/official/post_office_financial_fraud_accounts.json",
         "POLICE_VOICE_PHISHING_STATS_20251231": "backend/app/data/official/police_voice_phishing_stats.json",
         "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231": "backend/app/data/official/police_voice_phishing_regional_damage.json",
         "KDIC_INSURED_FINANCIAL_COMPANIES_20250930": "backend/app/data/official/kdic_insured_financial_companies.json",
-        "FTC_BANK_STANDARD_TERMS_20240927": "backend/app/data/official/ftc_bank_standard_terms.json",
+    }
+
+    non_runtime_sources = {
+        "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": ("excluded", "공공누리 제4유형: 출처표시·상업적 이용금지·변경금지"),
+        "FINANCIAL_CONSUMER_PROTECTION_PDF": ("reference_only", "이용조건 확인 전 재사용 금지"),
+        "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320": ("reference_only", "공식 원문 링크만 참조"),
+        "FTC_BANK_STANDARD_TERMS_20240927": ("reference_only", "공식 원문 링크만 참조"),
     }
 
     registry = [
@@ -445,52 +350,18 @@ def update_registry(row_counts: dict[str, int]) -> None:
 
     for item in registry:
         dataset_id = item["dataset_id"]
+        if dataset_id in non_runtime_sources:
+            item["status"], item["license"] = non_runtime_sources[dataset_id]
+            item["local_path"] = None
+            continue
         if dataset_id in local_paths:
             item["status"] = "imported"
             item["local_path"] = local_paths[dataset_id]
             if dataset_id in row_counts:
                 item["row_count"] = row_counts[dataset_id]
 
-    if "FINANCIAL_CONSUMER_PROTECTION_PDF" not in {item["dataset_id"] for item in registry}:
-        registry.append(
-            {
-                "dataset_id": "FINANCIAL_CONSUMER_PROTECTION_PDF",
-                "title": "금융소비자 보호.pdf",
-                "publisher": "공식 자료",
-                "portal": "사용자 제공 공식 PDF",
-                "url": "",
-                "format": "PDF",
-                "row_count": row_counts.get("FINANCIAL_CONSUMER_PROTECTION_PDF", 0),
-                "license": "사용자 제공 공식 자료",
-                "fee": "무료",
-                "modified_at": None,
-                "status": "imported",
-                "local_path": local_paths["FINANCIAL_CONSUMER_PROTECTION_PDF"],
-                "tags": ["금융소비자보호", "설명의무", "민원", "피해예방"],
-                "use_cases": ["procedure_guidance", "complaint_draft", "explanation_duty"],
-                "summary": "금융소비자 보호 관련 PDF를 페이지 단위 텍스트로 추출해 설명의무, 민원 초안, 절차 안내의 근거 자료로 활용합니다.",
-            }
-        )
-
     existing_ids = {item["dataset_id"] for item in registry}
     additions = [
-        {
-            "dataset_id": "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320",
-            "title": "금융 분야 불공정약관 개선 공동 설명회 자료",
-            "publisher": "공정거래위원회·금융감독원",
-            "portal": "KDI 경제정보센터",
-            "url": "https://eiec.kdi.re.kr/policy/materialView.do?num=264605&pg=&pp=20&topic=L",
-            "format": "PDF",
-            "row_count": row_counts.get("FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320", 0),
-            "license": "공식 공개 자료",
-            "fee": "무료",
-            "modified_at": "2025-03-20",
-            "status": "imported",
-            "local_path": local_paths["FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320"],
-            "tags": ["불공정약관", "금융약관", "약관심사", "표준약관", "독소조항"],
-            "use_cases": ["dark_pattern_detection", "contract_comparison", "risk_dictionary"],
-            "summary": "금융 분야 약관 심사 제도와 불공정약관 유형을 설명하는 공식 자료로, 독소조항 탐지 규칙 고도화에 활용합니다.",
-        },
         {
             "dataset_id": "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227",
             "title": "공정거래위원회_소비자 민원학습데이터 모범상담 사례_20211227",
@@ -516,7 +387,7 @@ def update_registry(row_counts: dict[str, int]) -> None:
             "url": "https://www.data.go.kr/data/15021794/fileData.do?recommendDataYn=Y",
             "format": "CSV",
             "row_count": row_counts.get("POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231", 0),
-            "license": "공공데이터포털 파일데이터",
+            "license": "이용허락범위 제한 없음",
             "fee": "무료",
             "modified_at": "2026-01-23",
             "status": "imported",
@@ -530,10 +401,10 @@ def update_registry(row_counts: dict[str, int]) -> None:
             "title": "경찰청_보이스피싱 현황_20251231",
             "publisher": "경찰청",
             "portal": "공공데이터포털",
-            "url": "https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EB%B3%B4%EC%9D%B4%EC%8A%A4%ED%94%BC%EC%8B%B1",
+            "url": "https://www.data.go.kr/data/15063815/fileData.do",
             "format": "CSV",
             "row_count": row_counts.get("POLICE_VOICE_PHISHING_STATS_20251231", 0),
-            "license": "공공데이터포털 파일데이터",
+            "license": "이용허락범위 제한 없음",
             "fee": "무료",
             "modified_at": "2026-01-21",
             "status": "imported",
@@ -547,10 +418,10 @@ def update_registry(row_counts: dict[str, int]) -> None:
             "title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
             "publisher": "경찰청",
             "portal": "공공데이터포털",
-            "url": "https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EB%B3%B4%EC%9D%B4%EC%8A%A4%ED%94%BC%EC%8B%B1",
+            "url": "https://www.data.go.kr/data/15157710/fileData.do",
             "format": "CSV",
             "row_count": row_counts.get("POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231", 0),
-            "license": "공공데이터포털 파일데이터",
+            "license": "이용허락범위 제한 없음",
             "fee": "무료",
             "modified_at": "2026-01-21",
             "status": "imported",
@@ -576,23 +447,6 @@ def update_registry(row_counts: dict[str, int]) -> None:
             "use_cases": ["deposit_protection", "institution_lookup", "product_precheck"],
             "summary": "예금보험 적용 대상 금융회사 목록으로, 기관명·주소·연락처·홈페이지 확인에 활용합니다.",
         },
-        {
-            "dataset_id": "FTC_BANK_STANDARD_TERMS_20240927",
-            "title": "공정거래위원회 은행 표준약관 3종_20240927",
-            "publisher": "공정거래위원회",
-            "portal": "공정거래위원회",
-            "url": "https://www.ftc.go.kr/www/selectBbsNttList.do?bordCd=201&key=202",
-            "format": "HWPX",
-            "row_count": row_counts.get("FTC_BANK_STANDARD_TERMS_20240927", 0),
-            "license": "공식 공개 표준약관",
-            "fee": "무료",
-            "modified_at": "2024-09-27",
-            "status": "imported",
-            "local_path": local_paths["FTC_BANK_STANDARD_TERMS_20240927"],
-            "tags": ["표준약관", "예금거래", "은행여신", "가계대출", "기업대출"],
-            "use_cases": ["contract_comparison", "dark_pattern_detection", "standard_terms_reference"],
-            "summary": "예금거래기본약관, 은행여신거래기본약관 가계용·기업용을 텍스트로 추출해 약관 비교 기준으로 활용합니다.",
-        },
     ]
     registry.extend(item for item in additions if item["dataset_id"] not in existing_ids)
 
@@ -601,20 +455,19 @@ def update_registry(row_counts: dict[str, int]) -> None:
 
 def main() -> None:
     row_counts = {
+        "KDIC_MISTAKEN_TRANSFER_FAQ_20240729": count_normalized_rows(
+            "kdic_mistaken_transfer_faq.json"
+        ),
         "KINFA_MAIN_FAQ_20251031": ingest_kinfa_faq(),
         "KDIC_DEPOSIT_INSURANCE_TERMS_20220825": ingest_kdic_terms(),
         "KINFA_MICROFINANCE_BRANCHES_20251231": ingest_microfinance_branches(),
         "KINFA_MICROFINANCE_AGE_LOAN_20241231": ingest_microfinance_age_stats(),
         "FTC_TELEMARKETING_SELLERS": ingest_telemarketing_sellers(),
-        "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": ingest_voice_phishing_news(),
-        "FINANCIAL_CONSUMER_PROTECTION_PDF": ingest_financial_consumer_protection_pdf(),
-        "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320": ingest_unfair_terms_briefing_pdf(),
         "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227": ingest_consumer_complaint_examples(),
         "POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231": ingest_post_office_fraud_accounts(),
         "POLICE_VOICE_PHISHING_STATS_20251231": ingest_police_voice_phishing_stats(),
         "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231": ingest_police_voice_phishing_regional_damage(),
         "KDIC_INSURED_FINANCIAL_COMPANIES_20250930": ingest_kdic_insured_companies(),
-        "FTC_BANK_STANDARD_TERMS_20240927": ingest_bank_standard_terms(),
         "FSC_FINANCIAL_TERMS_20260630": ingest_fsc_financial_terms(),
     }
     update_registry(row_counts)
@@ -622,13 +475,29 @@ def main() -> None:
         OFFICIAL_DATA_DIR / "ingestion_manifest.json",
         {
             "generated_at": date.today().isoformat(),
-            "source_folder": str(DATA_INBOX),
+            "source_folder": "data_inbox",
             "row_counts": row_counts,
             "excluded": [
                 {
                     "dataset_id": "FSC_DEPOSIT_INSURANCE_COMPANY_PRODUCT_API",
                     "reason": "사용자 요청에 따라 API만 제공하는 데이터는 제외했습니다.",
-                }
+                },
+                {
+                    "dataset_id": "KPF_VOICE_PHISHING_NEWS_METADATA_20241231",
+                    "reason": "공공누리 제4유형으로 상업적 이용과 변경이 금지되어 제외했습니다.",
+                },
+                {
+                    "dataset_id": "FINANCIAL_CONSUMER_PROTECTION_PDF",
+                    "reason": "출처와 이용조건 확인 전에는 공식 링크 참고 자료로만 관리합니다.",
+                },
+                {
+                    "dataset_id": "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320",
+                    "reason": "원문 추출·재배포 대신 공식 링크만 참고합니다.",
+                },
+                {
+                    "dataset_id": "FTC_BANK_STANDARD_TERMS_20240927",
+                    "reason": "원문 추출·재배포 대신 자체 작성 점검 기준과 공식 링크만 사용합니다.",
+                },
             ],
         },
     )

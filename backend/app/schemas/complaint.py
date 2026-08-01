@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field
 
 
 class ComplaintDraftRequest(BaseModel):
-    user_statement: str = Field(min_length=1)
+    user_statement: str = Field(min_length=1, max_length=30_000)
     incident_type: str = "general_complaint"
 
 

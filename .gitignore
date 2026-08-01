@@ -8,6 +8,10 @@ frontend/.next/
 frontend/out/
 frontend/tsconfig.tsbuildinfo
 *.inspect.ndjson
+~$*.pptx
 *.pyc
 __pycache__/
 .DS_Store
+.pytest_cache/
+submission/
+deliverables/*_Submission_Source.zip

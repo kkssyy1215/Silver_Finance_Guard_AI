@@ -191,8 +191,19 @@ def test_financial_term_search_prioritizes_exact_term_over_body_matches() -> Non
 def test_official_record_search_uses_new_complaint_and_phishing_data() -> None:
     complaint_results = search_official_records("보험금", dataset_id="FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227", limit=3)
     phishing_results = search_official_records("기관사칭", dataset_id="POLICE_VOICE_PHISHING_STATS_20251231", limit=3)
-    standard_terms_results = search_official_records("기한의 이익", dataset_id="FTC_BANK_STANDARD_TERMS_20240927", limit=3)
 
     assert complaint_results
     assert phishing_results
-    assert standard_terms_results
+
+
+def test_restricted_or_unverified_sources_are_not_runtime_datasets() -> None:
+    imported_ids = {dataset.dataset_id for dataset in find_official_datasets(status="imported")}
+    excluded_ids = {
+        "KPF_VOICE_PHISHING_NEWS_METADATA_20241231",
+        "FINANCIAL_CONSUMER_PROTECTION_PDF",
+        "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320",
+        "FTC_BANK_STANDARD_TERMS_20240927",
+    }
+
+    assert imported_ids.isdisjoint(excluded_ids)
+    assert all(dataset.license == "이용허락범위 제한 없음" for dataset in find_official_datasets(status="imported"))

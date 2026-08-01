@@ -26,8 +26,8 @@ def transcribe_audio(content: bytes, filename: str | None) -> tuple[str, bool, s
             audio_file.flush()
             segments, _ = _model.transcribe(str(audio_file.name), language="ko", vad_filter=True)
             text = " ".join(segment.text.strip() for segment in segments).strip()
-    except Exception as exc:
-        return "", False, f"음성을 글자로 바꾸지 못했습니다. 다시 녹음해주세요. ({exc})"
+    except Exception:
+        return "", False, "음성을 글자로 바꾸지 못했습니다. 다시 녹음해주세요."
 
     if not text:
         return "", False, "음성이 너무 짧거나 잘 들리지 않습니다. 조금 더 천천히 말해주세요."

@@ -55,14 +55,10 @@ SEARCHABLE_DATA_FILES = {
     "KINFA_MAIN_FAQ_20251031": "kinfa_main_faq.json",
     "KINFA_MICROFINANCE_BRANCHES_20251231": "kinfa_microfinance_branches.json",
     "FTC_TELEMARKETING_SELLERS": "ftc_telemarketing_sellers_seoul_gyeonggi.json",
-    "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": "kpf_voice_phishing_news_metadata.json",
-    "FINANCIAL_CONSUMER_PROTECTION_PDF": "financial_consumer_protection_pdf_pages.json",
-    "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320": "ftc_financial_unfair_terms_briefing_pages.json",
     "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227": "ftc_consumer_complaint_examples.json",
     "POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231": "post_office_financial_fraud_accounts.json",
     "POLICE_VOICE_PHISHING_STATS_20251231": "police_voice_phishing_stats.json",
     "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231": "police_voice_phishing_regional_damage.json",
-    "FTC_BANK_STANDARD_TERMS_20240927": "ftc_bank_standard_terms.json",
 }
 
 
@@ -87,14 +83,10 @@ def _normalize_records(dataset_id: str, rows: list[dict[str, Any]]) -> list[Offi
         "KINFA_MAIN_FAQ_20251031": _faq_record,
         "KINFA_MICROFINANCE_BRANCHES_20251231": _branch_record,
         "FTC_TELEMARKETING_SELLERS": _telemarketing_record,
-        "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": _news_record,
-        "FINANCIAL_CONSUMER_PROTECTION_PDF": _pdf_page_record,
-        "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320": _pdf_page_record,
         "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227": _complaint_example_record,
         "POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231": _fraud_account_record,
         "POLICE_VOICE_PHISHING_STATS_20251231": _police_voice_phishing_stat_record,
         "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231": _police_regional_damage_record,
-        "FTC_BANK_STANDARD_TERMS_20240927": _standard_terms_record,
     }
     normalize = normalizers[dataset_id]
     return [normalize(row) for row in rows]
@@ -148,26 +140,6 @@ def _telemarketing_record(row: dict[str, Any]) -> OfficialRecord:
         body=f"{row.get('agency', '')} {row.get('registration_no', '')} {row.get('phone', '')}",
         source_title="공정거래위원회_전화권유판매사업자정보파일",
         metadata={"type": "telemarketing_seller", "agency": row.get("agency", ""), "status": row.get("status", "")},
-    )
-
-
-def _news_record(row: dict[str, Any]) -> OfficialRecord:
-    return OfficialRecord(
-        dataset_id=row["dataset_id"],
-        title=row.get("title", ""),
-        body=f"{row.get('date', '')} {row.get('publisher', '')} {row.get('category_1', '')} {row.get('category_2', '')}",
-        source_title=row.get("source_title", ""),
-        metadata={"type": "news_metadata", "date": row.get("date", ""), "publisher": row.get("publisher", "")},
-    )
-
-
-def _pdf_page_record(row: dict[str, Any]) -> OfficialRecord:
-    return OfficialRecord(
-        dataset_id=row["dataset_id"],
-        title=f"{row.get('source_title', 'PDF')} {row.get('page', '')}쪽",
-        body=row.get("text", ""),
-        source_title=row.get("source_title", ""),
-        metadata={"type": "pdf_page", "page": str(row.get("page", ""))},
     )
 
 
@@ -229,16 +201,6 @@ def _police_regional_damage_record(row: dict[str, Any]) -> OfficialRecord:
         ),
         source_title=row.get("source_title", ""),
         metadata={"type": "voice_phishing_regional_damage", "region": row.get("region", "")},
-    )
-
-
-def _standard_terms_record(row: dict[str, Any]) -> OfficialRecord:
-    return OfficialRecord(
-        dataset_id=row["dataset_id"],
-        title=row.get("title", ""),
-        body=row.get("text", ""),
-        source_title=row.get("source_title", ""),
-        metadata={"type": "standard_terms", "source_file": row.get("source_file", "")},
     )
 
 

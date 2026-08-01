@@ -1,25 +1,19 @@
-import json
 import re
-from functools import lru_cache
-from pathlib import Path
 
 from app.schemas.analysis import ContractRiskResponse, RiskItem, TextAnalysisRequest
 from app.schemas.common import Confidence, EasyExplanation, RiskLevel
 from app.services.reference_service import references_for
-from app.services.reference_service import official_dataset_reference
 from app.services.rule_loader import load_rule_file
 
 DISCLAIMER = "이 결과는 법적 판단이 아니라 소비자 보호를 위한 확인 보조 정보입니다."
-OFFICIAL_DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "official"
-
-STANDARD_QUERY_TERMS = {
-    "auto_renewal": ["자동", "갱신", "연장", "통지", "해지"],
-    "excessive_penalty": ["위약금", "손해배상", "해지", "상환", "비용"],
-    "third_party_data": ["동의", "제공", "개인정보", "제3자", "통지"],
-    "principal_guarantee_misleading": ["예금", "보호", "원금", "손실", "위험"],
-    "pressure_sales": ["설명", "통지", "교부", "열람", "확인"],
-    "unclear_fee": ["비용", "수수료", "이자", "지연배상금", "인지세"],
-    "termination_limit": ["해지", "기한의 이익", "상실", "상환", "통지"],
+STANDARD_CHECK_REFERENCES = {
+    "auto_renewal": "점검 기준: 자동 연장 여부, 사전 통지 방법, 해지 절차를 계약 전에 확인합니다.",
+    "excessive_penalty": "점검 기준: 중도 해지 시 실제 부담액과 산정 방법을 계약 전에 확인합니다.",
+    "third_party_data": "점검 기준: 개인정보 제공 동의가 필수인지 선택인지, 거부할 수 있는지 확인합니다.",
+    "principal_guarantee_misleading": "점검 기준: 원금 손실 가능성과 예금자보호 대상 여부를 따로 확인합니다.",
+    "pressure_sales": "점검 기준: 충분한 설명과 판단 시간을 받았는지 확인합니다.",
+    "unclear_fee": "점검 기준: 가입·유지·해지 과정의 모든 비용과 산정 방법을 확인합니다.",
+    "termination_limit": "점검 기준: 해지 가능한 시점, 방법, 제한 조건을 확인합니다.",
 }
 
 SENIOR_ACTIONS = {
@@ -73,13 +67,8 @@ def _confidence_for(keywords: list[str], matched_keywords: list[str]) -> Confide
 
 
 def _references_for_risk(label: str):
-    reason = REFERENCE_REASONS.get(label, "공식 소비자보호 자료와 관련 표준약관을 확인하는 기준으로 사용했습니다.")
-    references = references_for("consumer_protection", application_reason=reason)
-    for dataset_id in ["FTC_BANK_STANDARD_TERMS_20240927", "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320"]:
-        reference = official_dataset_reference(dataset_id, reason)
-        if reference:
-            references.append(reference)
-    return references
+    reason = REFERENCE_REASONS.get(label, "공식 소비자보호 자료를 확인 기준으로 사용했습니다.")
+    return references_for("consumer_protection", application_reason=reason)
 
 
 def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
@@ -121,7 +110,7 @@ def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
     if matched_items:
         summary = EasyExplanation(
             one_line=f"확인할 내용이 {len(matched_items)}개 있습니다.",
-            easy_summary="가입 전 다시 물어봐야 할 조건이 보입니다. 표준약관 근거와 함께 확인하세요.",
+            easy_summary="가입 전 다시 물어봐야 할 조건이 보입니다. 공식 소비자보호 기준과 함께 확인하세요.",
             next_action="아래 질문을 상담사에게 묻고, 답변을 문자나 서류로 남겨두세요.",
         )
     else:
@@ -142,44 +131,14 @@ def analyze_contract_risk(request: TextAnalysisRequest) -> ContractRiskResponse:
     )
 
 
-@lru_cache
-def load_bank_standard_terms() -> list[dict[str, str]]:
-    path = OFFICIAL_DATA_DIR / "ftc_bank_standard_terms.json"
-    if not path.exists():
-        return []
-    with path.open(encoding="utf-8") as terms_file:
-        return json.load(terms_file)
-
-
-@lru_cache
-def load_unfair_terms_briefing_pages() -> list[dict[str, str]]:
-    path = OFFICIAL_DATA_DIR / "ftc_financial_unfair_terms_briefing_pages.json"
-    if not path.exists():
-        return []
-    with path.open(encoding="utf-8") as briefing_file:
-        return json.load(briefing_file)
-
-
 def find_standard_clause_references(label: str, context: str, limit: int = 2) -> list[str]:
-    query_terms = STANDARD_QUERY_TERMS.get(label, []) + _important_words(context)
-    candidates: list[tuple[int, str]] = []
-
-    for document in load_bank_standard_terms():
-        title = document.get("title", "은행 표준약관")
-        for clause in _split_clauses(document.get("text", "")):
-            score = _score_text(clause, query_terms)
-            if score <= 0:
-                continue
-            candidates.append((score, f"{title}: {clause[:260]}"))
-
-    candidates.sort(key=lambda item: item[0], reverse=True)
-    return [text for _, text in candidates[:limit]]
+    del context, limit
+    reference = STANDARD_CHECK_REFERENCES.get(label)
+    return [reference] if reference else []
 
 
 def compare_with_standard_terms(label: str, context: str, standard_refs: list[str]) -> str:
-    briefing_note = _find_unfair_terms_note(label)
-    if not standard_refs:
-        return "표준약관 직접 비교 근거를 찾지 못했습니다. 상담사에게 표준약관과 다른 내용인지 확인해야 합니다."
+    del context, standard_refs
 
     warning = {
         "auto_renewal": "자동 연장 조건은 소비자가 쉽게 알 수 있게 안내되어야 하므로 해지 방법과 통지 여부를 확인해야 합니다.",
@@ -191,38 +150,7 @@ def compare_with_standard_terms(label: str, context: str, standard_refs: list[st
         "termination_limit": "해지 제한이나 기한의 이익 상실은 소비자에게 큰 부담이 되므로 발생 조건을 구체적으로 확인해야 합니다.",
     }.get(label, "표준약관과 다른 불리한 조건인지 확인해야 합니다.")
 
-    if briefing_note:
-        return f"{warning} 공식 설명회 자료도 금융 분야 불공정약관 유형 확인 필요성을 강조합니다."
     return warning
-
-
-def _find_unfair_terms_note(label: str) -> str:
-    query_terms = STANDARD_QUERY_TERMS.get(label, [])
-    best_score = 0
-    best_text = ""
-    for page in load_unfair_terms_briefing_pages():
-        text = page.get("text", "")
-        score = _score_text(text, query_terms + ["불공정약관", "약관심사", "표준약관"])
-        if score > best_score:
-            best_score = score
-            best_text = text[:260]
-    return best_text
-
-
-def _split_clauses(text: str) -> list[str]:
-    parts = re.split(r"(?=제\d+조\s*\()", text)
-    return [part.strip() for part in parts if len(part.strip()) > 40]
-
-
-def _important_words(text: str) -> list[str]:
-    tokens = re.findall(r"[가-힣A-Za-z0-9]{2,}", text)
-    stopwords = {"경우", "해당", "약관", "계약", "은행", "고객", "합니다", "있는", "없는"}
-    return [token for token in tokens if token not in stopwords][:8]
-
-
-def _score_text(text: str, query_terms: list[str]) -> int:
-    normalized = text.lower()
-    return sum(1 for term in query_terms if term and term.lower() in normalized)
 
 
 def _find_context(content: str, keywords: list[str]) -> str:

@@ -6,6 +6,13 @@
 
 고령층 사용자가 이해하기 어려운 금융 약관의 위험 요소를 사전에 탐지하고, 금융사고 발생 시 골든타임 내 필요한 조치와 서류 작성을 즉시 지원하는 금융소비자 보호 AI 에이전트입니다.
 
+## Submission Prototype
+
+- Live service: https://silver-finance-guard-ai.onrender.com
+- Technical presentation: `deliverables/실버_금융가드_AI_기술설명서.pptx`
+- Technical description PDF: `deliverables/실버_금융가드_AI_기술설명서.pdf`
+- Judge demo flow: `docs/demo_scenarios.md`
+
 ## Core Flows
 
 - Pre-signup check: detect risky clauses or misleading sales language and explain them in plain Korean.
@@ -103,8 +110,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`. By default, the frontend calls `http://127.0.0.1:8000`.
-For a deployed backend, set `NEXT_PUBLIC_API_BASE_URL` before starting the app.
+Open `http://localhost:3000`. By default, the frontend calls `http://127.0.0.1:8000` during local development. The deployed Docker service serves the frontend and API from one address.
 
 The frontend is now the Next.js app; the previous Streamlit screen has been removed to prevent an outdated interface from being used during the demo.
 

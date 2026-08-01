@@ -1,0 +1,10 @@
+.git
+.gitignore
+**/.venv
+**/node_modules
+**/.next
+frontend/out
+data_inbox
+deliverables
+*.log
+.DS_Store

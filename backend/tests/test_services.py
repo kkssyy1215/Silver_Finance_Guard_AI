@@ -66,6 +66,20 @@ def test_incident_classifier_handles_negation_and_comma_amounts() -> None:
     assert result.extracted_facts.amount == 1_000_000
 
 
+def test_incident_classifier_does_not_treat_jalmot_as_negation() -> None:
+    result = classify_incident("모르는 사람에게 30만원을 잘못 보냈어요.")
+
+    assert result.extracted_facts.transfer_done is True
+
+
+def test_related_deposit_terms_use_term_specific_easy_explanations() -> None:
+    results = search_financial_terms("예금", limit=8)
+    descriptions = {item.term: item.easy_explanation for item in results}
+
+    assert "금융회사가 예금보험공사에 내는 돈" in descriptions["예금보험료"]
+    assert "일반 예금과는 다른 투자상품" in descriptions["예금보험기금채권"]
+
+
 def test_contract_risk_does_not_flag_explicitly_free_fee() -> None:
     result = analyze_contract_risk(TextAnalysisRequest(content="수수료가 없습니다."))
 

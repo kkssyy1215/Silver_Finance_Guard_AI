@@ -74,7 +74,7 @@ def _extract_facts(content: str) -> ExtractedFacts:
 
 def _fact_present(content: str, keywords: list[str]) -> bool:
     """Detect a fact while ignoring common Korean negation around the keyword."""
-    negation = re.compile(r"(?:안|않|못|없|아니|하지\s*않|하지\s*못)")
+    negation = re.compile(r"(?:안|않|(?<!잘)못|없|아니|하지\s*않|하지\s*못)")
     for keyword in keywords:
         for match in re.finditer(re.escape(keyword), content):
             before = content[max(0, match.start() - 8) : match.start()]

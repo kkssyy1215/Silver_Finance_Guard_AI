@@ -8,6 +8,17 @@ import { getJson, postFile, postJson } from "@/lib/api";
 type TabKey = "check" | "terms" | "incident" | "complaint";
 type InputMode = "text" | "file" | "voice";
 type JsonRecord = Record<string, any>;
+type BrowserSpeechRecognition = {
+  lang: string;
+  continuous: boolean;
+  interimResults: boolean;
+  onresult: ((event: any) => void) | null;
+  onerror: (() => void) | null;
+  onend: (() => void) | null;
+  start: () => void;
+  stop: () => void;
+};
+type BrowserSpeechRecognitionConstructor = new () => BrowserSpeechRecognition;
 
 const tabItems: { key: TabKey; title: string; description: string; icon: typeof ShieldCheck }[] = [
   { key: "check", title: "가입 전 확인", description: "약관·문자의 위험 표현 찾기", icon: ShieldCheck },
@@ -88,6 +99,78 @@ function PrivacyGuard({ text, onMask }: { text: string; onMask: () => void }) {
   return <div className="privacy-warning" role="alert"><strong>개인정보가 보입니다.</strong><span>{labels.join(", ")}는 분석 전에 가리는 것이 안전합니다.</span><button className="secondary-button" type="button" onClick={onMask}>민감한 정보 가리기</button></div>;
 }
 
+function useVoiceInput(onText: (text: string) => void, setError: (message: string) => void, filename: string) {
+  const [recording, setRecording] = useState(false);
+  const recognitionRef = useRef<BrowserSpeechRecognition | null>(null);
+  const recorderRef = useRef<MediaRecorder | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
+
+  const startRecording = async () => {
+    setError("");
+    const speechWindow = window as typeof window & {
+      SpeechRecognition?: BrowserSpeechRecognitionConstructor;
+      webkitSpeechRecognition?: BrowserSpeechRecognitionConstructor;
+    };
+    const Recognition = speechWindow.SpeechRecognition ?? speechWindow.webkitSpeechRecognition;
+
+    if (Recognition) {
+      const recognition = new Recognition();
+      recognition.lang = "ko-KR";
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.onresult = (event) => {
+        const transcript = event.results?.[0]?.[0]?.transcript?.trim();
+        if (transcript) onText(transcript);
+        else setError("음성을 또렷하게 듣지 못했습니다. 천천히 다시 말해주세요.");
+      };
+      recognition.onerror = () => setError("음성을 듣지 못했습니다. 마이크 권한을 확인하거나 직접 적어주세요.");
+      recognition.onend = () => {
+        recognitionRef.current = null;
+        setRecording(false);
+      };
+      recognitionRef.current = recognition;
+      recognition.start();
+      setRecording(true);
+      return;
+    }
+
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      chunksRef.current = [];
+      const recorder = new MediaRecorder(stream);
+      recorder.ondataavailable = (event) => { if (event.data.size) chunksRef.current.push(event.data); };
+      recorder.onstop = async () => {
+        stream.getTracks().forEach((track) => track.stop());
+        const audio = new File([new Blob(chunksRef.current, { type: "audio/webm" })], filename, { type: "audio/webm" });
+        try {
+          const data = await postFile<JsonRecord>("/api/v1/analyze/transcribe-audio", audio);
+          if (data.text) onText(data.text);
+          else setError(data.message ?? "음성을 글자로 바꾸지 못했습니다.");
+        } catch (caught) {
+          setError(caught instanceof Error ? caught.message : "음성 변환에 실패했습니다.");
+        } finally {
+          recorderRef.current = null;
+          setRecording(false);
+        }
+      };
+      recorderRef.current = recorder;
+      recorder.start();
+      setRecording(true);
+    } catch {
+      setError("마이크를 사용할 수 없습니다. 브라우저 권한을 확인하거나 직접 적어주세요.");
+    }
+  };
+
+  const stopRecording = () => {
+    recognitionRef.current?.stop();
+    recorderRef.current?.stop();
+    recognitionRef.current = null;
+    setRecording(false);
+  };
+
+  return { recording, startRecording, stopRecording };
+}
+
 function FileMode({ onFile, busy }: { onFile: (file: File) => void; busy: boolean }) {
   return <div className="upload-box"><label className="field-label icon-label" htmlFor="document-file"><FileUp size={19} aria-hidden="true" /> PDF, 사진 또는 텍스트 파일</label><input id="document-file" type="file" accept=".pdf,.png,.jpg,.jpeg,.webp,.txt,.md,.json" disabled={busy} onChange={(event) => { const file = event.target.files?.[0]; if (file) onFile(file); }} /><p className="input-help">파일을 읽은 뒤 문장을 직접 고칠 수 있습니다. {busy ? "파일을 읽는 중입니다." : "개인정보는 올리기 전에 지워주세요."}</p></div>;
 }
@@ -119,10 +202,13 @@ export default function FinanceGuardApp() {
   const contentRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const savedScale = window.localStorage.getItem("silver-font-scale") as "normal" | "large" | "xlarge" | null;
-    if (savedScale) setScale(savedScale);
-    const savedContrast = window.localStorage.getItem("silver-high-contrast");
-    if (savedContrast) setHighContrast(savedContrast === "true");
+    const restorePreferences = window.setTimeout(() => {
+      const savedScale = window.localStorage.getItem("silver-font-scale") as "normal" | "large" | "xlarge" | null;
+      if (savedScale) setScale(savedScale);
+      const savedContrast = window.localStorage.getItem("silver-high-contrast");
+      if (savedContrast) setHighContrast(savedContrast === "true");
+    }, 0);
+    return () => window.clearTimeout(restorePreferences);
   }, []);
   useEffect(() => { window.localStorage.setItem("silver-font-scale", scale); }, [scale]);
   useEffect(() => { window.localStorage.setItem("silver-high-contrast", String(highContrast)); }, [highContrast]);
@@ -142,7 +228,7 @@ export default function FinanceGuardApp() {
     <main className="page-wrap">
       <header className="site-header">
         <div className="brand"><div className="eyebrow">금융소비자 보호 서비스</div><h1>실버 금융가드</h1><p>어려운 금융 내용을 쉬운 말로 확인하고, 지금 할 일을 안내받으세요.</p></div>
-        <div className="tool-box" aria-label="보기 설정"><span className="tool-label">보기 설정</span><div className="size-control" aria-label="글자 크기"><button type="button" aria-label="글자 작게" disabled={sizeIndex === 0} onClick={() => changeSize(-1)}><Minus size={20} aria-hidden="true" /></button><strong aria-live="polite">{sizeLabel}</strong><button type="button" aria-label="글자 크게" disabled={sizeIndex === sizes.length - 1} onClick={() => changeSize(1)}><Plus size={20} aria-hidden="true" /></button></div><button className={`tool-button icon-button ${highContrast ? "active" : ""}`} type="button" aria-pressed={highContrast} onClick={() => setHighContrast((value) => !value)}><Contrast size={19} aria-hidden="true" /> 고대비</button><button className={`tool-button icon-button ${magnifier ? "active" : ""}`} type="button" aria-pressed={magnifier} onClick={() => setMagnifier((value) => !value)}><Eye size={19} aria-hidden="true" /> 입력 크게 보기</button></div>
+        <div className="tool-box" aria-label="보기 설정"><span className="tool-label">보기 설정</span><div className="size-control" aria-label="글자 크기"><button type="button" aria-label="글자 작게" disabled={sizeIndex === 0} onClick={() => changeSize(-1)}><Minus size={20} aria-hidden="true" /></button><strong aria-live="polite">{sizeLabel}</strong><button type="button" aria-label="글자 크게" disabled={sizeIndex === sizes.length - 1} onClick={() => changeSize(1)}><Plus size={20} aria-hidden="true" /></button></div><button className={`tool-button icon-button ${highContrast ? "active" : ""}`} type="button" aria-pressed={highContrast} onClick={() => setHighContrast((value) => !value)}><Contrast size={19} aria-hidden="true" /> {highContrast ? "고대비 끄기" : "고대비 보기"}</button><button className={`tool-button icon-button ${magnifier ? "active" : ""}`} type="button" aria-pressed={magnifier} onClick={() => setMagnifier((value) => !value)}><Eye size={19} aria-hidden="true" /> 입력 크게 보기</button></div>
       </header>
 
       <section className="service-picker" aria-labelledby="service-picker-title"><div className="service-picker-heading"><span>1단계</span><h2 id="service-picker-title">무엇을 도와드릴까요?</h2></div><nav className="service-grid" aria-label="주요 기능">{tabItems.map((item) => { const Icon = item.icon; return <button key={item.key} type="button" className={`service-button ${tab === item.key ? "active" : ""} ${item.key === "incident" ? "urgent" : ""}`} aria-current={tab === item.key ? "page" : undefined} onClick={() => changeTab(item.key)}><Icon size={25} aria-hidden="true" /><span><strong>{item.title}</strong><small>{item.description}</small></span></button>; })}</nav></section>
@@ -161,10 +247,12 @@ function ContractCheck({ magnifier, setError, error }: { magnifier: boolean; set
   const [loading, setLoading] = useState("");
   const [fileLoading, setFileLoading] = useState(false);
   const [fileMessage, setFileMessage] = useState("");
-  const [recording, setRecording] = useState(false);
-  const recorderRef = useRef<MediaRecorder | null>(null);
-  const chunksRef = useRef<Blob[]>([]);
   const resultRef = useRef<HTMLDivElement | null>(null);
+  const { recording, startRecording, stopRecording } = useVoiceInput((voiceText) => {
+    setText(voiceText);
+    setMode("text");
+    setFileMessage("음성을 글자로 바꿨습니다. 잘못 읽은 부분이 없는지 확인하고 고쳐주세요.");
+  }, setError, "voice-input.webm");
 
   useEffect(() => {
     if (result) resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -190,22 +278,6 @@ function ContractCheck({ magnifier, setError, error }: { magnifier: boolean; set
     finally { setFileLoading(false); }
   };
 
-  const startRecording = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      chunksRef.current = [];
-      const recorder = new MediaRecorder(stream);
-      recorder.ondataavailable = (event) => { if (event.data.size) chunksRef.current.push(event.data); };
-      recorder.onstop = async () => {
-        stream.getTracks().forEach((track) => track.stop());
-        const audio = new File([new Blob(chunksRef.current, { type: "audio/webm" })], "voice-input.webm", { type: "audio/webm" });
-        try { const data = await postFile<JsonRecord>("/api/v1/analyze/transcribe-audio", audio); if (data.text) { setText(data.text); setMode("text"); setFileMessage("음성을 글자로 바꿨습니다. 잘못 읽은 부분이 없는지 확인하고 고쳐주세요."); } else setError(data.message ?? "음성을 글자로 바꾸지 못했습니다."); } catch (caught) { setError(caught instanceof Error ? caught.message : "음성 변환에 실패했습니다."); }
-      };
-      recorderRef.current = recorder; recorder.start(); setRecording(true); setError("");
-    } catch { setError("마이크를 사용할 수 없습니다. 브라우저 권한을 확인하거나 직접 적기를 이용해주세요."); }
-  };
-  const stopRecording = () => { recorderRef.current?.stop(); recorderRef.current = null; setRecording(false); };
-
   return <><div className="panel-heading"><div><span className="panel-label">2단계 · 내용 넣기</span><h2>가입 전에 확인하기</h2><p>받은 문자, 약관 또는 상담 내용을 그대로 넣어주세요.</p></div></div><div className="choice-block"><strong className="choice-title">무엇을 확인할까요?</strong><div className="analysis-choice-row"><button type="button" className={analysisKind === "contract" ? "analysis-choice active" : "analysis-choice"} aria-pressed={analysisKind === "contract"} onClick={() => setAnalysisKind("contract")}><BookOpen size={22} aria-hidden="true" /><span><strong>약관·문자 확인</strong><small>불리하거나 위험한 표현을 찾아요</small></span></button><button type="button" className={analysisKind === "explanation" ? "analysis-choice active" : "analysis-choice"} aria-pressed={analysisKind === "explanation"} onClick={() => setAnalysisKind("explanation")}><MessageSquareWarning size={22} aria-hidden="true" /><span><strong>상담 설명 확인</strong><small>직원이 빠뜨린 설명을 살펴봐요</small></span></button></div></div><div className="input-section"><strong className="choice-title">어떻게 넣을까요?</strong><div className="mode-row"><ModeChoice name="contract-mode" value="text" checked={mode === "text"} onChange={() => setMode("text")}>직접 입력</ModeChoice><ModeChoice name="contract-mode" value="file" checked={mode === "file"} onChange={() => setMode("file")}>사진·PDF</ModeChoice><ModeChoice name="contract-mode" value="voice" checked={mode === "voice"} onChange={() => setMode("voice")}>음성 입력</ModeChoice></div>{mode === "file" ? <FileMode onFile={(selectedFile) => void handleFile(selectedFile)} busy={fileLoading} /> : mode === "voice" ? <div className="voice-box"><p>상담 내용이나 문자를 천천히 읽어주세요.</p><button type="button" className={recording ? "secondary-button icon-button" : "primary-button icon-button"} onClick={recording ? stopRecording : startRecording}>{recording ? <><Square size={18} aria-hidden="true" /> 녹음 끝내기</> : <><Mic size={18} aria-hidden="true" /> 녹음 시작</>}</button>{recording && <span className="recording" role="status">녹음 중입니다. 말이 끝나면 녹음 끝내기를 누르세요.</span>}</div> : <div><div className="field-heading"><label className="field-label" htmlFor="contract-text">확인할 내용</label><button className="text-button" type="button" onClick={() => setText(sampleContract)}>예시 넣기</button></div><textarea id="contract-text" value={text} onChange={(event) => setText(event.target.value)} placeholder="문자나 약관 내용을 여기에 적어주세요." />{fileMessage && <div className="notice success" role="status">{fileMessage}</div>}<PrivacyGuard text={text} onMask={() => setText(redactSensitiveText(text))} />{magnifier && text.trim() && <div className="magnifier"><strong>입력한 내용 크게 보기</strong>{text}</div>}<button className="primary-button full-button" type="button" aria-busy={Boolean(loading)} disabled={Boolean(loading) || fileLoading || !text.trim()} onClick={() => void runAnalysis(analysisKind)}>{loading ? "내용을 확인하고 있습니다..." : "내용 확인하기"}</button></div>}</div>{error && <ErrorNotice message={error} />}{result && <div ref={resultRef}><ContractResult result={result} /></div>}</>;
 }
 
@@ -224,7 +296,7 @@ function TermSearch({ magnifier, setError, error }: { magnifier: boolean; setErr
   const [searched, setSearched] = useState(false);
   const resultRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => { if (searched) resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }); }, [searched, terms]);
-  const search = async (nextQuery = query) => { const cleaned = nextQuery.trim(); if (!cleaned) { setError("궁금한 금융 단어를 입력해주세요."); return; } setQuery(cleaned); setError(""); setLoading(true); setSearched(false); try { const data = await getJson<{ terms: JsonRecord[] }>("/api/v1/official-data/terms/search", { query: cleaned, limit: 8 }); setTerms(data.terms); setSearched(true); } catch (caught) { setError(caught instanceof Error ? caught.message : "금융용어 검색에 실패했습니다."); } finally { setLoading(false); } };
+  const search = async (nextQuery = query) => { const cleaned = nextQuery.trim(); if (!cleaned) { setError("궁금한 금융 단어를 입력해주세요."); return; } setQuery(cleaned); setError(""); setLoading(true); setSearched(false); try { const data = await getJson<{ terms: JsonRecord[] }>("/api/v1/official-data/terms/search", { query: cleaned, limit: 5 }); setTerms(data.terms); setSearched(true); } catch (caught) { setError(caught instanceof Error ? caught.message : "금융용어 검색에 실패했습니다."); } finally { setLoading(false); } };
   return <><div className="panel-heading"><div><span className="panel-label">2단계 · 단어 입력</span><h2>어려운 금융 단어 찾기</h2><p>궁금한 단어 하나를 입력하면 먼저 쉬운 말로 설명합니다.</p></div></div><div className="term-search-row"><label className="sr-only" htmlFor="term-query">궁금한 금융 단어</label><input id="term-query" type="text" value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") void search(); }} placeholder="예: 예금자보호" /><button className="primary-button icon-button" type="button" onClick={() => void search()} disabled={loading || !query.trim()}><Search size={20} aria-hidden="true" /> {loading ? "찾는 중..." : "검색"}</button></div><div className="quick-terms" aria-label="자주 찾는 금융용어"><span>자주 찾는 단어</span>{["예금자보호", "지급정지", "청약철회", "중도상환수수료"].map((term) => <button type="button" key={term} onClick={() => void search(term)}>{term}</button>)}</div>{magnifier && query.trim() && <div className="magnifier"><strong>검색할 단어 크게 보기</strong>{query}</div>}{error && <ErrorNotice message={error} />}{searched && <div ref={resultRef} className="result-area"><div className="result-heading"><span>3단계 · 뜻 확인</span><h2>검색 결과</h2></div>{terms.length > 0 ? <><div className="search-summary">{terms.some((term) => term.match_type === "exact") ? "입력한 단어와 정확히 일치하는 뜻입니다." : `‘${query}’와 정확히 같은 단어가 없어 관련된 용어를 보여드립니다.`}</div><div className="result-stack">{terms.map((term, index) => <article className="result-card term-card" key={`${term.term}-${index}`}><div className="result-card-top"><h3>{term.term}</h3><span className="status-pill blue">{term.match_type === "exact" ? "정확히 일치" : "관련 용어"}</span></div><strong className="result-label">쉽게 말하면</strong><p className="easy-summary">{term.easy_explanation}</p>{term.action_tip && <div className="question"><strong>기억할 점</strong><p>{term.action_tip}</p></div>}<SpeakButton text={`${term.term}. 쉽게 말하면 ${term.easy_explanation}`} labelText="뜻 읽어주기" /><details className="reference"><summary>공식 정의와 출처 보기</summary><div className="reference-body"><p>{term.official_definition || "공식 정의가 등록되지 않았습니다."}</p><p><strong>출처</strong> · {term.source_title}</p>{term.source_url && <a href={term.source_url} target="_blank" rel="noreferrer">공식 출처 열기</a>}</div></details></article>)}</div></> : <div className="empty"><strong>일치하는 단어를 찾지 못했습니다.</strong><span>단어를 짧게 바꾸어 다시 검색해보세요.</span></div>}</div>}</>;
 }
 
@@ -239,29 +311,16 @@ function IncidentResponse({ magnifier, setError, error }: { magnifier: boolean; 
   const [incident, setIncident] = useState<JsonRecord | null>(null);
   const [plan, setPlan] = useState<JsonRecord | null>(null);
   const [loading, setLoading] = useState(false);
-  const [recording, setRecording] = useState(false);
-  const recorderRef = useRef<MediaRecorder | null>(null);
-  const chunksRef = useRef<Blob[]>([]);
   const resultRef = useRef<HTMLDivElement | null>(null);
   const digits = bankPhone.replace(/[^0-9+]/g, "");
+  const { recording, startRecording, stopRecording } = useVoiceInput((voiceText) => {
+    setContent(voiceText);
+    setMode("text");
+    setVoiceMessage("음성을 글자로 바꿨습니다. 잘못 읽은 부분이 없는지 확인하고 고쳐주세요.");
+  }, setError, "incident-voice.webm");
   useEffect(() => { if (incident && plan) resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }); }, [incident, plan]);
   const run = async () => { if (!content.trim()) { setError("무슨 일이 있었는지 한 문장으로 적어주세요."); return; } setError(""); setIncident(null); setPlan(null); setLoading(true); try { const safeContent = redactSensitiveText(content); const classified = await postJson<JsonRecord>("/api/v1/incidents/classify", { content: safeContent }); const actionPlan = await postJson<JsonRecord>("/api/v1/incidents/action-plan", { incident_type: classified.incident_type, content: safeContent }); setIncident(classified); setPlan(actionPlan); } catch (caught) { setError(caught instanceof Error ? caught.message : "사고 대응 분석에 실패했습니다."); } finally { setLoading(false); } };
   const searchCompanies = async () => { if (!companyQuery.trim()) return; setCompanyLoading(true); setError(""); try { const data = await getJson<{ records: JsonRecord[] }>("/api/v1/official-data/records/search", { query: companyQuery, dataset_id: "KDIC_INSURED_FINANCIAL_COMPANIES_20250930", limit: 6 }); setCompanies(data.records); if (!data.records.length) setError("공식 목록에서 금융회사를 찾지 못했습니다. 기관명을 다시 확인해주세요."); } catch (caught) { setError(caught instanceof Error ? caught.message : "금융회사 검색에 실패했습니다."); } finally { setCompanyLoading(false); } };
-  const startRecording = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      chunksRef.current = [];
-      const recorder = new MediaRecorder(stream);
-      recorder.ondataavailable = (event) => { if (event.data.size) chunksRef.current.push(event.data); };
-      recorder.onstop = async () => {
-        stream.getTracks().forEach((track) => track.stop());
-        const audio = new File([new Blob(chunksRef.current, { type: "audio/webm" })], "incident-voice.webm", { type: "audio/webm" });
-        try { const data = await postFile<JsonRecord>("/api/v1/analyze/transcribe-audio", audio); if (data.text) { setContent(data.text); setMode("text"); setVoiceMessage("음성을 글자로 바꿨습니다. 잘못 읽은 부분이 없는지 확인하고 고쳐주세요."); } else setError(data.message ?? "음성을 글자로 바꾸지 못했습니다."); } catch (caught) { setError(caught instanceof Error ? caught.message : "음성 변환에 실패했습니다."); }
-      };
-      recorderRef.current = recorder; recorder.start(); setRecording(true); setError("");
-    } catch { setError("마이크를 사용할 수 없습니다. 브라우저 권한을 확인하거나 직접 적기를 이용해주세요."); }
-  };
-  const stopRecording = () => { recorderRef.current?.stop(); recorderRef.current = null; setRecording(false); };
   return <><div className="panel-heading"><div><span className="panel-label">긴급할 때 가장 먼저</span><h2>금융사고 대응</h2><p>돈을 보냈거나 개인정보를 알려줬다면 바로 신고부터 하세요.</p></div></div><div className="emergency-box"><strong>지금 피해가 진행 중인가요?</strong><p>분석 결과를 기다리지 말고 먼저 전화하세요.</p><div className="emergency-actions"><a className="call-button danger icon-button" href="tel:112"><Phone size={21} aria-hidden="true" /> 경찰 112 신고</a><a className="call-button icon-button" href="tel:1332"><Phone size={21} aria-hidden="true" /> 금융감독원 1332</a></div></div><div className="input-section"><strong className="choice-title">무슨 일이 있었나요?</strong><div className="sample-buttons" aria-label="사고 상황 예시">{[["잘못 송금", incidentSamples[0]], ["전화 사기", incidentSamples[1]], ["현금 전달", incidentSamples[2]]].map(([title, sample]) => <button type="button" key={title} onClick={() => { setContent(sample); setMode("text"); }}>{title}</button>)}</div><div className="mode-row"><ModeChoice name="incident-mode" value="text" checked={mode === "text"} onChange={() => setMode("text")}>직접 입력</ModeChoice><ModeChoice name="incident-mode" value="voice" checked={mode === "voice"} onChange={() => setMode("voice")}>음성 입력</ModeChoice></div>{mode === "voice" ? <div className="voice-box"><p>사고 상황을 천천히 말해주세요.</p><button type="button" className={recording ? "secondary-button icon-button" : "primary-button icon-button"} onClick={recording ? stopRecording : startRecording}>{recording ? <><Square size={18} aria-hidden="true" /> 녹음 끝내기</> : <><Mic size={18} aria-hidden="true" /> 녹음 시작</>}</button>{recording && <span className="recording" role="status">녹음 중입니다.</span>}</div> : <><label className="sr-only" htmlFor="incident-content">사고 상황</label><textarea id="incident-content" value={content} onChange={(event) => setContent(event.target.value)} placeholder="예: 모르는 사람에게 돈을 잘못 보냈어요." />{voiceMessage && <div className="notice success" role="status">{voiceMessage}</div>}<PrivacyGuard text={content} onMask={() => setContent(redactSensitiveText(content))} />{magnifier && content.trim() && <div className="magnifier"><strong>사고 상황 크게 보기</strong>{content}</div>}<details className="company-finder"><summary>송금한 금융회사 연락처 찾기</summary><div className="company-finder-body"><div className="company-search-row"><label className="sr-only" htmlFor="company-query">금융회사 이름</label><input id="company-query" type="text" value={companyQuery} onChange={(event) => setCompanyQuery(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") void searchCompanies(); }} placeholder="예: 국민은행" /><button className="secondary-button" type="button" onClick={() => void searchCompanies()} disabled={companyLoading}>{companyLoading ? "찾는 중" : "연락처 찾기"}</button></div><p className="input-help">예금보험공사 공식 금융회사 목록을 사용합니다. 실제 고객센터 번호는 카드 뒷면이나 공식 앱에서도 확인하세요.</p>{companies.length > 0 && <div className="company-results">{companies.map((company, index) => <button className="company-result" type="button" key={`${company.title}-${index}`} onClick={() => { setBankPhone(company.metadata?.phone ?? ""); setCompanyQuery(company.title); setCompanies([]); }}><strong>{company.title}</strong><span>{company.metadata?.phone || "전화번호 없음"}</span></button>)}</div>}<label className="field-label" htmlFor="bank-phone">선택한 연락처</label><input id="bank-phone" type="tel" value={bankPhone} onChange={(event) => setBankPhone(event.target.value)} placeholder="번호를 선택하거나 입력하세요" />{digits && <a className="call-button compact icon-button" href={`tel:${digits}`}><Phone size={19} aria-hidden="true" /> 이 번호로 전화하기</a>}</div></details><button className="primary-button full-button" type="button" aria-busy={loading} onClick={() => void run()} disabled={loading || !content.trim()}>{loading ? "지금 할 일을 찾고 있습니다..." : "지금 할 일 확인하기"}</button></>}</div>{error && <ErrorNotice message={error} />}{incident && plan && <div ref={resultRef}><IncidentResult incident={incident} plan={plan} bankPhone={digits} /></div>}</>;
 }
 

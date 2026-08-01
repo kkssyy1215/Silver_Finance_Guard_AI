@@ -1,4 +1,6 @@
 from enum import Enum
+from typing import Optional
+
 from pydantic import BaseModel
 
 
@@ -28,6 +30,8 @@ class SourceReference(BaseModel):
     publisher: str
     url: str
     summary: str
+    published_at: Optional[str] = None
+    application_reason: str = ""
 
 
 class OfficialFaqItem(BaseModel):

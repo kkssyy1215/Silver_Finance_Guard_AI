@@ -5,7 +5,15 @@ from app.schemas.analysis import (
 )
 from app.schemas.common import Confidence, EasyExplanation, RiskLevel
 from app.services.reference_service import references_for
-from app.services.risk_detector import DISCLAIMER, _contains_any, _find_context
+from app.services.risk_detector import (
+    DISCLAIMER,
+    _contains_any,
+    _confidence_for,
+    _find_context,
+    _keyword_is_active,
+    _matched_keywords,
+    _references_for_risk,
+)
 from app.services.rule_loader import load_rule_file
 
 
@@ -14,15 +22,23 @@ def analyze_explanation_risk(request: TextAnalysisRequest) -> ExplanationRiskRes
     points: list[SuspiciousPoint] = []
 
     for rule in labels:
-        if _contains_any(request.content, rule["keywords"]):
+        if any(_contains_any(request.content, [excluded]) for excluded in rule.get("exclude_keywords", [])):
+            continue
+        if any(_keyword_is_active(request.content, keyword) for keyword in rule["keywords"]):
+            detected_text = _find_context(request.content, rule["keywords"])
+            detected_keywords = _matched_keywords(detected_text, rule["keywords"])
+            confidence = _confidence_for(rule["keywords"], detected_keywords)
             points.append(
                 SuspiciousPoint(
                     label=rule["label"],
                     severity=rule["severity"],
-                    detected_text=_find_context(request.content, rule["keywords"]),
+                    review_status="주의 후보" if confidence == Confidence.high else "확인 필요",
+                    detected_text=detected_text,
+                    detected_keywords=detected_keywords,
                     reason=rule["reason"],
                     easy_explanation=rule["easy_explanation"],
                     must_ask_question=rule["must_ask_question"],
+                    official_references=_references_for_risk(rule["label"]),
                 )
             )
 

@@ -163,7 +163,7 @@ def ingest_telemarketing_sellers() -> int:
 
 
 def ingest_voice_phishing_news() -> int:
-    source_path = find_inbox_file("보이스피싱")
+    source_path = find_inbox_file("뉴스빅데이터_메타데이터_보이스피싱")
     rows = read_csv_rows(source_path)
     normalized = [
         {

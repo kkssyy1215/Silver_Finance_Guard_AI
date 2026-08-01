@@ -1,4 +1,5 @@
 import json
+import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Optional
@@ -54,14 +55,10 @@ SEARCHABLE_DATA_FILES = {
     "KINFA_MAIN_FAQ_20251031": "kinfa_main_faq.json",
     "KINFA_MICROFINANCE_BRANCHES_20251231": "kinfa_microfinance_branches.json",
     "FTC_TELEMARKETING_SELLERS": "ftc_telemarketing_sellers_seoul_gyeonggi.json",
-    "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": "kpf_voice_phishing_news_metadata.json",
-    "FINANCIAL_CONSUMER_PROTECTION_PDF": "financial_consumer_protection_pdf_pages.json",
-    "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320": "ftc_financial_unfair_terms_briefing_pages.json",
     "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227": "ftc_consumer_complaint_examples.json",
     "POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231": "post_office_financial_fraud_accounts.json",
     "POLICE_VOICE_PHISHING_STATS_20251231": "police_voice_phishing_stats.json",
     "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231": "police_voice_phishing_regional_damage.json",
-    "FTC_BANK_STANDARD_TERMS_20240927": "ftc_bank_standard_terms.json",
 }
 
 
@@ -86,14 +83,10 @@ def _normalize_records(dataset_id: str, rows: list[dict[str, Any]]) -> list[Offi
         "KINFA_MAIN_FAQ_20251031": _faq_record,
         "KINFA_MICROFINANCE_BRANCHES_20251231": _branch_record,
         "FTC_TELEMARKETING_SELLERS": _telemarketing_record,
-        "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": _news_record,
-        "FINANCIAL_CONSUMER_PROTECTION_PDF": _pdf_page_record,
-        "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320": _pdf_page_record,
         "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227": _complaint_example_record,
         "POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231": _fraud_account_record,
         "POLICE_VOICE_PHISHING_STATS_20251231": _police_voice_phishing_stat_record,
         "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231": _police_regional_damage_record,
-        "FTC_BANK_STANDARD_TERMS_20240927": _standard_terms_record,
     }
     normalize = normalizers[dataset_id]
     return [normalize(row) for row in rows]
@@ -147,26 +140,6 @@ def _telemarketing_record(row: dict[str, Any]) -> OfficialRecord:
         body=f"{row.get('agency', '')} {row.get('registration_no', '')} {row.get('phone', '')}",
         source_title="공정거래위원회_전화권유판매사업자정보파일",
         metadata={"type": "telemarketing_seller", "agency": row.get("agency", ""), "status": row.get("status", "")},
-    )
-
-
-def _news_record(row: dict[str, Any]) -> OfficialRecord:
-    return OfficialRecord(
-        dataset_id=row["dataset_id"],
-        title=row.get("title", ""),
-        body=f"{row.get('date', '')} {row.get('publisher', '')} {row.get('category_1', '')} {row.get('category_2', '')}",
-        source_title=row.get("source_title", ""),
-        metadata={"type": "news_metadata", "date": row.get("date", ""), "publisher": row.get("publisher", "")},
-    )
-
-
-def _pdf_page_record(row: dict[str, Any]) -> OfficialRecord:
-    return OfficialRecord(
-        dataset_id=row["dataset_id"],
-        title=f"{row.get('source_title', 'PDF')} {row.get('page', '')}쪽",
-        body=row.get("text", ""),
-        source_title=row.get("source_title", ""),
-        metadata={"type": "pdf_page", "page": str(row.get("page", ""))},
     )
 
 
@@ -231,16 +204,6 @@ def _police_regional_damage_record(row: dict[str, Any]) -> OfficialRecord:
     )
 
 
-def _standard_terms_record(row: dict[str, Any]) -> OfficialRecord:
-    return OfficialRecord(
-        dataset_id=row["dataset_id"],
-        title=row.get("title", ""),
-        body=row.get("text", ""),
-        source_title=row.get("source_title", ""),
-        metadata={"type": "standard_terms", "source_file": row.get("source_file", "")},
-    )
-
-
 def search_official_records(query: str, dataset_id: Optional[str] = None, limit: int = 10) -> list[OfficialRecord]:
     normalized_query = query.strip().lower()
     compact_query = normalized_query.replace(" ", "")
@@ -282,9 +245,11 @@ def search_financial_terms(query: str, limit: int = 8) -> list[FinancialTermExpl
         body = record.body.lower()
         compact_body = body.replace(" ", "")
         if compact_query == compact_title:
-            score = 100
+            score = 1000
         elif compact_query in compact_title or compact_title in compact_query:
-            score = 80
+            # Prefer short, directly named terms over long titles that merely contain the query.
+            title_position_bonus = 18 if compact_title.startswith(compact_query) or compact_title.endswith(compact_query) else 8
+            score = 100 + title_position_bonus - max(0, len(compact_title) - len(compact_query)) * 3
         elif normalized_query in body or compact_query in compact_body:
             score = 10
         else:
@@ -300,7 +265,7 @@ def search_financial_terms(query: str, limit: int = 8) -> list[FinancialTermExpl
     else:
         selected_records = body_matches
 
-    explanations = easy_results + [_to_financial_term_explanation(record) for record in selected_records[:limit]]
+    explanations = easy_results + [_to_financial_term_explanation(record, compact_query) for record in selected_records[:limit]]
     deduped: list[FinancialTermExplanation] = []
     seen: set[str] = set()
     for item in explanations:
@@ -317,11 +282,13 @@ def _easy_dictionary_results(query: str) -> list[FinancialTermExplanation]:
     results = []
     for item in load_rule_file("easy_language_dictionary.json"):
         normalized_term = item["term"].replace(" ", "").lower()
-        if normalized_query not in normalized_term and normalized_term not in normalized_query:
+        # A generic query such as "예금" must not be presented as the exact term "예금자보호".
+        if normalized_query != normalized_term:
             continue
         results.append(
             FinancialTermExplanation(
                 term=item["term"],
+                match_type="exact",
                 official_definition="",
                 easy_explanation=item["easy"],
                 action_tip=item["action"],
@@ -332,7 +299,7 @@ def _easy_dictionary_results(query: str) -> list[FinancialTermExplanation]:
     return results
 
 
-def _to_financial_term_explanation(record: OfficialRecord) -> FinancialTermExplanation:
+def _to_financial_term_explanation(record: OfficialRecord, compact_query: str = "") -> FinancialTermExplanation:
     easy_match = _easy_dictionary_match(record.title)
     official_definition = record.body.strip()
     if easy_match:
@@ -344,6 +311,7 @@ def _to_financial_term_explanation(record: OfficialRecord) -> FinancialTermExpla
 
     return FinancialTermExplanation(
         term=record.title,
+        match_type="exact" if compact_query and record.title.replace(" ", "").lower() == compact_query else "related",
         official_definition=official_definition,
         easy_explanation=easy_explanation,
         action_tip=action_tip,
@@ -370,7 +338,7 @@ def _simplify_definition(definition: str) -> str:
         return "문제가 생긴 금융회사를 정리하거나 남은 자산을 관리하기 위해 만든 회사나 제도입니다."
     if "사기이용계좌" in text or "입출금" in text and "금지" in text:
         return "사기 피해가 의심되는 계좌에서 돈이 더 빠져나가지 못하게 막는 조치입니다."
-    if "예금자" in text and "보호" in text:
+    if ("예금자" in text and "보호" in text) or "예금보호한도" in text or "부보예금" in text:
         return "은행이나 금융회사가 문제가 생겼을 때 일정 한도 안에서 내 예금을 보호해 주는 제도입니다."
     if "청약" in text and ("철회" in text or "취소" in text):
         return "가입한 뒤 정해진 기간 안에 다시 생각해 보고 계약을 취소하는 제도입니다."

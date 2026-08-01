@@ -9,7 +9,7 @@
   },
   {
     "label": "excessive_penalty",
-    "keywords": ["위약금", "해지수수료", "잔여기간 이용료"],
+    "keywords": ["위약금", "해지수수료", "잔여기간 이용료", "손해배상금", "중도 상환"],
     "severity": "high",
     "simplified_text": "중간에 그만두면 큰 비용이 생길 수 있습니다.",
     "why_it_matters": "가입 후 해지할 때 예상보다 많은 돈을 낼 수 있습니다.",
@@ -21,15 +21,17 @@
     "severity": "medium",
     "simplified_text": "내 정보가 다른 회사에 넘어갈 수 있습니다.",
     "why_it_matters": "광고 전화나 안내 문자가 늘어날 수 있습니다.",
-    "must_ask_question": "이 동의를 거부해도 가입할 수 있나요?"
+    "must_ask_question": "이 동의를 거부해도 가입할 수 있나요?",
+    "exclude_keywords": ["제3자에게 제공하지", "제휴사에 제공하지"]
   },
   {
     "label": "principal_guarantee_misleading",
-    "keywords": ["원금 걱정", "원금 보장", "예금과 유사", "안전"],
+    "keywords": ["원금 걱정", "원금 보장", "예금과 유사", "안전한 상품"],
     "severity": "high",
     "simplified_text": "원금이 보장된다는 뜻이 아닐 수 있습니다.",
     "why_it_matters": "투자상품은 돈을 잃을 가능성이 있을 수 있습니다.",
-    "must_ask_question": "이 상품은 법적으로 원금이 보장되나요?"
+    "must_ask_question": "이 상품은 법적으로 원금이 보장되나요?",
+    "exclude_keywords": ["원금 보장을 약속하는 상품이 아닙니다", "원금 보장 상품이 아닙니다"]
   },
   {
     "label": "pressure_sales",
@@ -49,7 +51,7 @@
   },
   {
     "label": "termination_limit",
-    "keywords": ["해지 제한", "해지 불가", "해지 신청이 완료된 때"],
+    "keywords": ["해지 제한", "해지 불가", "해지 신청이 완료된 때", "해지 신청이 불가능", "해지 불가능"],
     "severity": "medium",
     "simplified_text": "바로 그만두기 어려울 수 있습니다.",
     "why_it_matters": "원할 때 계약을 끝내지 못할 수 있습니다.",

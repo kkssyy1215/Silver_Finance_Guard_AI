@@ -9,7 +9,7 @@
   },
   {
     "label": "exaggerated_return",
-    "keywords": ["확실히 오릅니다", "무조건 이익", "수익 보장"],
+    "keywords": ["확실히 오릅니다", "무조건 이익", "수익 보장", "수익만 확실", "확실히 수익", "확실한 수익"],
     "severity": "high",
     "reason": "불확실한 수익을 확정적으로 말하는 표현입니다.",
     "easy_explanation": "돈을 벌 수 있다고 단정해서 말하면 위험합니다.",
@@ -21,7 +21,8 @@
     "severity": "high",
     "reason": "원금 보장으로 오해할 수 있는 표현입니다.",
     "easy_explanation": "예금처럼 안전한 상품인지 꼭 확인해야 합니다.",
-    "must_ask_question": "예금자보호 대상인가요?"
+    "must_ask_question": "예금자보호 대상인가요?",
+    "exclude_keywords": ["원금 보장이 아니라", "원금 보장이 아님"]
   },
   {
     "label": "omitted_fee",
@@ -33,7 +34,7 @@
   },
   {
     "label": "pressure_sales",
-    "keywords": ["오늘만", "지금 해야", "지금 가입", "비밀로", "급하게"],
+    "keywords": ["오늘만", "지금 해야", "지금 가입", "비밀로", "급하게", "우선 가입"],
     "severity": "high",
     "reason": "충분히 생각할 시간을 주지 않는 표현입니다.",
     "easy_explanation": "급하게 결정하면 중요한 내용을 놓칠 수 있습니다.",
@@ -45,6 +46,7 @@
     "severity": "medium",
     "reason": "사용자 상황에 맞는 상품인지 확인이 필요합니다.",
     "easy_explanation": "나이, 투자경험, 재산상황에 맞는 상품인지 봐야 합니다.",
-    "must_ask_question": "제 나이와 투자경험에 맞는 상품인가요?"
+    "must_ask_question": "제 나이와 투자경험에 맞는 상품인가요?",
+    "exclude_keywords": ["위험과 적합성 기준을 차례로 설명했습니다"]
   }
 ]

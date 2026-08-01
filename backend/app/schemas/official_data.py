@@ -42,6 +42,7 @@ class OfficialRecordSearchResponse(BaseModel):
 
 class FinancialTermExplanation(BaseModel):
     term: str
+    match_type: str = "related"
     official_definition: str
     easy_explanation: str
     action_tip: str

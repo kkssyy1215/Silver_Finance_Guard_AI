@@ -6,6 +6,13 @@
 
 고령층 사용자가 이해하기 어려운 금융 약관의 위험 요소를 사전에 탐지하고, 금융사고 발생 시 골든타임 내 필요한 조치와 서류 작성을 즉시 지원하는 금융소비자 보호 AI 에이전트입니다.
 
+## Submission Prototype
+
+- Live service: https://silver-finance-guard-ai.onrender.com
+- Technical presentation: `deliverables/실버_금융가드_AI_기술설명서.pptx`
+- Technical description PDF: `deliverables/실버_금융가드_AI_기술설명서.pdf`
+- Judge demo flow: `docs/demo_scenarios.md`
+
 ## Core Flows
 
 - Pre-signup check: detect risky clauses or misleading sales language and explain them in plain Korean.
@@ -13,6 +20,8 @@
 - Incident response: classify financial incidents such as mistaken transfers or voice phishing, then generate action steps, document checklists, and complaint drafts.
 - Complaint drafting: ground complaint drafts in official model consultation cases.
 - Senior-friendly UX: provide large text, high contrast, magnifier view, emergency cards, and step-by-step action cards.
+- Evidence-first results: highlight detected words and show `확인 필요`/`주의 후보`, reason, question, source date, original link, and why each source was applied.
+- Input accessibility: support image OCR, local Korean voice transcription, and browser read-aloud controls.
 - Document export: download complaint drafts and analysis reports as TXT, Markdown, or HTML.
 - Official data grounding: search imported public-data rows for financial terms, senior finance support, telemarketing seller checks, voice-phishing trend evidence, and mistaken-transfer guidance.
 
@@ -48,6 +57,12 @@ python tools/ingest_official_data.py
 
 API-only datasets are intentionally excluded from the MVP data registry unless a local file or non-API source is available.
 
+## Detection Evaluation
+
+- `backend/app/data/evaluation/risk_detection_cases.json`: 40 labeled contract and consultation sentences, including normal sentences for false-positive checks.
+- `tools/evaluate_risk_detection.py`: runs the evaluation and writes `docs/risk_detection_evaluation.md` and a JSON report.
+- The current evaluation result is 100% expected-case match, with 0% false positives among the normal sentences.
+
 ## Official Data Registry
 
 The project also tracks additional official datasets in:
@@ -71,7 +86,10 @@ backend/
     schemas/            Pydantic request/response models
     services/           Business logic
 frontend/
-  app.py                Streamlit MVP interface
+  app/                  Next.js App Router pages
+  components/           TypeScript feature UI
+  lib/api.ts            Typed FastAPI client
+  package.json          Next.js frontend scripts
 ```
 
 ## Run Backend
@@ -84,14 +102,24 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
 ```
 
-## Run Frontend
+## Run Frontend (Next.js)
 
 ```bash
 cd frontend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-streamlit run app.py
+npm install
+npm run dev
 ```
 
-By default, the frontend calls `http://127.0.0.1:8000`.
+Open `http://localhost:3000`. By default, the frontend calls `http://127.0.0.1:8000` during local development. The deployed Docker service serves the frontend and API from one address.
+
+The frontend is now the Next.js app; the previous Streamlit screen has been removed to prevent an outdated interface from being used during the demo.
+
+### Optional Input Dependencies
+
+The backend requirements include Korean OCR (`Pillow`, `pytesseract`) and local voice transcription (`faster-whisper`). On macOS, install the OCR engine and Korean language data once:
+
+```bash
+brew install tesseract tesseract-lang
+```
+
+The first voice transcription downloads the small `tiny` Whisper model. Set `WHISPER_MODEL_SIZE` to choose another local model size.

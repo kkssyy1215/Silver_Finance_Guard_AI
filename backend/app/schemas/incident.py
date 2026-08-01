@@ -6,7 +6,7 @@ from app.schemas.common import Confidence, OfficialFaqItem, RiskLevel, SourceRef
 
 
 class IncidentClassifyRequest(BaseModel):
-    content: str = Field(min_length=1)
+    content: str = Field(min_length=1, max_length=20_000)
 
 
 class ExtractedFacts(BaseModel):
@@ -44,7 +44,7 @@ class IncidentClassifyResponse(BaseModel):
 
 class ActionPlanRequest(BaseModel):
     incident_type: str
-    content: str = ""
+    content: str = Field(default="", max_length=20_000)
 
 
 class ActionStep(BaseModel):

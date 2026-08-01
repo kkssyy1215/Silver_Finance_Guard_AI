@@ -1,27 +1,40 @@
 {
-  "generated_at": "2026-07-27",
-  "source_folder": "/Users/kkssyy/Projects/Silver_Finance_Guard_AI/data_inbox",
+  "generated_at": "2026-08-02",
+  "source_folder": "data_inbox",
   "row_counts": {
+    "KDIC_MISTAKEN_TRANSFER_FAQ_20240729": 12,
     "KINFA_MAIN_FAQ_20251031": 467,
     "KDIC_DEPOSIT_INSURANCE_TERMS_20220825": 70,
     "KINFA_MICROFINANCE_BRANCHES_20251231": 163,
     "KINFA_MICROFINANCE_AGE_LOAN_20241231": 90,
     "FTC_TELEMARKETING_SELLERS": 12898,
-    "KPF_VOICE_PHISHING_NEWS_METADATA_20241231": 11968,
-    "FINANCIAL_CONSUMER_PROTECTION_PDF": 37,
-    "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320": 3,
     "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227": 566,
     "POST_OFFICE_FINANCIAL_FRAUD_ACCOUNTS_20251231": 1209,
     "POLICE_VOICE_PHISHING_STATS_20251231": 10,
     "POLICE_VOICE_PHISHING_REGIONAL_DAMAGE_20251231": 18,
     "KDIC_INSURED_FINANCIAL_COMPANIES_20250930": 285,
-    "FTC_BANK_STANDARD_TERMS_20240927": 3,
     "FSC_FINANCIAL_TERMS_20260630": 229
   },
   "excluded": [
     {
       "dataset_id": "FSC_DEPOSIT_INSURANCE_COMPANY_PRODUCT_API",
       "reason": "사용자 요청에 따라 API만 제공하는 데이터는 제외했습니다."
+    },
+    {
+      "dataset_id": "KPF_VOICE_PHISHING_NEWS_METADATA_20241231",
+      "reason": "공공누리 제4유형으로 상업적 이용과 변경이 금지되어 제외했습니다."
+    },
+    {
+      "dataset_id": "FINANCIAL_CONSUMER_PROTECTION_PDF",
+      "reason": "출처와 이용조건 확인 전에는 공식 링크 참고 자료로만 관리합니다."
+    },
+    {
+      "dataset_id": "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320",
+      "reason": "원문 추출·재배포 대신 공식 링크만 참고합니다."
+    },
+    {
+      "dataset_id": "FTC_BANK_STANDARD_TERMS_20240927",
+      "reason": "원문 추출·재배포 대신 자체 작성 점검 기준과 공식 링크만 사용합니다."
     }
   ]
 }

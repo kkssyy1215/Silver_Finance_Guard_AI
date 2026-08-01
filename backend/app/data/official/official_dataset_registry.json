@@ -34,7 +34,7 @@
     "url": "https://www.data.go.kr/data/15151953/fileData.do",
     "format": "CSV",
     "row_count": 467,
-    "license": "공공데이터포털 파일데이터",
+    "license": "이용허락범위 제한 없음",
     "fee": "무료",
     "modified_at": "2025-11-11",
     "status": "imported",
@@ -62,7 +62,7 @@
     "url": "https://www.data.go.kr/data/15160317/fileData.do",
     "format": "PDF",
     "row_count": 229,
-    "license": "공공데이터포털 파일데이터",
+    "license": "이용허락범위 제한 없음",
     "fee": "무료",
     "modified_at": "2026-07-14",
     "status": "imported",
@@ -196,11 +196,11 @@
     "url": "https://www.data.go.kr/data/15156238/fileData.do",
     "format": "CSV",
     "row_count": 11968,
-    "license": "공공데이터포털 파일데이터",
+    "license": "공공누리 제4유형: 출처표시·상업적 이용금지·변경금지",
     "fee": "무료",
     "modified_at": "2025-12-17",
-    "status": "imported",
-    "local_path": "backend/app/data/official/kpf_voice_phishing_news_metadata.json",
+    "status": "excluded",
+    "local_path": null,
     "tags": [
       "보이스피싱",
       "뉴스메타데이터",
@@ -212,7 +212,7 @@
       "voice_phishing_trend",
       "demo_statistics"
     ],
-    "summary": "보이스피싱 관련 뉴스 메타정보 데이터로, 피해 유형 트렌드 분석과 발표용 문제정의 근거로 활용할 수 있습니다."
+    "summary": "상업적 이용과 변경이 금지된 공공누리 제4유형 자료이므로 서비스 실행 데이터와 제출 배포물에서 제외합니다."
   },
   {
     "dataset_id": "CONSUMER24_CONSULTATION_CASES",
@@ -273,11 +273,11 @@
     "url": "",
     "format": "PDF",
     "row_count": 37,
-    "license": "사용자 제공 공식 자료",
+    "license": "이용조건 확인 전 재사용 금지",
     "fee": "무료",
     "modified_at": null,
-    "status": "imported",
-    "local_path": "backend/app/data/official/financial_consumer_protection_pdf_pages.json",
+    "status": "reference_only",
+    "local_path": null,
     "tags": [
       "금융소비자보호",
       "설명의무",
@@ -289,7 +289,7 @@
       "complaint_draft",
       "explanation_duty"
     ],
-    "summary": "금융소비자 보호 관련 PDF를 페이지 단위 텍스트로 추출해 설명의무, 민원 초안, 절차 안내의 근거 자료로 활용합니다."
+    "summary": "출처와 이용조건을 확인할 때까지 서비스 실행 데이터로 사용하거나 재배포하지 않습니다."
   },
   {
     "dataset_id": "FTC_FINANCIAL_UNFAIR_TERMS_BRIEFING_20250320",
@@ -299,11 +299,11 @@
     "url": "https://eiec.kdi.re.kr/policy/materialView.do?num=264605&pg=&pp=20&topic=L",
     "format": "PDF",
     "row_count": 3,
-    "license": "공식 공개 자료",
+    "license": "공식 원문 링크만 참조",
     "fee": "무료",
     "modified_at": "2025-03-20",
-    "status": "imported",
-    "local_path": "backend/app/data/official/ftc_financial_unfair_terms_briefing_pages.json",
+    "status": "reference_only",
+    "local_path": null,
     "tags": [
       "불공정약관",
       "금융약관",
@@ -316,7 +316,7 @@
       "contract_comparison",
       "risk_dictionary"
     ],
-    "summary": "금융 분야 약관 심사 제도와 불공정약관 유형을 설명하는 공식 자료로, 독소조항 탐지 규칙 고도화에 활용합니다."
+    "summary": "공식 원문 링크만 참고하고 PDF 추출 텍스트는 서비스 실행 데이터로 사용하거나 재배포하지 않습니다."
   },
   {
     "dataset_id": "FTC_CONSUMER_COMPLAINT_EXAMPLES_20211227",
@@ -353,7 +353,7 @@
     "url": "https://www.data.go.kr/data/15021794/fileData.do?recommendDataYn=Y",
     "format": "CSV",
     "row_count": 1209,
-    "license": "공공데이터포털 파일데이터",
+    "license": "이용허락범위 제한 없음",
     "fee": "무료",
     "modified_at": "2026-01-23",
     "status": "imported",
@@ -377,10 +377,10 @@
     "title": "경찰청_보이스피싱 현황_20251231",
     "publisher": "경찰청",
     "portal": "공공데이터포털",
-    "url": "https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EB%B3%B4%EC%9D%B4%EC%8A%A4%ED%94%BC%EC%8B%B1",
+    "url": "https://www.data.go.kr/data/15063815/fileData.do",
     "format": "CSV",
     "row_count": 10,
-    "license": "공공데이터포털 파일데이터",
+    "license": "이용허락범위 제한 없음",
     "fee": "무료",
     "modified_at": "2026-01-21",
     "status": "imported",
@@ -404,10 +404,10 @@
     "title": "경찰청_전화금융사기_보이스피싱 시도청별 피해금액 현황_20251231",
     "publisher": "경찰청",
     "portal": "공공데이터포털",
-    "url": "https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EB%B3%B4%EC%9D%B4%EC%8A%A4%ED%94%BC%EC%8B%B1",
+    "url": "https://www.data.go.kr/data/15157710/fileData.do",
     "format": "CSV",
     "row_count": 18,
-    "license": "공공데이터포털 파일데이터",
+    "license": "이용허락범위 제한 없음",
     "fee": "무료",
     "modified_at": "2026-01-21",
     "status": "imported",
@@ -461,11 +461,11 @@
     "url": "https://www.ftc.go.kr/www/selectBbsNttList.do?bordCd=201&key=202",
     "format": "HWPX",
     "row_count": 3,
-    "license": "공식 공개 표준약관",
+    "license": "공식 원문 링크만 참조",
     "fee": "무료",
     "modified_at": "2024-09-27",
-    "status": "imported",
-    "local_path": "backend/app/data/official/ftc_bank_standard_terms.json",
+    "status": "reference_only",
+    "local_path": null,
     "tags": [
       "표준약관",
       "예금거래",
@@ -478,6 +478,6 @@
       "dark_pattern_detection",
       "standard_terms_reference"
     ],
-    "summary": "예금거래기본약관, 은행여신거래기본약관 가계용·기업용을 텍스트로 추출해 약관 비교 기준으로 활용합니다."
+    "summary": "표준약관 원문은 공식 페이지에서 확인하도록 안내하고, 서비스는 자체 작성한 소비자 점검 기준만 사용합니다."
   }
 ]

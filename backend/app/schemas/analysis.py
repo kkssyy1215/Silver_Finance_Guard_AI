@@ -4,7 +4,7 @@ from app.schemas.common import Confidence, EasyExplanation, RiskLevel, SourceRef
 
 
 class TextAnalysisRequest(BaseModel):
-    content: str = Field(min_length=1)
+    content: str = Field(min_length=1, max_length=50_000)
     content_type: str = "text"
     user_age_group: str = "senior"
     product_type: str = "unknown"

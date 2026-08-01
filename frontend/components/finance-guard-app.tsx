@@ -207,6 +207,7 @@ export default function FinanceGuardApp() {
       if (savedScale) setScale(savedScale);
       const savedContrast = window.localStorage.getItem("silver-high-contrast");
       if (savedContrast) setHighContrast(savedContrast === "true");
+      else if (window.matchMedia?.("(prefers-contrast: more)").matches) setHighContrast(true);
     }, 0);
     return () => window.clearTimeout(restorePreferences);
   }, []);
@@ -224,17 +225,18 @@ export default function FinanceGuardApp() {
   };
 
   return <div className={`app-shell ${scale === "large" ? "scale-large" : scale === "xlarge" ? "scale-xlarge" : ""} ${highContrast ? "high-contrast" : ""}`}>
+    <a className="skip-link" href="#main-content">본문으로 바로가기</a>
     <div className="top-rule" />
-    <main className="page-wrap">
+    <main className="page-wrap" id="main-content">
       <header className="site-header">
         <div className="brand"><div className="eyebrow">금융소비자 보호 서비스</div><h1>실버 금융가드</h1><p>어려운 금융 내용을 쉬운 말로 확인하고, 지금 할 일을 안내받으세요.</p></div>
-        <div className="tool-box" aria-label="보기 설정"><span className="tool-label">보기 설정</span><div className="size-control" aria-label="글자 크기"><button type="button" aria-label="글자 작게" disabled={sizeIndex === 0} onClick={() => changeSize(-1)}><Minus size={20} aria-hidden="true" /></button><strong aria-live="polite">{sizeLabel}</strong><button type="button" aria-label="글자 크게" disabled={sizeIndex === sizes.length - 1} onClick={() => changeSize(1)}><Plus size={20} aria-hidden="true" /></button></div><button className={`tool-button icon-button ${highContrast ? "active" : ""}`} type="button" aria-pressed={highContrast} onClick={() => setHighContrast((value) => !value)}><Contrast size={19} aria-hidden="true" /> {highContrast ? "고대비 끄기" : "고대비 보기"}</button><button className={`tool-button icon-button ${magnifier ? "active" : ""}`} type="button" aria-pressed={magnifier} onClick={() => setMagnifier((value) => !value)}><Eye size={19} aria-hidden="true" /> 입력 크게 보기</button></div>
+        <div className="tool-box" role="group" aria-label="보기 설정"><span className="tool-label">보기 설정</span><div className="size-control" aria-label="글자 크기"><button type="button" aria-label="글자 작게" disabled={sizeIndex === 0} onClick={() => changeSize(-1)}><Minus size={20} aria-hidden="true" /></button><strong aria-live="polite">{sizeLabel}</strong><button type="button" aria-label="글자 크게" disabled={sizeIndex === sizes.length - 1} onClick={() => changeSize(1)}><Plus size={20} aria-hidden="true" /></button></div><button className={`tool-button icon-button ${highContrast ? "active" : ""}`} type="button" aria-pressed={highContrast} onClick={() => setHighContrast((value) => !value)}><Contrast size={19} aria-hidden="true" /> {highContrast ? "고대비 켜짐" : "고대비 보기"}</button><button className={`tool-button icon-button ${magnifier ? "active" : ""}`} type="button" aria-pressed={magnifier} onClick={() => setMagnifier((value) => !value)}><Eye size={19} aria-hidden="true" /> 입력 크게 보기</button></div>
       </header>
 
       <section className="service-picker" aria-labelledby="service-picker-title"><div className="service-picker-heading"><span>1단계</span><h2 id="service-picker-title">무엇을 도와드릴까요?</h2></div><nav className="service-grid" aria-label="주요 기능">{tabItems.map((item) => { const Icon = item.icon; return <button key={item.key} type="button" className={`service-button ${tab === item.key ? "active" : ""} ${item.key === "incident" ? "urgent" : ""}`} aria-current={tab === item.key ? "page" : undefined} onClick={() => changeTab(item.key)}><Icon size={25} aria-hidden="true" /><span><strong>{item.title}</strong><small>{item.description}</small></span></button>; })}</nav></section>
 
       <section className="content-panel" ref={contentRef} tabIndex={-1}>{tab === "check" && <ContractCheck magnifier={magnifier} setError={setError} error={error} />} {tab === "terms" && <TermSearch magnifier={magnifier} setError={setError} error={error} />} {tab === "incident" && <IncidentResponse magnifier={magnifier} setError={setError} error={error} />} {tab === "complaint" && <ComplaintDraft setError={setError} error={error} />}</section>
-      <p className="footer-note">이 서비스는 공식 자료 기반의 확인 보조 도구입니다. 최종 가입·신고·민원 제출 전에는 해당 금융회사와 공식 기관의 최신 안내를 함께 확인하세요.</p>
+      <footer className="service-footer"><p>이 서비스는 공식 자료를 바탕으로 확인을 돕습니다. 최종 가입·신고·민원 제출 전에는 해당 금융회사와 공식 기관의 최신 안내를 함께 확인하세요.</p><details className="legal-notice"><summary>개인정보와 이용 안내</summary><div><p>입력한 문서와 음성은 결과를 만들기 위해 현재 요청에서만 처리하며 서비스 데이터로 저장하지 않습니다.</p><p>계좌번호, 주민등록번호, 비밀번호와 인증번호는 입력하지 마세요. 화면에 표시되면 ‘민감한 정보 가리기’를 먼저 눌러주세요.</p><p>결과는 법률·투자 판단을 대신하지 않으며, 긴급한 금융사고는 금융회사·112·1332에 즉시 연락해야 합니다.</p></div></details></footer>
     </main>
   </div>;
 }

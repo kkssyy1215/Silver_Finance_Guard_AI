@@ -1,4 +1,4 @@
-from fastapi import APIRouter, File, UploadFile
+from fastapi import APIRouter, File, HTTPException, UploadFile
 
 from app.schemas.analysis import (
     ContractRiskResponse,
@@ -13,6 +13,7 @@ from app.services.explanation_detector import analyze_explanation_risk
 from app.services.risk_detector import analyze_contract_risk
 
 router = APIRouter()
+MAX_AUDIO_BYTES = 15 * 1024 * 1024
 
 
 @router.post("/document", response_model=ContractRiskResponse)
@@ -53,5 +54,7 @@ def analyze_explanation(request: TextAnalysisRequest) -> ExplanationRiskResponse
 @router.post("/transcribe-audio", response_model=AudioTranscriptionResponse)
 async def transcribe_audio_file(file: UploadFile = File(...)) -> AudioTranscriptionResponse:
     content = await file.read()
+    if len(content) > MAX_AUDIO_BYTES:
+        raise HTTPException(status_code=413, detail="음성 파일은 15MB 이하만 올릴 수 있습니다.")
     text, available, message = transcribe_audio(content, file.filename)
     return AudioTranscriptionResponse(text=text, available=available, message=message)

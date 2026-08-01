@@ -153,7 +153,7 @@ textarea::placeholder, input::placeholder { color: #778493; }
 .score { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 15px; padding: 18px; border: 1px solid var(--line); border-radius: 9px; background: #f7fafb; }
 .score > strong { display: grid; place-items: center; min-width: 72px; min-height: 58px; padding: 8px; border-radius: 7px; background: var(--navy); color: #fff; font-size: 1.28rem; }
 .score span { font-weight: 750; }
-.score span b { display: block; }
+.score span b { display: inline; }
 .score small { display: block; margin-top: 3px; color: var(--muted); font-size: .8rem; font-weight: 650; }
 .result-stack { display: grid; gap: 14px; margin-top: 14px; }
 .result-card { padding: 20px; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); }

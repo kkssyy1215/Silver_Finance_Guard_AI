@@ -7,6 +7,13 @@ from app.schemas.complaint import ComplaintDraftResponse, SimilarComplaintCase
 from app.services.risk_detector import DISCLAIMER
 
 OFFICIAL_DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "official"
+FINANCIAL_CASE_TERMS = (
+    "금융", "은행", "보험", "예금", "적금", "대출", "투자", "펀드", "증권", "카드",
+    "송금", "계좌", "이체", "신용", "대부", "채무", "보이스피싱", "원금", "금리",
+)
+FINANCIAL_QUERY_TERMS = FINANCIAL_CASE_TERMS + (
+    "수수료", "손실", "수익", "보장", "설명", "가입", "해지", "약관", "권유", "고지의무",
+)
 
 
 def draft_complaint(user_statement: str, incident_type: str) -> ComplaintDraftResponse:
@@ -24,7 +31,7 @@ def draft_complaint(user_statement: str, incident_type: str) -> ComplaintDraftRe
     return ComplaintDraftResponse(
         complaint_type=incident_type,
         title=title,
-        summary="사용자 진술과 공식 모범상담 사례를 함께 참고해 정리한 초안입니다.",
+        summary="입력한 사건 내용과 금융 민원 쟁점을 바탕으로 정리한 초안입니다.",
         draft_body=(
             f"본인은 다음과 같은 금융 관련 문제를 겪었습니다.\n\n"
             f"1. 사건 내용\n{user_statement}\n\n"
@@ -32,8 +39,7 @@ def draft_complaint(user_statement: str, incident_type: str) -> ComplaintDraftRe
             f"3. 요청 사항\n"
             f"관련 절차와 사실관계를 확인해주시고, 설명 부족·부당 권유·피해 발생 여부에 대해 조사해 주시기 바랍니다. "
             f"확인 결과에 따라 계약 취소, 손해 회복, 수수료 환급, 피해구제 절차 안내 등 필요한 조치를 요청드립니다.\n\n"
-            f"4. 참고 가능한 유사 사례\n{_format_similar_cases(similar_cases)}\n\n"
-            f"5. 첨부 예정 자료\n{', '.join(attachments)}"
+            f"4. 첨부 예정 자료\n{', '.join(attachments)}"
         ),
         recommended_attachments=attachments,
         editable_fields=["사건 발생일", "금액", "금융회사명", "요청 사항"],
@@ -62,13 +68,15 @@ def load_complaint_examples() -> list[dict[str, str]]:
 
 
 def find_similar_complaint_cases(user_statement: str, incident_type: str, limit: int = 3) -> list[SimilarComplaintCase]:
-    query_terms = _important_terms(user_statement) + _terms_for_incident_type(incident_type)
+    query_terms = _financial_terms_in(user_statement) + _terms_for_incident_type(incident_type) + _important_terms(user_statement)
     scored_cases: list[tuple[int, dict[str, str]]] = []
 
     for case in load_complaint_examples():
+        if not _is_financial_case(case):
+            continue
         haystack = f"{case.get('title', '')} {case.get('content', '')} {case.get('answer', '')}"
         score = _score(haystack, query_terms)
-        if score <= 0:
+        if score < 3:
             continue
         scored_cases.append((score, case))
 
@@ -122,18 +130,31 @@ def _terms_for_incident_type(incident_type: str) -> list[str]:
         return ["착오송금", "송금", "반환", "계좌"]
     if incident_type == "mis_selling":
         return ["보험", "투자", "설명", "고지의무", "원금", "손실", "수수료"]
-    return ["소비자", "피해", "민원", "보상", "환급"]
+    return []
+
+
+def _financial_terms_in(text: str) -> list[str]:
+    normalized = text.lower()
+    return [term for term in FINANCIAL_QUERY_TERMS if term in normalized]
+
+
+def _is_financial_case(case: dict[str, str]) -> bool:
+    title_and_content = f"{case.get('title', '')} {case.get('content', '')}".lower()
+    return any(term in title_and_content for term in FINANCIAL_CASE_TERMS)
 
 
 def _important_terms(text: str) -> list[str]:
     tokens = re.findall(r"[가-힣A-Za-z0-9]{2,}", text)
-    stopwords = {"저는", "제가", "관련", "문제", "했습니다", "있습니다", "그리고", "그런데", "받았습니다"}
+    stopwords = {
+        "저는", "제가", "관련", "문제", "했습니다", "있습니다", "그리고", "그런데", "받았습니다",
+        "나중에", "가능성이", "있다는", "사실을", "알았습니다", "상담원이", "가입했지만",
+    }
     return [token for token in tokens if token not in stopwords][:16]
 
 
 def _score(text: str, terms: list[str]) -> int:
     normalized = text.lower()
-    return sum(normalized.count(term.lower()) for term in terms if term)
+    return sum(1 for term in set(terms) if term and term.lower() in normalized)
 
 
 def _relevance_reason(case: dict[str, str], terms: list[str]) -> str:
@@ -153,12 +174,3 @@ def _summarize_answer(answer: str) -> str:
 
 def _format_numbered(items: list[str]) -> str:
     return "\n".join(f"{index}. {item}" for index, item in enumerate(items, start=1))
-
-
-def _format_similar_cases(cases: list[SimilarComplaintCase]) -> str:
-    if not cases:
-        return "현재 입력과 직접 연결되는 공식 모범상담 사례는 찾지 못했습니다."
-    return "\n".join(
-        f"{index}. {case.title} - {case.relevance_reason} 답변 요지: {case.answer_summary}"
-        for index, case in enumerate(cases, start=1)
-    )

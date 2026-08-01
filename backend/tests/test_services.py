@@ -113,7 +113,18 @@ def test_complaint_draft_uses_similar_official_cases() -> None:
     assert result.similar_cases
     assert result.claim_points
     assert result.submission_checklist
-    assert "공식 모범상담 사례" in result.draft_body
+    assert "참고 가능한 유사 사례" not in result.draft_body
+
+
+def test_complaint_draft_excludes_unrelated_consumer_cases() -> None:
+    result = draft_complaint(
+        "은행 상담원이 원금이 보장된다고 설명해 가입했지만 손실 가능성을 나중에 알았습니다.",
+        "general_complaint",
+    )
+
+    unrelated_words = ("패딩", "의류", "장례", "레이저 시술", "화재보험", "차주의 남편")
+    assert not any(word in case.title for case in result.similar_cases for word in unrelated_words)
+    assert not any(word in result.draft_body for word in unrelated_words)
 
 
 def test_official_kdic_faq_search_uses_imported_csv_data() -> None:
